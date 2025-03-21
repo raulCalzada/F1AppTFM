@@ -3,23 +3,26 @@
   "WorkspaceRootPath": "D:\\TFM\\F1WebAppTFM\\F1WebAppBack\\F1.Users\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9930CE2C-3E3A-2A8E-4157-8509419058A7}|..\\F1.Shared.Database\\F1.Shared.Database.csproj|d:\\tfm\\f1webapptfm\\f1webappback\\f1.shared.database\\connection\\databaseconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9930CE2C-3E3A-2A8E-4157-8509419058A7}|..\\F1.Shared.Database\\F1.Shared.Database.csproj|d:\\tfm\\f1webapptfm\\f1webappback\\f1.shared.database\\connection\\storeprocedurerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9930CE2C-3E3A-2A8E-4157-8509419058A7}|..\\F1.Shared.Database\\F1.Shared.Database.csproj|d:\\tfm\\f1webapptfm\\f1webappback\\f1.shared.database\\repositories\\users\\usersrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DAF804C2-2F60-C141-A687-8D393567CC80}|..\\F1.Shared.Application\\F1.Shared.Application.csproj|d:\\tfm\\f1webapptfm\\f1webappback\\f1.shared.application\\user\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{45D556A1-A850-4506-91C8-E5ED4D94A113}|F1.Users.csproj|d:\\tfm\\f1webapptfm\\f1webappback\\f1.users\\endpoints\\getusers\\getusersendpoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{45D556A1-A850-4506-91C8-E5ED4D94A113}|F1.Users.csproj|solutionrelative:endpoints\\getusers\\getusersendpoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DAF804C2-2F60-C141-A687-8D393567CC80}|..\\F1.Shared.Application\\F1.Shared.Application.csproj|d:\\tfm\\f1webapptfm\\f1webappback\\f1.shared.application\\user\\usecases\\getusersusecase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{45D556A1-A850-4506-91C8-E5ED4D94A113}|F1.Users.csproj|d:\\tfm\\f1webapptfm\\f1webappback\\f1.users\\endpoints\\getusers\\getusersendpoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{45D556A1-A850-4506-91C8-E5ED4D94A113}|F1.Users.csproj|solutionrelative:endpoints\\getusers\\getusersendpoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DAF804C2-2F60-C141-A687-8D393567CC80}|..\\F1.Shared.Application\\F1.Shared.Application.csproj|d:\\tfm\\f1webapptfm\\f1webappback\\f1.shared.application\\user\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9930CE2C-3E3A-2A8E-4157-8509419058A7}|..\\F1.Shared.Database\\F1.Shared.Database.csproj|d:\\tfm\\f1webapptfm\\f1webappback\\f1.shared.database\\repositories\\users\\usersrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9930CE2C-3E3A-2A8E-4157-8509419058A7}|..\\F1.Shared.Database\\F1.Shared.Database.csproj|d:\\tfm\\f1webapptfm\\f1webappback\\f1.shared.database\\connection\\storeprocedurerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9930CE2C-3E3A-2A8E-4157-8509419058A7}|..\\F1.Shared.Database\\F1.Shared.Database.csproj|d:\\tfm\\f1webapptfm\\f1webappback\\f1.shared.database\\connection\\dbconnectionwrapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9930CE2C-3E3A-2A8E-4157-8509419058A7}|..\\F1.Shared.Database\\F1.Shared.Database.csproj|d:\\tfm\\f1webapptfm\\f1webappback\\f1.shared.database\\connection\\databaseconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9930CE2C-3E3A-2A8E-4157-8509419058A7}|..\\F1.Shared.Database\\F1.Shared.Database.csproj|d:\\tfm\\f1webapptfm\\f1webappback\\f1.shared.database\\databaselayerextension.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
@@ -27,9 +30,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{45D556A1-A850-4506-91C8-E5ED4D94A113}|F1.Users.csproj|d:\\tfm\\f1webapptfm\\f1webappback\\f1.users\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{45D556A1-A850-4506-91C8-E5ED4D94A113}|F1.Users.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9930CE2C-3E3A-2A8E-4157-8509419058A7}|..\\F1.Shared.Database\\F1.Shared.Database.csproj|d:\\tfm\\f1webapptfm\\f1webappback\\f1.shared.database\\connection\\dbconnectionwrapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9930CE2C-3E3A-2A8E-4157-8509419058A7}|..\\F1.Shared.Database\\F1.Shared.Database.csproj|d:\\tfm\\f1webapptfm\\f1webappback\\f1.shared.database\\connection\\interfaces\\istoreprocedurerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
@@ -89,17 +89,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 22,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "StoreProcedureRepository.cs",
               "DocumentMoniker": "D:\\TFM\\F1WebAppTFM\\F1WebAppBack\\F1.Shared.Database\\Connection\\StoreProcedureRepository.cs",
               "RelativeDocumentMoniker": "..\\F1.Shared.Database\\Connection\\StoreProcedureRepository.cs",
               "ToolTip": "D:\\TFM\\F1WebAppTFM\\F1WebAppBack\\F1.Shared.Database\\Connection\\StoreProcedureRepository.cs",
               "RelativeToolTip": "..\\F1.Shared.Database\\Connection\\StoreProcedureRepository.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAawCsAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAABUAAAAAAAAAAAAawDMAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-21T12:46:59.577Z",
               "EditorCaption": ""
@@ -158,39 +158,39 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "UsersRepository.cs",
               "DocumentMoniker": "D:\\TFM\\F1WebAppTFM\\F1WebAppBack\\F1.Shared.Database\\Repositories\\Users\\UsersRepository.cs",
               "RelativeDocumentMoniker": "..\\F1.Shared.Database\\Repositories\\Users\\UsersRepository.cs",
               "ToolTip": "D:\\TFM\\F1WebAppTFM\\F1WebAppBack\\F1.Shared.Database\\Repositories\\Users\\UsersRepository.cs",
               "RelativeToolTip": "..\\F1.Shared.Database\\Repositories\\Users\\UsersRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-21T12:12:25.712Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 5,
               "Title": "DbConnectionWrapper.cs",
               "DocumentMoniker": "D:\\TFM\\F1WebAppTFM\\F1WebAppBack\\F1.Shared.Database\\Connection\\DbConnectionWrapper.cs",
               "RelativeDocumentMoniker": "..\\F1.Shared.Database\\Connection\\DbConnectionWrapper.cs",
               "ToolTip": "D:\\TFM\\F1WebAppTFM\\F1WebAppBack\\F1.Shared.Database\\Connection\\DbConnectionWrapper.cs",
               "RelativeToolTip": "..\\F1.Shared.Database\\Connection\\DbConnectionWrapper.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAYAAAATAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwBUAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-21T12:11:38.249Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 6,
               "Title": "DatabaseConnection.cs",
               "DocumentMoniker": "D:\\TFM\\F1WebAppTFM\\F1WebAppBack\\F1.Shared.Database\\Connection\\DatabaseConnection.cs",
               "RelativeDocumentMoniker": "..\\F1.Shared.Database\\Connection\\DatabaseConnection.cs",
               "ToolTip": "D:\\TFM\\F1WebAppTFM\\F1WebAppBack\\F1.Shared.Database\\Connection\\DatabaseConnection.cs",
               "RelativeToolTip": "..\\F1.Shared.Database\\Connection\\DatabaseConnection.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAkAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwA8AAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-21T12:11:37.649Z",
               "EditorCaption": ""
@@ -223,26 +223,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "GetUsersUseCase.cs",
               "DocumentMoniker": "D:\\TFM\\F1WebAppTFM\\F1WebAppBack\\F1.Shared.Application\\User\\UseCases\\GetUsersUseCase.cs",
               "RelativeDocumentMoniker": "..\\F1.Shared.Application\\User\\UseCases\\GetUsersUseCase.cs",
               "ToolTip": "D:\\TFM\\F1WebAppTFM\\F1WebAppBack\\F1.Shared.Application\\User\\UseCases\\GetUsersUseCase.cs",
               "RelativeToolTip": "..\\F1.Shared.Application\\User\\UseCases\\GetUsersUseCase.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwBAAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwBEAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-21T11:12:50.321Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "UserService.cs",
               "DocumentMoniker": "D:\\TFM\\F1WebAppTFM\\F1WebAppBack\\F1.Shared.Application\\User\\Services\\UserService.cs",
               "RelativeDocumentMoniker": "..\\F1.Shared.Application\\User\\Services\\UserService.cs",
               "ToolTip": "D:\\TFM\\F1WebAppTFM\\F1WebAppBack\\F1.Shared.Application\\User\\Services\\UserService.cs",
               "RelativeToolTip": "..\\F1.Shared.Application\\User\\Services\\UserService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-21T11:12:00.059Z",
               "EditorCaption": ""
@@ -262,7 +262,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "DatabaseLayerExtension.cs",
               "DocumentMoniker": "D:\\TFM\\F1WebAppTFM\\F1WebAppBack\\F1.Shared.Database\\DatabaseLayerExtension.cs",
               "RelativeDocumentMoniker": "..\\F1.Shared.Database\\DatabaseLayerExtension.cs",
@@ -378,20 +378,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 0,
               "Title": "GetUsersEndpoint.cs",
               "DocumentMoniker": "D:\\TFM\\F1WebAppTFM\\F1WebAppBack\\F1.Users\\Endpoints\\GetUsers\\GetUsersEndpoint.cs",
               "RelativeDocumentMoniker": "Endpoints\\GetUsers\\GetUsersEndpoint.cs",
               "ToolTip": "D:\\TFM\\F1WebAppTFM\\F1WebAppBack\\F1.Users\\Endpoints\\GetUsers\\GetUsersEndpoint.cs",
               "RelativeToolTip": "Endpoints\\GetUsers\\GetUsersEndpoint.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-17T16:10:20.649Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\TFM\\F1WebAppTFM\\F1WebAppBack\\F1.Users\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
