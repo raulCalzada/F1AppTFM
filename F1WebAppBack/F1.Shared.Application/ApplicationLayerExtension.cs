@@ -22,7 +22,7 @@ namespace F1.Shared.Application
         {
 
             builder.Services
-                .AddTransient<IGetUsersUseCase, GetUsersUseCase>();
+                .AddTransient<IGetUsersByIdUseCase, GetUsersUseCase>();
 
             return builder;
         }

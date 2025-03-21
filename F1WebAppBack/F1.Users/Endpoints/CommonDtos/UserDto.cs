@@ -3,7 +3,7 @@ using F1.Shared.Domain.Users.Entities.Enums;
 using F1.Shared.Domain.Users.Entities.Interfaces;
 using System.Globalization;
 
-namespace F1.Users.Endpoints.GlobalDtos
+namespace F1.Users.Endpoints.CommonDtos
 {
     public class UserDto
     {
@@ -27,7 +27,7 @@ namespace F1.Users.Endpoints.GlobalDtos
         {
             return new User
             {
-                UserId = UserId,
+                Id = UserId,
                 Username = Username,
                 Email = Email,
                 Password = Password,
@@ -40,7 +40,7 @@ namespace F1.Users.Endpoints.GlobalDtos
 
         public UserDto (IUser user)
         {
-            UserId = user.UserId;
+            UserId = user.Id;
             Username = user.Username;
             Email = user.Email;
             Password = user.Password;

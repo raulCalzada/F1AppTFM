@@ -1,14 +1,14 @@
 ﻿using F1.Shared.Application.User.UseCases.Interfaces;
-using F1.Users.Endpoints.GlobalDtos;
+using F1.Users.Endpoints.CommonDtos;
 using FastEndpoints;
 
 namespace F1.Users.Endpoints.GetUsers
 {
     public class GetUsersEndpoint : Endpoint<EmptyRequest, List<UserDto>>
     {
-        private readonly IGetUsersUseCase _getUsersUseCase;
+        private readonly IGetUsersByIdUseCase _getUsersUseCase;
 
-        public GetUsersEndpoint(IGetUsersUseCase getUsersUseCase) 
+        public GetUsersEndpoint(IGetUsersByIdUseCase getUsersUseCase) 
         {
             _getUsersUseCase = getUsersUseCase;
         }

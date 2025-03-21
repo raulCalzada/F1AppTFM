@@ -2,8 +2,8 @@
 
 namespace F1.Shared.Application.User.UseCases.Interfaces
 {
-    public interface IGetUsersUseCase
+    public interface IDeleteUserUseCase
     {
-        Task<IEnumerable<IUser>> GetUsers();
+        Task<IUser> DeleteUser(long userId);
     }
 }

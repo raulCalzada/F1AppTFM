@@ -4,17 +4,18 @@ using F1.Shared.Domain.Users.Entities.Interfaces;
 
 namespace F1.Shared.Application.User.UseCases
 {
-    internal class GetUsersUseCase : IGetUsersByIdUseCase
+    internal class GetUserByUsernameUseCase : IGetUserByUsernameUseCase
     {
         private readonly IUserService _userService;
-        public GetUsersUseCase(IUserService userService)
+
+        public GetUserByUsernameUseCase(IUserService userService)
         {
             _userService = userService;
         }
 
-        public async Task<IEnumerable<IUser>> GetUsers()
+        public async Task<IUser?> GetUserByUsername(string username)
         {
-            return await _userService.GetAllUsers();
+            return await _userService.GetUserByUsername(username);
         }
     }
 }

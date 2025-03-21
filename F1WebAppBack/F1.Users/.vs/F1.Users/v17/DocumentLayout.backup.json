@@ -3,8 +3,76 @@
   "WorkspaceRootPath": "D:\\TFM\\F1AppTFM\\F1WebAppBack\\F1.Users\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{45D556A1-A850-4506-91C8-E5ED4D94A113}|F1.Users.csproj|d:\\tfm\\f1apptfm\\f1webappback\\f1.users\\endpoints\\getusers\\getusersendpoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{45D556A1-A850-4506-91C8-E5ED4D94A113}|F1.Users.csproj|solutionrelative:endpoints\\getusers\\getusersendpoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DAF804C2-2F60-C141-A687-8D393567CC80}|..\\F1.Shared.Application\\F1.Shared.Application.csproj|d:\\tfm\\f1apptfm\\f1webappback\\f1.shared.application\\user\\usecases\\createuserusecase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DAF804C2-2F60-C141-A687-8D393567CC80}|..\\F1.Shared.Application\\F1.Shared.Application.csproj|d:\\tfm\\f1apptfm\\f1webappback\\f1.shared.application\\user\\usecases\\deleteuserusecase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DAF804C2-2F60-C141-A687-8D393567CC80}|..\\F1.Shared.Application\\F1.Shared.Application.csproj|d:\\tfm\\f1apptfm\\f1webappback\\f1.shared.application\\user\\usecases\\getuserbyusernameusecase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DAF804C2-2F60-C141-A687-8D393567CC80}|..\\F1.Shared.Application\\F1.Shared.Application.csproj|d:\\tfm\\f1apptfm\\f1webappback\\f1.shared.application\\user\\usecases\\getusersusecase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DAF804C2-2F60-C141-A687-8D393567CC80}|..\\F1.Shared.Application\\F1.Shared.Application.csproj|d:\\tfm\\f1apptfm\\f1webappback\\f1.shared.application\\user\\usecases\\updateuserusecase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DAF804C2-2F60-C141-A687-8D393567CC80}|..\\F1.Shared.Application\\F1.Shared.Application.csproj|d:\\tfm\\f1apptfm\\f1webappback\\f1.shared.application\\user\\usecases\\interfaces\\igetuserbyusernameusecase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DAF804C2-2F60-C141-A687-8D393567CC80}|..\\F1.Shared.Application\\F1.Shared.Application.csproj|d:\\tfm\\f1apptfm\\f1webappback\\f1.shared.application\\user\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DAF804C2-2F60-C141-A687-8D393567CC80}|..\\F1.Shared.Application\\F1.Shared.Application.csproj|d:\\tfm\\f1apptfm\\f1webappback\\f1.shared.application\\user\\services\\interfaces\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DAF804C2-2F60-C141-A687-8D393567CC80}|..\\F1.Shared.Application\\F1.Shared.Application.csproj|d:\\tfm\\f1apptfm\\f1webappback\\f1.shared.application\\user\\usecases\\interfaces\\ideleteuserusecase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DAF804C2-2F60-C141-A687-8D393567CC80}|..\\F1.Shared.Application\\F1.Shared.Application.csproj|d:\\tfm\\f1apptfm\\f1webappback\\f1.shared.application\\user\\usecases\\interfaces\\icreateuserusecase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DAF804C2-2F60-C141-A687-8D393567CC80}|..\\F1.Shared.Application\\F1.Shared.Application.csproj|d:\\tfm\\f1apptfm\\f1webappback\\f1.shared.application\\user\\usecases\\interfaces\\iupdateuserusecase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E303DA3-FF97-6177-4919-295D5871C2A1}|..\\F1.Shared.Domain\\F1.Shared.Domain.csproj|d:\\tfm\\f1apptfm\\f1webappback\\f1.shared.domain\\users\\entities\\interfaces\\iuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9930CE2C-3E3A-2A8E-4157-8509419058A7}|..\\F1.Shared.Database\\F1.Shared.Database.csproj|d:\\tfm\\f1apptfm\\f1webappback\\f1.shared.database\\repositories\\users\\dtos\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DAF804C2-2F60-C141-A687-8D393567CC80}|..\\F1.Shared.Application\\F1.Shared.Application.csproj|d:\\tfm\\f1apptfm\\f1webappback\\f1.shared.application\\applicationlayerextension.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9930CE2C-3E3A-2A8E-4157-8509419058A7}|..\\F1.Shared.Database\\F1.Shared.Database.csproj|d:\\tfm\\f1apptfm\\f1webappback\\f1.shared.database\\repositories\\users\\interfaces\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9930CE2C-3E3A-2A8E-4157-8509419058A7}|..\\F1.Shared.Database\\F1.Shared.Database.csproj|d:\\tfm\\f1apptfm\\f1webappback\\f1.shared.database\\repositories\\users\\usersrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9930CE2C-3E3A-2A8E-4157-8509419058A7}|..\\F1.Shared.Database\\F1.Shared.Database.csproj|d:\\tfm\\f1apptfm\\f1webappback\\f1.shared.database\\connection\\storeprocedurerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9930CE2C-3E3A-2A8E-4157-8509419058A7}|..\\F1.Shared.Database\\F1.Shared.Database.csproj|d:\\tfm\\f1apptfm\\f1webappback\\f1.shared.database\\connection\\interfaces\\istoreprocedurerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\raulc\\AppData\\Local\\SourceServer\\b7f4ad413d69a398c39da34697dbe1551ccade181c2638db2806e46b1e28f755\\SqlMapper.Async.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DAF804C2-2F60-C141-A687-8D393567CC80}|..\\F1.Shared.Application\\F1.Shared.Application.csproj|d:\\tfm\\f1apptfm\\f1webappback\\f1.shared.application\\user\\usecases\\interfaces\\igetusersbyidusecase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{45D556A1-A850-4506-91C8-E5ED4D94A113}|F1.Users.csproj|d:\\tfm\\f1apptfm\\f1webappback\\f1.users\\endpoints\\getusersendpoint\\getusersendpoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{45D556A1-A850-4506-91C8-E5ED4D94A113}|F1.Users.csproj|solutionrelative:endpoints\\getusersendpoint\\getusersendpoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{45D556A1-A850-4506-91C8-E5ED4D94A113}|F1.Users.csproj|d:\\tfm\\f1apptfm\\f1webappback\\f1.users\\endpoints\\updateuserendpoint\\updateuserendpoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{45D556A1-A850-4506-91C8-E5ED4D94A113}|F1.Users.csproj|solutionrelative:endpoints\\updateuserendpoint\\updateuserendpoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{45D556A1-A850-4506-91C8-E5ED4D94A113}|F1.Users.csproj|d:\\tfm\\f1apptfm\\f1webappback\\f1.users\\endpoints\\commondtos\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{45D556A1-A850-4506-91C8-E5ED4D94A113}|F1.Users.csproj|solutionrelative:endpoints\\commondtos\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{45D556A1-A850-4506-91C8-E5ED4D94A113}|F1.Users.csproj|d:\\tfm\\f1apptfm\\f1webappback\\f1.users\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -17,10 +85,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{45D556A1-A850-4506-91C8-E5ED4D94A113}|F1.Users.csproj|d:\\tfm\\f1apptfm\\f1webappback\\f1.users\\f1.users.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
       "RelativeMoniker": "D:0:0:{45D556A1-A850-4506-91C8-E5ED4D94A113}|F1.Users.csproj|solutionrelative:f1.users.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{45D556A1-A850-4506-91C8-E5ED4D94A113}|F1.Users.csproj|d:\\tfm\\f1apptfm\\f1webappback\\f1.users\\endpoints\\globaldtos\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{45D556A1-A850-4506-91C8-E5ED4D94A113}|F1.Users.csproj|solutionrelative:endpoints\\globaldtos\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{45D556A1-A850-4506-91C8-E5ED4D94A113}|F1.Users.csproj|d:\\tfm\\f1apptfm\\f1webappback\\f1.users\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
@@ -89,215 +153,469 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 22,
+          "SelectedChildIndex": 14,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "IUser.cs",
+              "DocumentMoniker": "D:\\TFM\\F1AppTFM\\F1WebAppBack\\F1.Shared.Domain\\Users\\Entities\\Interfaces\\IUser.cs",
+              "RelativeDocumentMoniker": "..\\F1.Shared.Domain\\Users\\Entities\\Interfaces\\IUser.cs",
+              "ToolTip": "D:\\TFM\\F1AppTFM\\F1WebAppBack\\F1.Shared.Domain\\Users\\Entities\\Interfaces\\IUser.cs",
+              "RelativeToolTip": "..\\F1.Shared.Domain\\Users\\Entities\\Interfaces\\IUser.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-21T20:15:45.727Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "ApplicationLayerExtension.cs",
+              "DocumentMoniker": "D:\\TFM\\F1AppTFM\\F1WebAppBack\\F1.Shared.Application\\ApplicationLayerExtension.cs",
+              "RelativeDocumentMoniker": "..\\F1.Shared.Application\\ApplicationLayerExtension.cs",
+              "ToolTip": "D:\\TFM\\F1AppTFM\\F1WebAppBack\\F1.Shared.Application\\ApplicationLayerExtension.cs",
+              "RelativeToolTip": "..\\F1.Shared.Application\\ApplicationLayerExtension.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-21T20:12:56.468Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "IStoreProcedureRepository.cs",
+              "DocumentMoniker": "D:\\TFM\\F1AppTFM\\F1WebAppBack\\F1.Shared.Database\\Connection\\Interfaces\\IStoreProcedureRepository.cs",
+              "RelativeDocumentMoniker": "..\\F1.Shared.Database\\Connection\\Interfaces\\IStoreProcedureRepository.cs",
+              "ToolTip": "D:\\TFM\\F1AppTFM\\F1WebAppBack\\F1.Shared.Database\\Connection\\Interfaces\\IStoreProcedureRepository.cs",
+              "RelativeToolTip": "..\\F1.Shared.Database\\Connection\\Interfaces\\IStoreProcedureRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-21T19:57:15.054Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "UserDto.cs",
+              "DocumentMoniker": "D:\\TFM\\F1AppTFM\\F1WebAppBack\\F1.Shared.Database\\Repositories\\Users\\Dtos\\UserDto.cs",
+              "RelativeDocumentMoniker": "..\\F1.Shared.Database\\Repositories\\Users\\Dtos\\UserDto.cs",
+              "ToolTip": "D:\\TFM\\F1AppTFM\\F1WebAppBack\\F1.Shared.Database\\Repositories\\Users\\Dtos\\UserDto.cs",
+              "RelativeToolTip": "..\\F1.Shared.Database\\Repositories\\Users\\Dtos\\UserDto.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAuwBoAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-21T19:56:43.077Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "IUserRepository.cs",
+              "DocumentMoniker": "D:\\TFM\\F1AppTFM\\F1WebAppBack\\F1.Shared.Database\\Repositories\\Users\\Interfaces\\IUserRepository.cs",
+              "RelativeDocumentMoniker": "..\\F1.Shared.Database\\Repositories\\Users\\Interfaces\\IUserRepository.cs",
+              "ToolTip": "D:\\TFM\\F1AppTFM\\F1WebAppBack\\F1.Shared.Database\\Repositories\\Users\\Interfaces\\IUserRepository.cs",
+              "RelativeToolTip": "..\\F1.Shared.Database\\Repositories\\Users\\Interfaces\\IUserRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAQAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-21T19:50:08.257Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "StoreProcedureRepository.cs",
+              "DocumentMoniker": "D:\\TFM\\F1AppTFM\\F1WebAppBack\\F1.Shared.Database\\Connection\\StoreProcedureRepository.cs",
+              "RelativeDocumentMoniker": "..\\F1.Shared.Database\\Connection\\StoreProcedureRepository.cs",
+              "ToolTip": "D:\\TFM\\F1AppTFM\\F1WebAppBack\\F1.Shared.Database\\Connection\\StoreProcedureRepository.cs",
+              "RelativeToolTip": "..\\F1.Shared.Database\\Connection\\StoreProcedureRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAkwCAAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-21T19:48:59.557Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "UsersRepository.cs",
+              "DocumentMoniker": "D:\\TFM\\F1AppTFM\\F1WebAppBack\\F1.Shared.Database\\Repositories\\Users\\UsersRepository.cs",
+              "RelativeDocumentMoniker": "..\\F1.Shared.Database\\Repositories\\Users\\UsersRepository.cs",
+              "ToolTip": "D:\\TFM\\F1AppTFM\\F1WebAppBack\\F1.Shared.Database\\Repositories\\Users\\UsersRepository.cs",
+              "RelativeToolTip": "..\\F1.Shared.Database\\Repositories\\Users\\UsersRepository.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAgwAgAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-21T19:48:48.169Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "SqlMapper.Async.cs",
+              "DocumentMoniker": "C:\\Users\\raulc\\AppData\\Local\\SourceServer\\b7f4ad413d69a398c39da34697dbe1551ccade181c2638db2806e46b1e28f755\\SqlMapper.Async.cs",
+              "ToolTip": "C:\\Users\\raulc\\AppData\\Local\\SourceServer\\b7f4ad413d69a398c39da34697dbe1551ccade181c2638db2806e46b1e28f755\\SqlMapper.Async.cs",
+              "ViewState": "AgIAAMYAAAAAAAAAAAAAANIAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-21T19:48:20.417Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 7,
+              "Title": "IUserService.cs",
+              "DocumentMoniker": "D:\\TFM\\F1AppTFM\\F1WebAppBack\\F1.Shared.Application\\User\\Services\\Interfaces\\IUserService.cs",
+              "RelativeDocumentMoniker": "..\\F1.Shared.Application\\User\\Services\\Interfaces\\IUserService.cs",
+              "ToolTip": "D:\\TFM\\F1AppTFM\\F1WebAppBack\\F1.Shared.Application\\User\\Services\\Interfaces\\IUserService.cs",
+              "RelativeToolTip": "..\\F1.Shared.Application\\User\\Services\\Interfaces\\IUserService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAcAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-21T19:41:34.122Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "GetUserByUsernameUseCase.cs",
+              "DocumentMoniker": "D:\\TFM\\F1AppTFM\\F1WebAppBack\\F1.Shared.Application\\User\\UseCases\\GetUserByUsernameUseCase.cs",
+              "RelativeDocumentMoniker": "..\\F1.Shared.Application\\User\\UseCases\\GetUserByUsernameUseCase.cs",
+              "ToolTip": "D:\\TFM\\F1AppTFM\\F1WebAppBack\\F1.Shared.Application\\User\\UseCases\\GetUserByUsernameUseCase.cs",
+              "RelativeToolTip": "..\\F1.Shared.Application\\User\\UseCases\\GetUserByUsernameUseCase.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAABHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-21T19:33:23.179Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "IGetUserByUsernameUseCase.cs",
+              "DocumentMoniker": "D:\\TFM\\F1AppTFM\\F1WebAppBack\\F1.Shared.Application\\User\\UseCases\\Interfaces\\IGetUserByUsernameUseCase.cs",
+              "RelativeDocumentMoniker": "..\\F1.Shared.Application\\User\\UseCases\\Interfaces\\IGetUserByUsernameUseCase.cs",
+              "ToolTip": "D:\\TFM\\F1AppTFM\\F1WebAppBack\\F1.Shared.Application\\User\\UseCases\\Interfaces\\IGetUserByUsernameUseCase.cs",
+              "RelativeToolTip": "..\\F1.Shared.Application\\User\\UseCases\\Interfaces\\IGetUserByUsernameUseCase.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAYAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-21T19:32:27.035Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "IDeleteUserUseCase.cs",
+              "DocumentMoniker": "D:\\TFM\\F1AppTFM\\F1WebAppBack\\F1.Shared.Application\\User\\UseCases\\Interfaces\\IDeleteUserUseCase.cs",
+              "RelativeDocumentMoniker": "..\\F1.Shared.Application\\User\\UseCases\\Interfaces\\IDeleteUserUseCase.cs",
+              "ToolTip": "D:\\TFM\\F1AppTFM\\F1WebAppBack\\F1.Shared.Application\\User\\UseCases\\Interfaces\\IDeleteUserUseCase.cs",
+              "RelativeToolTip": "..\\F1.Shared.Application\\User\\UseCases\\Interfaces\\IDeleteUserUseCase.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAYAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-21T19:29:36.919Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ICreateUserUseCase.cs",
+              "DocumentMoniker": "D:\\TFM\\F1AppTFM\\F1WebAppBack\\F1.Shared.Application\\User\\UseCases\\Interfaces\\ICreateUserUseCase.cs",
+              "RelativeDocumentMoniker": "..\\F1.Shared.Application\\User\\UseCases\\Interfaces\\ICreateUserUseCase.cs",
+              "ToolTip": "D:\\TFM\\F1AppTFM\\F1WebAppBack\\F1.Shared.Application\\User\\UseCases\\Interfaces\\ICreateUserUseCase.cs",
+              "RelativeToolTip": "..\\F1.Shared.Application\\User\\UseCases\\Interfaces\\ICreateUserUseCase.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAYAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-21T19:29:25.564Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DeleteUserUseCase.cs",
+              "DocumentMoniker": "D:\\TFM\\F1AppTFM\\F1WebAppBack\\F1.Shared.Application\\User\\UseCases\\DeleteUserUseCase.cs",
+              "RelativeDocumentMoniker": "..\\F1.Shared.Application\\User\\UseCases\\DeleteUserUseCase.cs",
+              "ToolTip": "D:\\TFM\\F1AppTFM\\F1WebAppBack\\F1.Shared.Application\\User\\UseCases\\DeleteUserUseCase.cs",
+              "RelativeToolTip": "..\\F1.Shared.Application\\User\\UseCases\\DeleteUserUseCase.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-21T19:29:12.488Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CreateUserUseCase.cs",
+              "DocumentMoniker": "D:\\TFM\\F1AppTFM\\F1WebAppBack\\F1.Shared.Application\\User\\UseCases\\CreateUserUseCase.cs",
+              "RelativeDocumentMoniker": "..\\F1.Shared.Application\\User\\UseCases\\CreateUserUseCase.cs",
+              "ToolTip": "D:\\TFM\\F1AppTFM\\F1WebAppBack\\F1.Shared.Application\\User\\UseCases\\CreateUserUseCase.cs",
+              "RelativeToolTip": "..\\F1.Shared.Application\\User\\UseCases\\CreateUserUseCase.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-21T19:29:05.591Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "D:\\TFM\\F1AppTFM\\F1WebAppBack\\F1.Shared.Application\\User\\Services\\UserService.cs",
+              "RelativeDocumentMoniker": "..\\F1.Shared.Application\\User\\Services\\UserService.cs",
+              "ToolTip": "D:\\TFM\\F1AppTFM\\F1WebAppBack\\F1.Shared.Application\\User\\Services\\UserService.cs",
+              "RelativeToolTip": "..\\F1.Shared.Application\\User\\Services\\UserService.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAQwCoAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-21T19:28:51.422Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "GetUsersUseCase.cs",
+              "DocumentMoniker": "D:\\TFM\\F1AppTFM\\F1WebAppBack\\F1.Shared.Application\\User\\UseCases\\GetUsersUseCase.cs",
+              "RelativeDocumentMoniker": "..\\F1.Shared.Application\\User\\UseCases\\GetUsersUseCase.cs",
+              "ToolTip": "D:\\TFM\\F1AppTFM\\F1WebAppBack\\F1.Shared.Application\\User\\UseCases\\GetUsersUseCase.cs",
+              "RelativeToolTip": "..\\F1.Shared.Application\\User\\UseCases\\GetUsersUseCase.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-21T19:28:08.506Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "IGetUsersByIdUseCase.cs",
+              "DocumentMoniker": "D:\\TFM\\F1AppTFM\\F1WebAppBack\\F1.Shared.Application\\User\\UseCases\\Interfaces\\IGetUsersByIdUseCase.cs",
+              "RelativeDocumentMoniker": "..\\F1.Shared.Application\\User\\UseCases\\Interfaces\\IGetUsersByIdUseCase.cs",
+              "ToolTip": "D:\\TFM\\F1AppTFM\\F1WebAppBack\\F1.Shared.Application\\User\\UseCases\\Interfaces\\IGetUsersByIdUseCase.cs",
+              "RelativeToolTip": "..\\F1.Shared.Application\\User\\UseCases\\Interfaces\\IGetUsersByIdUseCase.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-21T19:27:05.822Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "IUpdateUserUseCase.cs",
+              "DocumentMoniker": "D:\\TFM\\F1AppTFM\\F1WebAppBack\\F1.Shared.Application\\User\\UseCases\\Interfaces\\IUpdateUserUseCase.cs",
+              "RelativeDocumentMoniker": "..\\F1.Shared.Application\\User\\UseCases\\Interfaces\\IUpdateUserUseCase.cs",
+              "ToolTip": "D:\\TFM\\F1AppTFM\\F1WebAppBack\\F1.Shared.Application\\User\\UseCases\\Interfaces\\IUpdateUserUseCase.cs",
+              "RelativeToolTip": "..\\F1.Shared.Application\\User\\UseCases\\Interfaces\\IUpdateUserUseCase.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAYAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-21T19:26:42.944Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "UpdateUserUseCase.cs",
+              "DocumentMoniker": "D:\\TFM\\F1AppTFM\\F1WebAppBack\\F1.Shared.Application\\User\\UseCases\\UpdateUserUseCase.cs",
+              "RelativeDocumentMoniker": "..\\F1.Shared.Application\\User\\UseCases\\UpdateUserUseCase.cs",
+              "ToolTip": "D:\\TFM\\F1AppTFM\\F1WebAppBack\\F1.Shared.Application\\User\\UseCases\\UpdateUserUseCase.cs",
+              "RelativeToolTip": "..\\F1.Shared.Application\\User\\UseCases\\UpdateUserUseCase.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-21T19:26:24.617Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "UpdateUserEndpoint.cs",
+              "DocumentMoniker": "D:\\TFM\\F1AppTFM\\F1WebAppBack\\F1.Users\\Endpoints\\UpdateUserEndpoint\\UpdateUserEndpoint.cs",
+              "RelativeDocumentMoniker": "Endpoints\\UpdateUserEndpoint\\UpdateUserEndpoint.cs",
+              "ToolTip": "D:\\TFM\\F1AppTFM\\F1WebAppBack\\F1.Users\\Endpoints\\UpdateUserEndpoint\\UpdateUserEndpoint.cs",
+              "RelativeToolTip": "Endpoints\\UpdateUserEndpoint\\UpdateUserEndpoint.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-21T19:25:36.871Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
               "Title": "StoreProcedureRepository.cs",
               "DocumentMoniker": "D:\\TFM\\F1WebAppTFM\\F1WebAppBack\\F1.Shared.Database\\Connection\\StoreProcedureRepository.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\F1WebAppTFM\\F1WebAppBack\\F1.Shared.Database\\Connection\\StoreProcedureRepository.cs",
               "ToolTip": "D:\\TFM\\F1WebAppTFM\\F1WebAppBack\\F1.Shared.Database\\Connection\\StoreProcedureRepository.cs",
               "RelativeToolTip": "..\\..\\..\\F1WebAppTFM\\F1WebAppBack\\F1.Shared.Database\\Connection\\StoreProcedureRepository.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAawDMAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-21T12:46:59.577Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 29,
               "Title": "IStoreProcedureRepository.cs",
               "DocumentMoniker": "D:\\TFM\\F1WebAppTFM\\F1WebAppBack\\F1.Shared.Database\\Connection\\Interfaces\\IStoreProcedureRepository.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\F1WebAppTFM\\F1WebAppBack\\F1.Shared.Database\\Connection\\Interfaces\\IStoreProcedureRepository.cs",
               "ToolTip": "D:\\TFM\\F1WebAppTFM\\F1WebAppBack\\F1.Shared.Database\\Connection\\Interfaces\\IStoreProcedureRepository.cs",
               "RelativeToolTip": "..\\..\\..\\F1WebAppTFM\\F1WebAppBack\\F1.Shared.Database\\Connection\\Interfaces\\IStoreProcedureRepository.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAIA2wCEAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-21T12:46:58.286Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 30,
               "Title": "IDbConnectionWrapper.cs",
               "DocumentMoniker": "D:\\TFM\\F1WebAppTFM\\F1WebAppBack\\F1.Shared.Database\\Connection\\Interfaces\\IDbConnectionWrapper.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\F1WebAppTFM\\F1WebAppBack\\F1.Shared.Database\\Connection\\Interfaces\\IDbConnectionWrapper.cs",
               "ToolTip": "D:\\TFM\\F1WebAppTFM\\F1WebAppBack\\F1.Shared.Database\\Connection\\Interfaces\\IDbConnectionWrapper.cs",
               "RelativeToolTip": "..\\..\\..\\F1WebAppTFM\\F1WebAppBack\\F1.Shared.Database\\Connection\\Interfaces\\IDbConnectionWrapper.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-21T12:46:57.463Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 31,
               "Title": "IUserRepository.cs",
               "DocumentMoniker": "D:\\TFM\\F1WebAppTFM\\F1WebAppBack\\F1.Shared.Database\\Repositories\\Users\\Interfaces\\IUserRepository.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\F1WebAppTFM\\F1WebAppBack\\F1.Shared.Database\\Repositories\\Users\\Interfaces\\IUserRepository.cs",
               "ToolTip": "D:\\TFM\\F1WebAppTFM\\F1WebAppBack\\F1.Shared.Database\\Repositories\\Users\\Interfaces\\IUserRepository.cs",
               "RelativeToolTip": "..\\..\\..\\F1WebAppTFM\\F1WebAppBack\\F1.Shared.Database\\Repositories\\Users\\Interfaces\\IUserRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAQAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-21T12:44:32.043Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 32,
               "Title": "UserDto.cs",
               "DocumentMoniker": "D:\\TFM\\F1WebAppTFM\\F1WebAppBack\\F1.Shared.Database\\Repositories\\Users\\Dtos\\UserDto.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\F1WebAppTFM\\F1WebAppBack\\F1.Shared.Database\\Repositories\\Users\\Dtos\\UserDto.cs",
               "ToolTip": "D:\\TFM\\F1WebAppTFM\\F1WebAppBack\\F1.Shared.Database\\Repositories\\Users\\Dtos\\UserDto.cs",
               "RelativeToolTip": "..\\..\\..\\F1WebAppTFM\\F1WebAppBack\\F1.Shared.Database\\Repositories\\Users\\Dtos\\UserDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-21T12:12:46.983Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 33,
               "Title": "UsersRepository.cs",
               "DocumentMoniker": "D:\\TFM\\F1WebAppTFM\\F1WebAppBack\\F1.Shared.Database\\Repositories\\Users\\UsersRepository.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\F1WebAppTFM\\F1WebAppBack\\F1.Shared.Database\\Repositories\\Users\\UsersRepository.cs",
               "ToolTip": "D:\\TFM\\F1WebAppTFM\\F1WebAppBack\\F1.Shared.Database\\Repositories\\Users\\UsersRepository.cs",
               "RelativeToolTip": "..\\..\\..\\F1WebAppTFM\\F1WebAppBack\\F1.Shared.Database\\Repositories\\Users\\UsersRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-21T12:12:25.712Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 34,
               "Title": "DbConnectionWrapper.cs",
               "DocumentMoniker": "D:\\TFM\\F1WebAppTFM\\F1WebAppBack\\F1.Shared.Database\\Connection\\DbConnectionWrapper.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\F1WebAppTFM\\F1WebAppBack\\F1.Shared.Database\\Connection\\DbConnectionWrapper.cs",
               "ToolTip": "D:\\TFM\\F1WebAppTFM\\F1WebAppBack\\F1.Shared.Database\\Connection\\DbConnectionWrapper.cs",
               "RelativeToolTip": "..\\..\\..\\F1WebAppTFM\\F1WebAppBack\\F1.Shared.Database\\Connection\\DbConnectionWrapper.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwBUAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-21T12:11:38.249Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 35,
               "Title": "DatabaseConnection.cs",
               "DocumentMoniker": "D:\\TFM\\F1WebAppTFM\\F1WebAppBack\\F1.Shared.Database\\Connection\\DatabaseConnection.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\F1WebAppTFM\\F1WebAppBack\\F1.Shared.Database\\Connection\\DatabaseConnection.cs",
               "ToolTip": "D:\\TFM\\F1WebAppTFM\\F1WebAppBack\\F1.Shared.Database\\Connection\\DatabaseConnection.cs",
               "RelativeToolTip": "..\\..\\..\\F1WebAppTFM\\F1WebAppBack\\F1.Shared.Database\\Connection\\DatabaseConnection.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwA8AAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-21T12:11:37.649Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 36,
               "Title": "IUserService.cs",
               "DocumentMoniker": "D:\\TFM\\F1WebAppTFM\\F1WebAppBack\\F1.Shared.Application\\User\\Services\\Interfaces\\IUserService.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\F1WebAppTFM\\F1WebAppBack\\F1.Shared.Application\\User\\Services\\Interfaces\\IUserService.cs",
               "ToolTip": "D:\\TFM\\F1WebAppTFM\\F1WebAppBack\\F1.Shared.Application\\User\\Services\\Interfaces\\IUserService.cs",
               "RelativeToolTip": "..\\..\\..\\F1WebAppTFM\\F1WebAppBack\\F1.Shared.Application\\User\\Services\\Interfaces\\IUserService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAYAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-21T11:19:35.564Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 37,
               "Title": "IGetUsersUseCase.cs",
               "DocumentMoniker": "D:\\TFM\\F1WebAppTFM\\F1WebAppBack\\F1.Shared.Application\\User\\UseCases\\Interfaces\\IGetUsersUseCase.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\F1WebAppTFM\\F1WebAppBack\\F1.Shared.Application\\User\\UseCases\\Interfaces\\IGetUsersUseCase.cs",
               "ToolTip": "D:\\TFM\\F1WebAppTFM\\F1WebAppBack\\F1.Shared.Application\\User\\UseCases\\Interfaces\\IGetUsersUseCase.cs",
               "RelativeToolTip": "..\\..\\..\\F1WebAppTFM\\F1WebAppBack\\F1.Shared.Application\\User\\UseCases\\Interfaces\\IGetUsersUseCase.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAQAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-21T11:15:43.477Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 38,
               "Title": "GetUsersUseCase.cs",
               "DocumentMoniker": "D:\\TFM\\F1WebAppTFM\\F1WebAppBack\\F1.Shared.Application\\User\\UseCases\\GetUsersUseCase.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\F1WebAppTFM\\F1WebAppBack\\F1.Shared.Application\\User\\UseCases\\GetUsersUseCase.cs",
               "ToolTip": "D:\\TFM\\F1WebAppTFM\\F1WebAppBack\\F1.Shared.Application\\User\\UseCases\\GetUsersUseCase.cs",
               "RelativeToolTip": "..\\..\\..\\F1WebAppTFM\\F1WebAppBack\\F1.Shared.Application\\User\\UseCases\\GetUsersUseCase.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwBEAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-21T11:12:50.321Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 39,
               "Title": "UserService.cs",
               "DocumentMoniker": "D:\\TFM\\F1WebAppTFM\\F1WebAppBack\\F1.Shared.Application\\User\\Services\\UserService.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\F1WebAppTFM\\F1WebAppBack\\F1.Shared.Application\\User\\Services\\UserService.cs",
               "ToolTip": "D:\\TFM\\F1WebAppTFM\\F1WebAppBack\\F1.Shared.Application\\User\\Services\\UserService.cs",
               "RelativeToolTip": "..\\..\\..\\F1WebAppTFM\\F1WebAppBack\\F1.Shared.Application\\User\\Services\\UserService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-21T11:12:00.059Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 40,
               "Title": "Role.cs",
               "DocumentMoniker": "D:\\TFM\\F1WebAppTFM\\F1WebAppBack\\F1.Shared.Domain\\Users\\Entities\\Enums\\Role.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\F1WebAppTFM\\F1WebAppBack\\F1.Shared.Domain\\Users\\Entities\\Enums\\Role.cs",
               "ToolTip": "D:\\TFM\\F1WebAppTFM\\F1WebAppBack\\F1.Shared.Domain\\Users\\Entities\\Enums\\Role.cs",
               "RelativeToolTip": "..\\..\\..\\F1WebAppTFM\\F1WebAppBack\\F1.Shared.Domain\\Users\\Entities\\Enums\\Role.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-21T11:02:54.21Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 41,
               "Title": "DatabaseLayerExtension.cs",
               "DocumentMoniker": "D:\\TFM\\F1WebAppTFM\\F1WebAppBack\\F1.Shared.Database\\DatabaseLayerExtension.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\F1WebAppTFM\\F1WebAppBack\\F1.Shared.Database\\DatabaseLayerExtension.cs",
               "ToolTip": "D:\\TFM\\F1WebAppTFM\\F1WebAppBack\\F1.Shared.Database\\DatabaseLayerExtension.cs",
               "RelativeToolTip": "..\\..\\..\\F1WebAppTFM\\F1WebAppBack\\F1.Shared.Database\\DatabaseLayerExtension.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwCIAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-19T21:02:17.162Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 42,
               "Title": "IUser.cs",
               "DocumentMoniker": "D:\\TFM\\F1WebAppTFM\\F1WebAppBack\\F1.Shared.Domain\\Users\\Entities\\Interfaces\\IUser.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\F1WebAppTFM\\F1WebAppBack\\F1.Shared.Domain\\Users\\Entities\\Interfaces\\IUser.cs",
               "ToolTip": "D:\\TFM\\F1WebAppTFM\\F1WebAppBack\\F1.Shared.Domain\\Users\\Entities\\Interfaces\\IUser.cs",
               "RelativeToolTip": "..\\..\\..\\F1WebAppTFM\\F1WebAppBack\\F1.Shared.Domain\\Users\\Entities\\Interfaces\\IUser.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-19T20:53:47.624Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 43,
               "Title": "User.cs",
               "DocumentMoniker": "D:\\TFM\\F1WebAppTFM\\F1WebAppBack\\F1.Shared.Domain\\Users\\Entities\\User.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\F1WebAppTFM\\F1WebAppBack\\F1.Shared.Domain\\Users\\Entities\\User.cs",
               "ToolTip": "D:\\TFM\\F1WebAppTFM\\F1WebAppBack\\F1.Shared.Domain\\Users\\Entities\\User.cs",
               "RelativeToolTip": "..\\..\\..\\F1WebAppTFM\\F1WebAppBack\\F1.Shared.Domain\\Users\\Entities\\User.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwA8AAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-19T20:53:46.228Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 44,
               "Title": "ApplicationLayerExtension.cs",
               "DocumentMoniker": "D:\\TFM\\F1WebAppTFM\\F1WebAppBack\\F1.Shared.Application\\ApplicationLayerExtension.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\F1WebAppTFM\\F1WebAppBack\\F1.Shared.Application\\ApplicationLayerExtension.cs",
               "ToolTip": "D:\\TFM\\F1WebAppTFM\\F1WebAppBack\\F1.Shared.Application\\ApplicationLayerExtension.cs",
               "RelativeToolTip": "..\\..\\..\\F1WebAppTFM\\F1WebAppBack\\F1.Shared.Application\\ApplicationLayerExtension.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAACIAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-19T08:19:51.876Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 27,
               "Title": "F1.Users.csproj",
               "DocumentMoniker": "D:\\TFM\\F1AppTFM\\F1WebAppBack\\F1.Users\\F1.Users.csproj",
               "RelativeDocumentMoniker": "F1.Users.csproj",
@@ -305,11 +623,12 @@
               "RelativeToolTip": "F1.Users.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-03-17T17:13:47.537Z"
+              "WhenOpened": "2025-03-17T17:13:47.537Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 26,
               "Title": "launchSettings.json",
               "DocumentMoniker": "D:\\TFM\\F1AppTFM\\F1WebAppBack\\F1.Users\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "Properties\\launchSettings.json",
@@ -317,22 +636,24 @@
               "RelativeToolTip": "Properties\\launchSettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-03-17T17:09:01.039Z"
+              "WhenOpened": "2025-03-17T17:09:01.039Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 25,
               "Title": "F1.Users",
               "DocumentMoniker": "D:\\TFM\\F1AppTFM\\F1WebAppBack\\F1.Users\\F1.Users.csproj",
               "RelativeDocumentMoniker": "F1.Users.csproj",
               "ToolTip": "D:\\TFM\\F1AppTFM\\F1WebAppBack\\F1.Users\\F1.Users.csproj",
               "RelativeToolTip": "F1.Users.csproj",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-03-17T17:05:35.764Z"
+              "WhenOpened": "2025-03-17T17:05:35.764Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 24,
               "Title": "appsettings.json",
               "DocumentMoniker": "D:\\TFM\\F1AppTFM\\F1WebAppBack\\F1.Users\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
@@ -340,44 +661,47 @@
               "RelativeToolTip": "appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-03-17T16:35:10.148Z"
+              "WhenOpened": "2025-03-17T16:35:10.148Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 22,
               "Title": "UserDto.cs",
-              "DocumentMoniker": "D:\\TFM\\F1AppTFM\\F1WebAppBack\\F1.Users\\Endpoints\\GlobalDtos\\UserDto.cs",
-              "RelativeDocumentMoniker": "Endpoints\\GlobalDtos\\UserDto.cs",
-              "ToolTip": "D:\\TFM\\F1AppTFM\\F1WebAppBack\\F1.Users\\Endpoints\\GlobalDtos\\UserDto.cs",
-              "RelativeToolTip": "Endpoints\\GlobalDtos\\UserDto.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAuwAkAAAAAAAAAAAAAAA==",
+              "DocumentMoniker": "D:\\TFM\\F1AppTFM\\F1WebAppBack\\F1.Users\\Endpoints\\CommonDtos\\UserDto.cs",
+              "RelativeDocumentMoniker": "Endpoints\\CommonDtos\\UserDto.cs",
+              "ToolTip": "D:\\TFM\\F1AppTFM\\F1WebAppBack\\F1.Users\\Endpoints\\CommonDtos\\UserDto.cs",
+              "RelativeToolTip": "Endpoints\\CommonDtos\\UserDto.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAB0AAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-17T16:18:52.279Z"
+              "WhenOpened": "2025-03-17T16:18:52.279Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 20,
               "Title": "GetUsersEndpoint.cs",
-              "DocumentMoniker": "D:\\TFM\\F1AppTFM\\F1WebAppBack\\F1.Users\\Endpoints\\GetUsers\\GetUsersEndpoint.cs",
-              "RelativeDocumentMoniker": "Endpoints\\GetUsers\\GetUsersEndpoint.cs",
-              "ToolTip": "D:\\TFM\\F1AppTFM\\F1WebAppBack\\F1.Users\\Endpoints\\GetUsers\\GetUsersEndpoint.cs",
-              "RelativeToolTip": "Endpoints\\GetUsers\\GetUsersEndpoint.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAoAAAAAAAAAA==",
+              "DocumentMoniker": "D:\\TFM\\F1AppTFM\\F1WebAppBack\\F1.Users\\Endpoints\\GetUsersEndpoint\\GetUsersEndpoint.cs",
+              "RelativeDocumentMoniker": "Endpoints\\GetUsersEndpoint\\GetUsersEndpoint.cs",
+              "ToolTip": "D:\\TFM\\F1AppTFM\\F1WebAppBack\\F1.Users\\Endpoints\\GetUsersEndpoint\\GetUsersEndpoint.cs",
+              "RelativeToolTip": "Endpoints\\GetUsersEndpoint\\GetUsersEndpoint.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-17T16:10:20.649Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 23,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\TFM\\F1AppTFM\\F1WebAppBack\\F1.Users\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "D:\\TFM\\F1AppTFM\\F1WebAppBack\\F1.Users\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-17T09:07:21.578Z"
+              "WhenOpened": "2025-03-17T09:07:21.578Z",
+              "EditorCaption": ""
             }
           ]
         }

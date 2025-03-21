@@ -15,16 +15,22 @@ namespace F1.Shared.Database.Connection
             _dbConnectionWrapper = dbConnectionWrapper;
         }
 
-        public async Task ExecuteAsync(string sql, object? parameters = null, CommandType? commandType = null)
+        public async Task<bool> ExecuteAsync(string sql, object? parameters = null, CommandType? commandType = null)
         {
             using var connection = await _databaseConnection.GetConnectionAsync();
 
             if (connection == null)
             {
-                throw new Exception("Connection is null");
+                throw new InvalidOperationException("Connection is null");
             }
             var affectedRows = await _dbConnectionWrapper.ExecuteAsync(connection, sql, parameters, commandType: commandType);
 
+            if (affectedRows > 0)
+            {
+                return true;
+            }   
+
+            return false;
         }
 
         public async Task<T?> ExecuteScalarAsync<T>(string sql, object? parameters = null, CommandType? commandType = null)
@@ -33,7 +39,7 @@ namespace F1.Shared.Database.Connection
 
             if (connection == null)
             {
-                throw new Exception("Connection is null");
+                throw new InvalidOperationException("Connection is null");
             }
 
             return await _dbConnectionWrapper.ExecuteScalarAsync<T>(connection, sql, parameters, commandType: commandType);
@@ -45,7 +51,7 @@ namespace F1.Shared.Database.Connection
 
             if (connection == null)
             {
-                throw new Exception("Connection is null");
+                throw new InvalidOperationException("Connection is null");
             }
 
             return await _dbConnectionWrapper.QueryAsync<T>(connection, sql, parameters, commandType: commandType);
@@ -57,7 +63,7 @@ namespace F1.Shared.Database.Connection
 
             if (connection == null)
             {
-                throw new Exception("Connection is null");
+                throw new InvalidOperationException("Connection is null");
             }
 
             return await _dbConnectionWrapper.QueryFirstOrDefaultAsync<T>(connection, sql, parameters, commandType: commandType);
@@ -69,7 +75,7 @@ namespace F1.Shared.Database.Connection
 
             if (connection == null)
             {
-                throw new Exception("Connection is null");
+                throw new InvalidOperationException("Connection is null");
             }
 
             return await _dbConnectionWrapper.QuerySingleAsync<T>(connection, sql, parameters, commandType: commandType);
@@ -81,7 +87,7 @@ namespace F1.Shared.Database.Connection
 
             if (connection == null)
             {
-                throw new Exception("Connection is null");
+                throw new InvalidOperationException("Connection is null");
             }
 
             return await _dbConnectionWrapper.QuerySingleOrDefaultAsync<T>(connection, sql, parameters, commandType: commandType);

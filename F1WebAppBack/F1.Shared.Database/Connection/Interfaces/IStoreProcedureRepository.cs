@@ -11,7 +11,7 @@ namespace F1.Shared.Database.Connection.Interfaces
         /// <param name="parameters"></param>
         /// <param name="commandType"></param>
         /// <returns></returns>
-        public Task ExecuteAsync(string sql, object? parameters = null, CommandType? commandType = null);
+        public Task<bool> ExecuteAsync(string sql, object? parameters = null, CommandType? commandType = null);
 
         /// <summary>
         /// Execute a store procedure that returns a single value
