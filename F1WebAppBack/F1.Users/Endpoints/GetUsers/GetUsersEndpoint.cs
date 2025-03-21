@@ -21,7 +21,6 @@ namespace F1.Users.Endpoints.GetUsers
 
         public override async Task HandleAsync(EmptyRequest request, CancellationToken ct)
         {
-
             var users = await _getUsersUseCase.GetUsers();
 
             var response = users.Select(user => new UserDto(user)).ToList();

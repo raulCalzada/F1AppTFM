@@ -159,7 +159,6 @@
               "RelativeDocumentMoniker": "..\\..\\..\\F1WebAppTFM\\F1WebAppBack\\F1.Shared.Database\\Repositories\\Users\\UsersRepository.cs",
               "ToolTip": "D:\\TFM\\F1WebAppTFM\\F1WebAppBack\\F1.Shared.Database\\Repositories\\Users\\UsersRepository.cs",
               "RelativeToolTip": "..\\..\\..\\F1WebAppTFM\\F1WebAppBack\\F1.Shared.Database\\Repositories\\Users\\UsersRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-21T12:12:25.712Z"
             },
@@ -360,9 +359,9 @@
               "Title": "GetUsersEndpoint.cs",
               "DocumentMoniker": "D:\\TFM\\F1AppTFM\\F1WebAppBack\\F1.Users\\Endpoints\\GetUsers\\GetUsersEndpoint.cs",
               "RelativeDocumentMoniker": "Endpoints\\GetUsers\\GetUsersEndpoint.cs",
-              "ToolTip": "D:\\TFM\\F1AppTFM\\F1WebAppBack\\F1.Users\\Endpoints\\GetUsers\\GetUsersEndpoint.cs",
-              "RelativeToolTip": "Endpoints\\GetUsers\\GetUsersEndpoint.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAoAAAAAAAAAA==",
+              "ToolTip": "D:\\TFM\\F1AppTFM\\F1WebAppBack\\F1.Users\\Endpoints\\GetUsers\\GetUsersEndpoint.cs*",
+              "RelativeToolTip": "Endpoints\\GetUsers\\GetUsersEndpoint.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-17T16:10:20.649Z",
               "EditorCaption": ""
