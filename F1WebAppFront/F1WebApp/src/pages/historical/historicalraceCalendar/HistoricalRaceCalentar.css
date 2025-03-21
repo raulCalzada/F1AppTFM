@@ -1,0 +1,45 @@
+.calendar-title {
+  margin-bottom: 20px;
+}
+
+.year-dropdown {
+  margin-bottom: 20px;
+  padding: 10px;
+  font-size: 16px;
+}
+.year-dropdown:hover{
+  background-color: rgba(0, 0, 0, 0.9);
+  border-color: red;
+}
+
+.race-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.race-item {
+  background-color: rgba(0, 0, 0, 0.8); 
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  width: 200px; 
+  text-align: center;
+  transition: 0.3s ease;
+  border: 3px solid black;
+}
+
+.race-item:hover {
+  background-color: rgba(0, 0, 0, 0.9);
+  border-color: red;
+}
+
+.race-date,
+.race-season,
+.race-name,
+.race-round {
+  margin-top: 10px;
+  font-size: 16px;
+}

@@ -1,0 +1,80 @@
+.calendar-page {
+  background: url('../../assets/prueba2.png');
+  background-position: center;
+  background-size: cover;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  padding: 20px;
+  margin: 0;
+  border: none;
+}
+
+.title {
+  margin-top: 20px;
+  color: #e10600; 
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.year-dropdown {
+  margin-bottom: 20px;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.year-dropdown:hover{
+  background-color: rgba(0, 0, 0, 0.9);
+  border-color: red;
+}
+
+.race-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.race-item {
+  background-color: rgba(0, 0, 0, 0.8); 
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  width: 200px; 
+  text-align: center;
+  transition: 0.3s ease;
+  border: 3px solid black;
+  position: relative;
+}
+
+.race-item:hover {
+  background-color: rgba(0, 0, 0, 0.9);
+  border-color: red;
+}
+
+.race-item.disabled {
+  background-color: #2E0606;
+  cursor: not-allowed;
+  pointer-events: none;
+  position: relative;
+}
+
+.race-date,
+.race-season,
+.race-name,
+.race-round {
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+.disabled-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3rem;
+  color: white;
+  opacity: 0.8;
+}

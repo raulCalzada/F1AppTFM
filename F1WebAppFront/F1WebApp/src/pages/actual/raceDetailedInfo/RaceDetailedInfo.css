@@ -1,0 +1,95 @@
+.drivers-page {
+    color: white;
+    background-size: cover;
+    background-position: center;
+}
+
+h1, h2, h3 {
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.countdown {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.grid-item {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.circuit-info, .weather-summary, .circuit-map {
+    margin-top: 20px;
+}
+
+.circuit-map iframe {
+    border-radius: 8px;
+    border: 2px solid white;
+}
+
+.weather-summary p {
+    margin: 5px 0;
+}
+
+.weather-summary h3, .circuit-info h3 {
+    margin-bottom: 10px;
+}
+
+.hourly-weather-conatiner {
+    display: flex;
+    justify-content: center; /* Centra el grid en su contenedor */
+    margin-top: 20px;
+}
+
+.hourly-weather-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr); 
+    gap: 16px;
+    justify-content: center; 
+    width: 100%;
+    max-width: 1200px; 
+}
+
+.hourly-weather-item {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.hourly-weather-item img {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
+}
+
+.weather-chart {
+    width: 100%;
+    grid-column: span 2;
+}
+
+@media (max-width: 768px) {
+    .hourly-weather-grid {
+        grid-template-columns: repeat(6, 1fr); 
+    }
+
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+
+   
+    
+    
+}
+

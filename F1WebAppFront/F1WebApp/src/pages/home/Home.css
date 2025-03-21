@@ -1,0 +1,122 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    background-color: #000;
+}
+
+.title-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    background-color: #333;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.title-logo {
+    width: 50px;
+    height: auto;
+    margin: 0 15px;
+}
+
+.main-title {
+    font-size: 2.5rem;
+    color: white;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+    margin: 0;
+}
+
+.home-container {
+    display: flex;
+    flex: 1;
+    height: calc(100vh - 60px); /* Subtracting height of title-container */
+}
+
+.current-section-link, .historical-section {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.current-section-link:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+.current-section, .historical-section {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.background-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    filter: brightness(50%) !important;
+}
+
+.current-overlay, .historical-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    height: 100% !important;
+}
+
+.current-title {
+    font-size: 3rem !important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7) !important;
+    margin: 0 !important;
+}
+
+.historical-content {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 20px;
+}
+
+.historical-title {
+    font-size: 2rem !important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7) !important;
+    margin-bottom: 20px;
+}
+
+.historical-links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.historical-card {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 15px;
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+    transition: transform 0.3s, background 0.3s;
+}
+
+.historical-card:hover {
+    transform: scale(1.05);
+    background: rgba(255, 255, 255, 0.1);
+}

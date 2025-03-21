@@ -1,0 +1,117 @@
+.teams-page {
+    background: url('../../assets/prueba2.png') center/cover no-repeat;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    padding: 20px;
+    margin: 0;
+}
+
+.title {
+    margin-top: 20px;
+    color: #e10600;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.teams-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 20px;
+}
+
+.team-card {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+    cursor: pointer;
+}
+
+.team-card:hover {
+    transform: scale(1.05);
+}
+
+.team-name, .team-nationality {
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+.team-name {
+    color: #e10600;
+}
+
+.team-nationality {
+    color: #ccc;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(34, 34, 34, 0.8) !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background: rgba(0, 0, 0, 0.9) !important;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+    max-width: 80%;
+    max-height: 80%;
+    overflow-y: auto;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+    color: red;
+    transition: color 0.3s;
+}
+
+.close-button:hover {
+    color: #e10600;
+}
+
+.team-logo {
+    width: 150px;
+    height: auto;
+    margin-bottom: 20px;
+    background-color: white;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+}
+
+.team-description {
+    color: white;
+    opacity: 0.9;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 5px;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 1.5rem;
+    }
+
+    .team-card {
+        width: 100%;
+        max-width: 400px;
+    }
+}
