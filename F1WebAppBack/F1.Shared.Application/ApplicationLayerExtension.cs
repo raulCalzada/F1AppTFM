@@ -18,11 +18,15 @@ namespace F1.Shared.Application
             return builder;
         }
 
-        private static IHostApplicationBuilder AddUseCases(this IHostApplicationBuilder builder)
+        private static IHostApplicationBuilder AddUserUseCases(this IHostApplicationBuilder builder)
         {
-
             builder.Services
-                .AddTransient<IGetUsersByIdUseCase, GetUsersUseCase>();
+                .AddTransient<ICreateUserUseCase, CreateUserUseCase>()
+                .AddTransient<IUpdateUserUseCase, UpdateUserUseCase>()
+                .AddTransient<IDeleteUserUseCase, DeleteUserUseCase>()
+                .AddTransient<IGetAllUsersUseCase, GetAllUsersUseCase>()
+                .AddTransient<IGetUserByIdUseCase, GetUserByIdUseCase>()
+                .AddTransient<IGetUserByUsernameUseCase, GetUserByUsernameUseCase>();
 
             return builder;
         }
@@ -30,7 +34,7 @@ namespace F1.Shared.Application
         public static IHostApplicationBuilder UseApplicationLayer(this IHostApplicationBuilder builder)
         {
             return builder
-                .AddUseCases()
+                .AddUserUseCases()
                 .AddServices();
         }
     }

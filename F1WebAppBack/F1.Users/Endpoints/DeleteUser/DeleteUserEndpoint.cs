@@ -3,26 +3,25 @@ using F1.Users.Endpoints.CommonDtos;
 using FastEndpoints;
 using System.Net;
 
-namespace F1.Users.Endpoints.UpdateUserEndpoint
+namespace F1.Users.Endpoints.DeleteUser
 {
-    public class UpdateUserEndpoint : Endpoint<UserDtoRequest>
+    public class DeleteUserEndpoint : Endpoint<long>
     {
-        private readonly IUpdateUserUseCase _updateUserUseCase;
-
-        public UpdateUserEndpoint(IUpdateUserUseCase updateUserUseCase)
+        private readonly IDeleteUserUseCase _deleteUserUseCase;
+        public DeleteUserEndpoint(IDeleteUserUseCase deleteUserUseCase) 
         {
-            _updateUserUseCase = updateUserUseCase;
+            _deleteUserUseCase = deleteUserUseCase;
         }
+
         public override void Configure()
         {
-            Post("/user/{UserId}");
+            Delete("/user/{UserId}");
             AllowAnonymous();
         }
 
-        public override async Task HandleAsync(UserDtoRequest request, CancellationToken ct)
+        public override async Task HandleAsync(long request, CancellationToken ct)
         {
-            var response = await _updateUserUseCase.UpdateUser(request.ToDomain());
-
+            var response = await _deleteUserUseCase.DeleteUser(request);
             if (response == null)
             {
                 await SendAsync(null, (int)HttpStatusCode.BadRequest, ct);

@@ -15,7 +15,7 @@ namespace F1.Shared.Database.Connection
             _dbConnectionWrapper = dbConnectionWrapper;
         }
 
-        public async Task<bool> ExecuteAsync(string sql, object? parameters = null, CommandType? commandType = null)
+        public async Task ExecuteAsync(string sql, object? parameters = null, CommandType? commandType = null)
         {
             using var connection = await _databaseConnection.GetConnectionAsync();
 
@@ -23,14 +23,8 @@ namespace F1.Shared.Database.Connection
             {
                 throw new InvalidOperationException("Connection is null");
             }
-            var affectedRows = await _dbConnectionWrapper.ExecuteAsync(connection, sql, parameters, commandType: commandType);
-
-            if (affectedRows > 0)
-            {
-                return true;
-            }   
-
-            return false;
+            
+            await _dbConnectionWrapper.ExecuteAsync(connection, sql, parameters, commandType: commandType);
         }
 
         public async Task<T?> ExecuteScalarAsync<T>(string sql, object? parameters = null, CommandType? commandType = null)

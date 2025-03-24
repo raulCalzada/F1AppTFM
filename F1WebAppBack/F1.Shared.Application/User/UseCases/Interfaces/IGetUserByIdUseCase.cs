@@ -2,8 +2,8 @@
 
 namespace F1.Shared.Application.User.UseCases.Interfaces
 {
-    public interface IGetUsersByIdUseCase
+    public interface IGetUserByIdUseCase
     {
-        Task<IEnumerable<IUser>> GetUsers();
+        Task<IUser?> GetUserById(long userId);
     }
 }

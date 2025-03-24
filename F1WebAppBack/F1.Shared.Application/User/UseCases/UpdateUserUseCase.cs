@@ -21,15 +21,9 @@ namespace F1.Shared.Application.User.UseCases
                 throw new InvalidOperationException("User does not exist");
             }
 
-            var userIsUpdated = await _userService.UpdateUser(user);
+            await _userService.UpdateUser(user);
 
-            if (userIsUpdated)
-            {
-                return await _userService.GetUserById(user.Id);
-            }
-
-            return null;
-
+            return await _userService.GetUserById(user.Id);
         }
     }
 }

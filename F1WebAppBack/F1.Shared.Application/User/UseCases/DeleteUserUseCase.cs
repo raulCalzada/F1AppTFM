@@ -12,7 +12,7 @@ namespace F1.Shared.Application.User.UseCases
             _userService = userService;
         }
 
-        public async Task<IUser> DeleteUser(long userId)
+        public async Task<IUser?> DeleteUser(long userId)
         {
             var user = await _userService.GetUserById(userId);
 
@@ -21,14 +21,14 @@ namespace F1.Shared.Application.User.UseCases
                 throw new InvalidOperationException("User does not exist");
             }
 
-            var result = await _userService.DeleteUser(user);
+            await _userService.DeleteUser(user);
 
-            if (!result)
+            if (await _userService.GetUserById(userId) == null)
             {
-                throw new InvalidOperationException("User could not be deleted");
+                return user;
             }
-
-            return user;
+            
+            return null;
         }
     }
 }

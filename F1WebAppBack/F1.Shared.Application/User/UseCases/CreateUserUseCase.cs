@@ -21,14 +21,9 @@ namespace F1.Shared.Application.User.UseCases
                 throw new InvalidOperationException("User already exists");
             }
 
-            var created = await _userService.CreateUser(user);
+            await _userService.CreateUser(user);
 
-            if (created)
-            {
-                return await _userService.GetUserByUsername(user.Username);
-            }
-
-            return null;
+           return await _userService.GetUserByUsername(user.Username);
         }
     }
 }

@@ -4,11 +4,11 @@ using FastEndpoints;
 
 namespace F1.Users.Endpoints.GetUsers
 {
-    public class GetUsersEndpoint : Endpoint<EmptyRequest, List<UserDto>>
+    public class GetUsersEndpoint : Endpoint<EmptyRequest, List<UserDtoResponse>>
     {
-        private readonly IGetUsersByIdUseCase _getUsersUseCase;
+        private readonly IGetAllUsersUseCase _getUsersUseCase;
 
-        public GetUsersEndpoint(IGetUsersByIdUseCase getUsersUseCase) 
+        public GetUsersEndpoint(IGetAllUsersUseCase getUsersUseCase) 
         {
             _getUsersUseCase = getUsersUseCase;
         }
@@ -16,14 +16,13 @@ namespace F1.Users.Endpoints.GetUsers
         {
             Get("/user");
             AllowAnonymous();
-            Version(1); 
         }
 
         public override async Task HandleAsync(EmptyRequest request, CancellationToken ct)
         {
             var users = await _getUsersUseCase.GetUsers();
 
-            var response = users.Select(user => new UserDto(user)).ToList();
+            var response = users.Select(user => new UserDtoResponse(user)).ToList();
 
             await SendOkAsync(response);
         }

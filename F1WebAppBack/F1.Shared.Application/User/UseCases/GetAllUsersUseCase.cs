@@ -4,10 +4,10 @@ using F1.Shared.Domain.Users.Entities.Interfaces;
 
 namespace F1.Shared.Application.User.UseCases
 {
-    internal class GetUsersUseCase : IGetUsersByIdUseCase
+    internal class GetAllUsersUseCase : IGetAllUsersUseCase
     {
         private readonly IUserService _userService;
-        public GetUsersUseCase(IUserService userService)
+        public GetAllUsersUseCase(IUserService userService)
         {
             _userService = userService;
         }

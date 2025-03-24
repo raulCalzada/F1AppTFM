@@ -13,14 +13,14 @@ namespace F1.Shared.Application.User.Services
             _userRepository = userRepository;
         }
 
-        public async Task<bool> CreateUser(IUser user)
+        public async Task CreateUser(IUser user)
         {
-            return await _userRepository.CreateUser(user);
+            await _userRepository.CreateUser(user);
         }
 
-        public async Task<bool> DeleteUser(IUser user)
+        public async Task DeleteUser(IUser user)
         {
-            return await _userRepository.DeleteUser(user.Id);
+            await _userRepository.DeleteUser(user.Id);
         }
 
         public async Task<IEnumerable<IUser>> GetAllUsers()
@@ -38,7 +38,7 @@ namespace F1.Shared.Application.User.Services
             return _userRepository.GetUserByUserName(userName);
         }
 
-        public Task<bool> UpdateUser(IUser user)
+        public Task UpdateUser(IUser user)
         {
             return _userRepository.UpdateUser(user);
         }
