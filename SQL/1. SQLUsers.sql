@@ -20,8 +20,8 @@ VALUES
 ('user2', 'user2@example.com', 'hashed_password4', '2025-03-21T11:53:03', NULL, 1, 2),
 ('user3', 'user3@example.com', 'hashed_password5', '2025-03-21T11:53:03', NULL, 0, 2),
 ('user4', 'user4@example.com', 'hashed_password6', '2025-03-21T11:53:03', NULL, 1, 2),
-('guest1', 'guest1@example.com', 'hashed_password7', '2025-03-21T11:53:03', NULL, 0, 2),
-('guest2', 'guest2@example.com', 'hashed_password8', '2025-03-21T11:53:03', NULL, 0, 2);
+('writer1', 'writer1@example.com', 'hashed_password7', '2025-03-21T11:53:03', NULL, 0, 3),
+('writer2', 'writer2@example.com', 'hashed_password8', '2025-03-21T11:53:03', NULL, 0, 3);
 GO
 
 -- Create sp [CreateUser]

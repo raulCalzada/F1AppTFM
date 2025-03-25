@@ -6,7 +6,7 @@ namespace F1.Shared.Database.Connection
 {
     public class DatabaseConnection : IDatabaseConnection
     {
-        private readonly string _connectionString = "Server=localhost\\SQLEXPRESS;Database=master;Trusted_Connection=True;TrustServerCertificate=True;";
+        private const string _connectionString = "Server=localhost\\SQLEXPRESS;Database=master;Trusted_Connection=True;TrustServerCertificate=True;";
 
         public async Task<IDbConnection> GetConnectionAsync()
         {

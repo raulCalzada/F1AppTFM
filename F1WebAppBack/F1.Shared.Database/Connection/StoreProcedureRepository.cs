@@ -63,7 +63,7 @@ namespace F1.Shared.Database.Connection
             return await _dbConnectionWrapper.QueryFirstOrDefaultAsync<T>(connection, sql, parameters, commandType: commandType);
         }
 
-        public async Task<T> QuerySingleAsync<T>(string sql, object? parameters = null, CommandType? commandType = null)
+        public async Task<T?> QuerySingleAsync<T>(string sql, object? parameters = null, CommandType? commandType = null)
         {
             using var connection = await _databaseConnection.GetConnectionAsync();
 
