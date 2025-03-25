@@ -2,8 +2,8 @@
 
 namespace F1.Shared.Application.User.UseCases.Interfaces
 {
-    public interface IGetUsersUseCase
+    public interface IUpdateUserUseCase
     {
-        Task<IEnumerable<IUser>> GetUsers();
+        Task<IUser?> UpdateUser(IUser user);
     }
 }

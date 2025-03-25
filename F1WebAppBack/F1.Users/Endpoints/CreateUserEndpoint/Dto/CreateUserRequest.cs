@@ -1,19 +1,18 @@
-﻿using F1.Shared.Domain.Users.Entities;
-using F1.Shared.Domain.Users.Entities.Enums;
+﻿using F1.Shared.Domain.Users.Entities.Enums;
 using F1.Shared.Domain.Users.Entities.Interfaces;
+using F1.Shared.Domain.Users.Entities;
+using Microsoft.AspNetCore.Mvc;
 using System.Globalization;
 
-namespace F1.Users.Endpoints.GlobalDtos
+namespace F1.Users.Endpoints.CreateUserEndpoint.Dto
 {
-    public class UserDto
+    public class CreateUserRequest
     {
-        public int UserId { get; set; }
+        public string Username { get; set; } = string.Empty;
 
-        public string Username { get; set; }
+        public string Email { get; set; } = string.Empty;
 
-        public string Email { get; set; }
-
-        public string Password { get; set; }
+        public string Password { get; set; } = string.Empty;
 
         public string? CreateDate { get; set; }
 
@@ -27,7 +26,6 @@ namespace F1.Users.Endpoints.GlobalDtos
         {
             return new User
             {
-                UserId = UserId,
                 Username = Username,
                 Email = Email,
                 Password = Password,
@@ -36,18 +34,6 @@ namespace F1.Users.Endpoints.GlobalDtos
                 IsActive = IsActive,
                 Role = (Role)Role
             };
-        }
-
-        public UserDto (IUser user)
-        {
-            UserId = user.UserId;
-            Username = user.Username;
-            Email = user.Email;
-            Password = user.Password;
-            CreateDate = user.CreateDate?.ToString();
-            LastUpdateDate = user.LastUpdateDate?.ToString();
-            IsActive = user.IsActive;
-            Role = (int)user.Role;
         }
     }
 }

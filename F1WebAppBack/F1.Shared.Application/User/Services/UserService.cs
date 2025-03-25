@@ -13,9 +13,34 @@ namespace F1.Shared.Application.User.Services
             _userRepository = userRepository;
         }
 
+        public async Task CreateUser(IUser user)
+        {
+            await _userRepository.CreateUser(user);
+        }
+
+        public async Task DeleteUser(IUser user)
+        {
+            await _userRepository.DeleteUser(user.Id);
+        }
+
         public async Task<IEnumerable<IUser>> GetAllUsers()
         {
             return await _userRepository.GetAllUsers();
+        }
+
+        public async Task<IUser?> GetUserById(long id)
+        {
+            return await _userRepository.GetUserById(id);
+        }
+
+        public Task<IUser?> GetUserByUsername(string userName)
+        {
+            return _userRepository.GetUserByUserName(userName);
+        }
+
+        public Task UpdateUser(IUser user)
+        {
+            return _userRepository.UpdateUser(user);
         }
     }
 }
