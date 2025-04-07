@@ -17,7 +17,7 @@ namespace F1.Shared.Database.Repositories.News.Dtos
         {
             return new ArticleComment
             {
-                CommentId = CommentId,
+                Id = CommentId,
                 User = new User { Id = UserId },
                 Comment = Comment,
                 CreateDate = DateTime.TryParse(CreateDate, CultureInfo.InvariantCulture, DateTimeStyles.None, out var createDate) ? createDate : null

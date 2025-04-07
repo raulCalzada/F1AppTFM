@@ -31,7 +31,7 @@ namespace F1.Shared.Application.News.Services
             await _newsCommentsRepository.DeleteComment(commentId);
         }
 
-        public async Task Delete(long id)
+        public async Task DeleteNew(long id)
         {
             await _newsRespository.DeleteNew(id);
         }

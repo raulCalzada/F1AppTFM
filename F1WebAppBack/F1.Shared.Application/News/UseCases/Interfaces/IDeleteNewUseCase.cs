@@ -2,8 +2,8 @@
 
 namespace F1.Shared.Application.News.UseCases.Interfaces
 {
-    public interface IGetLastNewsUseCase
+    public interface IDeleteNewUseCase
     {
-        Task<IEnumerable<INew>> GetLastNews(int? number = null);
+        Task<INew> DeleteNew(long id);
     }
 }

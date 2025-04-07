@@ -30,7 +30,7 @@ namespace F1.Shared.Application.News.Services.Interfaces
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        Task Delete(long id);
+        Task DeleteNew(long id);
 
         /// <summary>
         /// Update a new

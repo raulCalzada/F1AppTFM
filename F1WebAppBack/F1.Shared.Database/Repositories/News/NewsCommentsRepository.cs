@@ -37,7 +37,7 @@ namespace F1.Shared.Database.Repositories.News
         {
             var commentDto = new
             {
-                CommentId = comment.CommentId,
+                CommentId = comment.Id,
                 UserId = comment.User.Id,
                 ArticleId = articleId,
                 Comment = comment.Comment,

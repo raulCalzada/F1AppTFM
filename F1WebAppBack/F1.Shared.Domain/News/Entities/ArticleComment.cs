@@ -5,7 +5,7 @@ namespace F1.Shared.Domain.News.Entities
 {
     public class ArticleComment : IArticleComment
     {
-        public long CommentId { get; set; }
+        public long Id { get; set; }
         public IUser User { get; set; } = null!;
         public string Comment { get; set; } = string.Empty;
         public DateTime? CreateDate { get; set; }
