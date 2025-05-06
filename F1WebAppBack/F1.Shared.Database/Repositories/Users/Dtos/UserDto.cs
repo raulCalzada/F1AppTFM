@@ -14,7 +14,7 @@ namespace F1.Shared.Database.Repositories.Users.Dtos
 
         public string Password { get; set; } = string.Empty;
 
-        public DateTime CreateDate { get; set; }
+        public DateTime? CreateDate { get; set; }
 
         public DateTime? LastUpdateDate { get; set; }
 
@@ -26,7 +26,7 @@ namespace F1.Shared.Database.Repositories.Users.Dtos
         {
             return new User
             {
-                UserId = UserId,
+                Id = UserId,
                 Username = Username,
                 Email = Email,
                 Password = Password,
@@ -34,6 +34,21 @@ namespace F1.Shared.Database.Repositories.Users.Dtos
                 LastUpdateDate = LastUpdateDate,
                 IsActive = IsActive,
                 Role = (Role)Rol
+            };
+        }
+
+        public static UserDto FromDomain(IUser user)
+        {
+            return new UserDto
+            {
+                UserId = (int)user.Id,
+                Username = user.Username,
+                Email = user.Email,
+                Password = user.Password,
+                CreateDate = user.CreateDate,
+                LastUpdateDate = user.LastUpdateDate,
+                IsActive = user.IsActive,
+                Rol = (int)user.Role
             };
         }
     }

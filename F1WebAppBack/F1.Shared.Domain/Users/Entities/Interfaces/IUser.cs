@@ -4,7 +4,7 @@ namespace F1.Shared.Domain.Users.Entities.Interfaces
 {
     public interface IUser
     {
-        int UserId { get; set; }
+        long Id { get; set; }
         string Username { get; set; }
         string Email { get; set; }
         string Password { get; set; }
