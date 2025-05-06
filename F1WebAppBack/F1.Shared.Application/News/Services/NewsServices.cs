@@ -60,9 +60,9 @@ namespace F1.Shared.Application.News.Services
             return _newsRespository.GetLastNews(number);
         }
 
-        public Task UpdateArticleComment(IArticleComment comment, long articleId)
+        public Task UpdateArticleComment(IArticleComment comment)
         {
-            return _newsCommentsRepository.UpdateComment(comment, articleId);
+            return _newsCommentsRepository.UpdateComment(comment);
         }
 
         public Task UpdateNew(INew news)

@@ -30,20 +30,17 @@ namespace F1.Shared.Database.Repositories.News
                 Comment = comment.Comment,
                 CreateDate = comment.CreateDate
             };
-            await _storeProcedureRepository.ExecuteAsync("CreateComment", commentDto, CommandType.StoredProcedure);
+            await _storeProcedureRepository.ExecuteAsync("CreateNewsComment", commentDto, CommandType.StoredProcedure);
         }
 
-        public async Task UpdateComment(IArticleComment comment, long articleId)
+        public async Task UpdateComment(IArticleComment comment)
         {
             var commentDto = new
             {
                 CommentId = comment.Id,
-                UserId = comment.User.Id,
-                ArticleId = articleId,
                 Comment = comment.Comment,
-                CreateDate = comment.CreateDate
             };
-            await _storeProcedureRepository.ExecuteAsync("UpdateComment", commentDto, CommandType.StoredProcedure);
+            await _storeProcedureRepository.ExecuteAsync("UpdateNewsComment", commentDto, CommandType.StoredProcedure);
         }
 
         public async Task DeleteComment(long commentId)

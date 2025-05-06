@@ -2,8 +2,8 @@
 
 namespace F1.Shared.Application.News.UseCases.Interfaces
 {
-    public interface IGetNewByIdUseCase
+    public interface IUpdateCommentUseCase
     {
-        Task<INew?> GetNewById(long id);
+        Task<bool> EditComment(IArticleComment articleComment, long newId);
     }
 }

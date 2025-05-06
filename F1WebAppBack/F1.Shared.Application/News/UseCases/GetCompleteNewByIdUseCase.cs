@@ -4,11 +4,11 @@ using F1.Shared.Domain.News.Entities.Interfaces;
 
 namespace F1.Shared.Application.News.UseCases
 {
-    class GetNewByIdUseCase : IGetNewByIdUseCase
+    class GetCompleteNewByIdUseCase : IGetCompleteNewByIdUseCase
     {
         private readonly INewsServices _newsServices;
 
-        public GetNewByIdUseCase(INewsServices newsServices)
+        public GetCompleteNewByIdUseCase(INewsServices newsServices)
         {
             _newsServices = newsServices;
         }

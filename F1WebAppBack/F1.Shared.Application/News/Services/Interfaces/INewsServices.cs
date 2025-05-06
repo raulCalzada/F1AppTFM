@@ -59,7 +59,7 @@ namespace F1.Shared.Application.News.Services.Interfaces
         /// </summary>
         /// <param name="comment"></param>
         /// <returns></returns>
-        Task UpdateArticleComment(IArticleComment comment, long articleId);
+        Task UpdateArticleComment(IArticleComment comment);
 
         /// <summary>
         /// Delete a comment from a new

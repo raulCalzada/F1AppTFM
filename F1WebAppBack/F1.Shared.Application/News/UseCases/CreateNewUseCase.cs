@@ -17,14 +17,21 @@ namespace F1.Shared.Application.News.UseCases
         {
             await _newsServices.CreateNew(news);
 
-            var newCreated = await _newsServices.GetCompleteNewById(news.Id);
+            var article = await _newsServices.GetNews(1);
 
-            if (newCreated == null)
+            if (article == null)
             {
                 throw new InvalidOperationException("New not created");
             }
 
-            return newCreated;
+            var articleToVerifyCreation = article.First();
+
+            if (!articleToVerifyCreation.Title.Equals(news.Title))
+            {
+                throw new InvalidOperationException("New not created");
+            }
+
+            return articleToVerifyCreation;
         }
     }
 }

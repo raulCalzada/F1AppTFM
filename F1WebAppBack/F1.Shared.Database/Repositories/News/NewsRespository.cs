@@ -43,9 +43,8 @@ namespace F1.Shared.Database.Repositories.News
                 ImageUrl1 = news.ImageUrl1,
                 ImageUrl2 = news.ImageUrl2,
                 AuthorUserId = news.Author.Id,
-                CreateDate = news.CreateDate
             };
-            await _storeProcedureRepository.ExecuteAsync("CreateNew", newsDto, CommandType.StoredProcedure);
+            await _storeProcedureRepository.ExecuteAsync("CreateNews", newsDto, CommandType.StoredProcedure);
         }
 
         public async Task UpdateNew(INew news)
@@ -61,7 +60,7 @@ namespace F1.Shared.Database.Repositories.News
                 AuthorUserId = news.Author.Id,
                 CreateDate = news.CreateDate
             };
-            await _storeProcedureRepository.ExecuteAsync("UpdateNew", newsDto, CommandType.StoredProcedure);
+            await _storeProcedureRepository.ExecuteAsync("UpdateNews", newsDto, CommandType.StoredProcedure);
         }
 
         public async Task DeleteNew(long id)

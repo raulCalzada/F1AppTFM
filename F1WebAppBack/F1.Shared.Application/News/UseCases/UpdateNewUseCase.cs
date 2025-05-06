@@ -12,9 +12,25 @@ namespace F1.Shared.Application.News.UseCases
         {
             _newsServices = newsServices;
         }
-        public Task<INew> UpdateNew(INew news)
+        public async Task<INew> UpdateNew(INew news)
         {
-            
+            var article = _newsServices.GetCompleteNewById(news.Id);
+
+            if (article == null && article?.Id == news.Id)
+            {
+                throw new InvalidOperationException("New not found");
+            }
+
+            await _newsServices.UpdateNew(news);
+
+            var articleUpdated = await _newsServices.GetCompleteNewById(news.Id);
+
+            if (articleUpdated == null)
+            {
+                throw new InvalidOperationException("New not updated correctly");
+            }
+
+            return articleUpdated;
         }
     }
 }
