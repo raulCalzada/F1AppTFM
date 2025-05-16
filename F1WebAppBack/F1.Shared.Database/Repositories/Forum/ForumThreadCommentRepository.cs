@@ -15,14 +15,16 @@ namespace F1.Shared.Database.Repositories.Forum
         }
         public async Task CreateForumComment(int forumId, string comment, long userId)
         {
-            var forumComment = new
+            var sql = "INSERT INTO ForumThreadComment (Content, AuthorUserId, ThreadId, CreateDate) VALUES (@Content, @AuthorUserId, @ThreadId, @CreateDate)";
+            var parameters = new
             {
                 Content = comment,
                 AuthorUserId = userId,
-                ThreadId = forumId
+                ThreadId = forumId,
+                CreateDate = DateTime.Now
             };
 
-            await _storeProcedureRepository.ExecuteAsync("CreateForumComment", forumComment, CommandType.StoredProcedure);
+            await _storeProcedureRepository.ExecuteAsync(sql, parameters, CommandType.Text);
         }
 
         public async Task DeleteForumComment(long commentId)

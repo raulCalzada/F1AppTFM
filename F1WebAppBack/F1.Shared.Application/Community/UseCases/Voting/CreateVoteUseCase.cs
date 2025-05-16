@@ -28,9 +28,11 @@ namespace F1.Shared.Application.Community.UseCases.Voting
                 throw new ArgumentException("Vote options cannot be empty", nameof(voteQuestion));
             }
 
-            await _votingServices.CreateVote(voteQuestion);
+            var questionId = await _votingServices.CreateVote(voteQuestion);
 
-            return voteQuestion;
+            return await _votingServices.GetVotesAndQuestion(questionId);
+
+
         }
     }
 }

@@ -51,7 +51,7 @@ namespace F1.Shared.ApplicationTests.Community.Services
 
             _voteQuestionsRepositoryMock
                 .Setup(r => r.CreateVoteQuestion(It.IsAny<string>(), It.IsAny<IEnumerable<string>>(), It.IsAny<VotingStatus>()))
-                .Returns(Task.CompletedTask);
+                .Returns((Task<long>)Task.CompletedTask);
 
             _voteOptionsRepositoryMock
                 .Setup(r => r.CreateVoteOption(It.IsAny<long>(), It.IsAny<int>(), It.IsAny<string>()))

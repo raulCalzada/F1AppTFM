@@ -1,10 +1,11 @@
 ﻿using F1.CommunityService.Endpoints.Dtos;
+using F1.CommunityService.Endpoints.Voting.CreateVotation.Request;
 using F1.Shared.Application.Community.UseCases.Voting.Interfaces;
 using FastEndpoints;
 
 namespace F1.CommunityService.Endpoints.Voting.CreateVotation
 {
-    public class CreateVotationEndpoint : Endpoint<VoteQuestionDto>
+    public class CreateVotationEndpoint : Endpoint<CreateVotationRequest>
     {
         private readonly ICreateVoteUseCase _createVoteUseCase;
 
@@ -19,7 +20,7 @@ namespace F1.CommunityService.Endpoints.Voting.CreateVotation
             AllowAnonymous();
         }
 
-        public override async Task HandleAsync(VoteQuestionDto request, CancellationToken ct)
+        public override async Task HandleAsync(CreateVotationRequest request, CancellationToken ct)
         {
             var result = await _createVoteUseCase.CreateCompleteVote(request.ToDomain());
             if (result == null)

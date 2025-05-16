@@ -8,14 +8,14 @@ namespace F1.Shared.Database.Repositories.Votes.Dtos
     public class VotesDto
     {
         public int Id { get; set; }
-        public int VoteOptionId { get; set; }
+        public int OptionNumber { get; set; }
         public int UserId { get; set; }
 
         public IVote ToDomain()
         {
             return new Vote
             {
-                Option = VoteOptionId,
+                Option = OptionNumber,
                 User = new User { Id = UserId }
             };
         }

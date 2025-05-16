@@ -5,7 +5,7 @@ namespace F1.Shared.Database.Repositories.Votes.Interfaces
 {
     public interface IVoteQuestionsRepository
     {
-        Task CreateVoteQuestion(string question, IEnumerable<string> options, VotingStatus status);
+        Task<long> CreateVoteQuestion(string question, IEnumerable<string> options, VotingStatus status);
         Task<IVoteQuestion?> GetVoteQuestion(long questionId);
         Task DeleteVoteQuestion(long questionId);
         Task<IEnumerable<IVoteQuestion>> GetAllVoteQuestions();

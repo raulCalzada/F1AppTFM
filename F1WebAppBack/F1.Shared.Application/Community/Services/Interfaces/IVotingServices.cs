@@ -6,7 +6,7 @@ namespace F1.Shared.Application.Community.Services.Interfaces
     interface IVotingServices
     {
         Task Vote(long questionId, long userId, int option);
-        Task CreateVote(IVoteQuestion voteQ);
+        Task<long> CreateVote(IVoteQuestion voteQ);
         Task ChangeVoteStatus(long questionId, VotingStatus state);
         Task<IEnumerable<IVote>> GetVotes(long questionId);
         Task<IEnumerable<IVoteQuestion>> GetAllVoteQuestions();

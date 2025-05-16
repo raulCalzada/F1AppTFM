@@ -18,13 +18,15 @@ namespace F1.Shared.Database.Repositories.Forum
 
         public async Task CreateForum(string title, string description, long userId)
         {
-            var forumThreadDto = new
+            var sql = "INSERT INTO ForumThread (Title, Content, AuthorUserId, CreateDate) VALUES (@Title, @Content, @AuthorUserId, @CreateDate)";
+            var parameters = new
             {
                 Title = title,
-                Description = description,
-                AuthorUserId = userId
+                Content = description,
+                AuthorUserId = userId,
+                CreateDate = DateTime.Now
             };
-            await _storeProcedureRepository.ExecuteAsync("CreateForumThread", forumThreadDto, CommandType.StoredProcedure);
+            await _storeProcedureRepository.ExecuteAsync(sql, parameters, CommandType.Text);
         }
 
         public async Task DeleteForum(int forumId)
@@ -40,7 +42,7 @@ namespace F1.Shared.Database.Repositories.Forum
 
         public async Task<IForum?> GetForumById(int forumId)
         {
-            var forumDto = await _storeProcedureRepository.QuerySingleAsync<ForumThreadDto>($"SELECT * FROM ForumThread WHERE ThreadId = {forumId}", commandType: CommandType.Text);
+            var forumDto = await _storeProcedureRepository.QueryFirstOrDefaultAsync<ForumThreadDto?>($"SELECT * FROM ForumThread WHERE ThreadId = {forumId}", commandType: CommandType.Text);
             return forumDto?.ToDomain();
         }
     }

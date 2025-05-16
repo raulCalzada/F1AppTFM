@@ -16,18 +16,19 @@ namespace F1.Shared.Database.Repositories.Votes
             _storeProcedureRepository = storeProcedureRepository;
         }
 
-        public async Task CreateVoteQuestion(string question, IEnumerable<string> options, VotingStatus status)
+        public async Task<long> CreateVoteQuestion(string question, IEnumerable<string> options, VotingStatus status)
         {
-            const string sql = "INSERT INTO VoteQuestions (Question, CreateDate, State) VALUES " +
-                      "(@Question, @CreateDate, @State)";
+            const string sql = "INSERT INTO VoteQuestions (Question, CreateDate, State) VALUES (@Question, @CreateDate, @State); SELECT CAST(SCOPE_IDENTITY() as bigint);";
             var parameters = new
             {
                 Question = question,
                 CreateDate = DateTime.Now,
                 State = (int)status
             };
-            await _storeProcedureRepository.ExecuteAsync(sql, parameters, CommandType.Text);
+            var id = await _storeProcedureRepository.ExecuteScalarAsync<long>(sql, parameters, CommandType.Text);
+            return id;
         }
+
 
         public async Task DeleteVoteQuestion(long questionId)
         {
@@ -38,7 +39,7 @@ namespace F1.Shared.Database.Repositories.Votes
 
         public async Task<IVoteQuestion?> GetVoteQuestion(long questionId)
         {
-            var dto = await _storeProcedureRepository.QuerySingleAsync<VoteQuestionsDto>($"SELECT * FROM VoteQuestions WHERE QuestionId = {questionId}", commandType: CommandType.Text);
+            var dto = await _storeProcedureRepository.QuerySingleAsync<VoteQuestionsDto>($"SELECT * FROM VoteQuestions WHERE Id = {questionId}", commandType: CommandType.Text);
 
             return dto?.ToDomain();
         }
@@ -52,7 +53,7 @@ namespace F1.Shared.Database.Repositories.Votes
 
         public async Task ChangeVoteStatus(long questionId, VotingStatus state)
         {
-            var sql = $"UPDATE VoteQuestions SET State = {(int)state} WHERE QuestionId = {questionId}";
+            var sql = $"UPDATE VoteQuestions SET State = {(int)state} WHERE Id = {questionId}";
 
             await _storeProcedureRepository.ExecuteAsync(sql, commandType: CommandType.Text);
         }

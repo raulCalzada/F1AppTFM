@@ -10,6 +10,11 @@ namespace F1.CommunityService.Endpoints.Voting.ChangeVoteStatus
     {
         private readonly IChangeVoteStatusUseCase _changeVoteStatusUseCase;
 
+        public ChangeVoteStatusEndpoint(IChangeVoteStatusUseCase changeVoteStatusUseCase)
+        {
+            _changeVoteStatusUseCase = changeVoteStatusUseCase;
+        }
+
         public override void Configure()
         {
             Post("/vote/{QuestionId}/status");

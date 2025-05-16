@@ -23,7 +23,7 @@ namespace F1.CommunityService.Endpoints.Voting.Vote
         {
             var questionId = Route<long>("QuestionId");
 
-            var result = await _voteUseCase.Vote(questionId, request.VoteOptionId, request.UserId);
+            var result = await _voteUseCase.Vote(questionId, request.VoteOption, request.UserId);
 
             if (result == null)
             {

@@ -1,20 +1,18 @@
 ﻿using F1.Shared.Application.Community.Services.Interfaces;
 using F1.Shared.Application.Community.UseCases.Forum.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using F1.Shared.Application.News.UseCases.Interfaces;
 
 namespace F1.Shared.Application.Community.UseCases.Forum
 {
     class DeleteForumThreadUseCase : IDeleteForumThreadUseCase
     {
         private readonly IForumServices _forumServices;
+        private readonly IDeleteForumCommentUseCase _deleteForumCommentUseCase;
 
-        public DeleteForumThreadUseCase(IForumServices forumServices)
+        public DeleteForumThreadUseCase(IForumServices forumServices, IDeleteForumCommentUseCase deleteForumCommentUseCase)
         {
             _forumServices = forumServices;
+            _deleteForumCommentUseCase = deleteForumCommentUseCase;
         }
 
         public async Task<bool> DeleteThread(int threadId)
@@ -24,6 +22,14 @@ namespace F1.Shared.Application.Community.UseCases.Forum
             if (forum == null)
             {
                 throw new InvalidOperationException("Forum not found");
+            }
+
+            if (forum.Comments.Any())
+            {
+                foreach (var comment in forum.Comments)
+                {
+                    await _deleteForumCommentUseCase.DeleteComment(comment.Id);
+                }
             }
 
             await _forumServices.DeleteForum(threadId);

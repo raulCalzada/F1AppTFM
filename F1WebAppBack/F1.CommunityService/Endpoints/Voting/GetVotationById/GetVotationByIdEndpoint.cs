@@ -1,4 +1,5 @@
-﻿using F1.Shared.Application.Community.UseCases.Voting.Interfaces;
+﻿using F1.CommunityService.Endpoints.Dtos;
+using F1.Shared.Application.Community.UseCases.Voting.Interfaces;
 using FastEndpoints;
 
 namespace F1.CommunityService.Endpoints.Voting.GetVoteById
@@ -27,7 +28,7 @@ namespace F1.CommunityService.Endpoints.Voting.GetVoteById
                 await SendErrorsAsync();
                 return;
             }
-            await SendOkAsync(result, ct);
+            await SendOkAsync(new VoteQuestionWithAnswersDto(result), ct);
         }
 
     }

@@ -1,5 +1,6 @@
 ﻿using F1.Shared.Application.Community.Services.Interfaces;
 using F1.Shared.Database.Repositories.Votes.Interfaces;
+using F1.Shared.Domain.Comunity.Entities;
 using F1.Shared.Domain.Comunity.Entities.Interfaces;
 using F1.Shared.Domain.Comunity.Enums;
 
@@ -23,14 +24,15 @@ namespace F1.Shared.Application.Community.Services
             await _voteQuestionsRepository.ChangeVoteStatus(questionId, state);
         }
 
-        public async Task CreateVote(IVoteQuestion voteQ)
+        public async Task<long> CreateVote(IVoteQuestion voteQ)
         {
-            await _voteQuestionsRepository.CreateVoteQuestion(voteQ.Question, voteQ.Options, voteQ.State);
+            var questionId = await _voteQuestionsRepository.CreateVoteQuestion(voteQ.Question, voteQ.Options, voteQ.State);
 
             foreach (var (option, pos) in voteQ.Options.Select((option, index) => (option, index)))
             {
-                await _voteOptionsRepository.CreateVoteOption(voteQ.Id, pos, option);
+                await _voteOptionsRepository.CreateVoteOption(questionId, pos, option);
             }
+            return questionId;
         }
 
         public async Task Vote(long questionId, long userId, int option)
@@ -45,7 +47,13 @@ namespace F1.Shared.Application.Community.Services
 
         public async Task<IEnumerable<IVoteQuestion>> GetAllVoteQuestions()
         {
-            return await _voteQuestionsRepository.GetAllVoteQuestions();
+            var votation = await _voteQuestionsRepository.GetAllVoteQuestions();
+
+            foreach(var question in votation)
+            {
+                question.Options = await _voteOptionsRepository.GetVoteOptions(question.Id);
+            }
+            return votation;
         }
 
         public async Task<IVoteQuestion?> GetVotesAndQuestion(long questionId)
@@ -70,7 +78,7 @@ namespace F1.Shared.Application.Community.Services
                 await _votesRepository.DeleteVotes(voteQ.Id, vote.User.Id);
             }
 
-            for(int i = 0; i < voteQ.Options.Count(); i++)
+            for (int i = 0; i < voteQ.Options.Count(); i++)
             {
                 await _voteOptionsRepository.DeleteVoteOption(voteQ.Id, i);
             }
