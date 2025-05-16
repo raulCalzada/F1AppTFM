@@ -1,0 +1,67 @@
+﻿using F1.Shared.Database.Connection.Interfaces;
+using F1.Shared.Database.Repositories.Votes.Dtos;
+using F1.Shared.Database.Repositories.Votes.Interfaces;
+using F1.Shared.Domain.Comunity.Entities.Interfaces;
+using F1.Shared.Domain.Comunity.Enums;
+using System.Data;
+
+namespace F1.Shared.Database.Repositories.Votes
+{
+    class VoteQuestionsRepository : IVoteQuestionsRepository
+    {
+        private readonly IStoreProcedureRepository _storeProcedureRepository;
+
+        public VoteQuestionsRepository(IStoreProcedureRepository storeProcedureRepository)
+        {
+            _storeProcedureRepository = storeProcedureRepository;
+        }
+
+        public async Task CreateVoteQuestion(string question, IEnumerable<string> options, VotingStatus status)
+        {
+            const string sql = "INSERT INTO VoteQuestions (Question, CreateDate, State) VALUES " +
+                      "(@Question, @CreateDate, @State)";
+            var parameters = new
+            {
+                Question = question,
+                CreateDate = DateTime.Now,
+                State = (int)status
+            };
+            await _storeProcedureRepository.ExecuteAsync(sql, parameters, CommandType.Text);
+        }
+
+        public async Task DeleteVoteQuestion(long questionId)
+        {
+            var sql = $"DELETE FROM VoteQuestions WHERE QuestionId = {questionId}";
+
+            await _storeProcedureRepository.ExecuteAsync(sql, commandType: CommandType.Text);
+        }
+
+        public async Task<IVoteQuestion?> GetVoteQuestion(long questionId)
+        {
+            var dto = await _storeProcedureRepository.QuerySingleAsync<VoteQuestionsDto>($"SELECT * FROM VoteQuestions WHERE QuestionId = {questionId}", commandType: CommandType.Text);
+
+            return dto?.ToDomain();
+        }
+
+        public async Task<IEnumerable<IVoteQuestion>> GetAllVoteQusestions()
+        {
+            const string sql = "SELECT * FROM VoteQuestions";
+            var dtos = await _storeProcedureRepository.QueryAsync<VoteQuestionsDto>(sql, commandType: CommandType.Text);
+            return dtos.Select(dto => dto.ToDomain());
+        }
+
+        public async Task ChangeVoteStatus(long questionId, VotingStatus state)
+        {
+            var sql = $"UPDATE VoteQuestions SET State = {(int)state} WHERE QuestionId = {questionId}";
+
+            await _storeProcedureRepository.ExecuteAsync(sql, commandType: CommandType.Text);
+        }
+
+        public async Task<IEnumerable<IVoteQuestion>> GetAllVoteQuestions()
+        {
+            var dto = await _storeProcedureRepository.QueryAsync<VoteQuestionsDto>($"SELECT * FROM VoteQuestions", commandType: CommandType.Text);
+
+            return dto.Select(x => x.ToDomain()).ToList();
+        }
+    }
+}
