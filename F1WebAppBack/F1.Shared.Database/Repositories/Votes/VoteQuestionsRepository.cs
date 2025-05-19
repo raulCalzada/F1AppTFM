@@ -32,14 +32,14 @@ namespace F1.Shared.Database.Repositories.Votes
 
         public async Task DeleteVoteQuestion(long questionId)
         {
-            var sql = $"DELETE FROM VoteQuestions WHERE QuestionId = {questionId}";
+            var sql = $"DELETE FROM VoteQuestions WHERE Id = {questionId}";
 
             await _storeProcedureRepository.ExecuteAsync(sql, commandType: CommandType.Text);
         }
 
         public async Task<IVoteQuestion?> GetVoteQuestion(long questionId)
         {
-            var dto = await _storeProcedureRepository.QuerySingleAsync<VoteQuestionsDto>($"SELECT * FROM VoteQuestions WHERE Id = {questionId}", commandType: CommandType.Text);
+            var dto = await _storeProcedureRepository.QueryFirstOrDefaultAsync<VoteQuestionsDto?>($"SELECT * FROM VoteQuestions WHERE Id = {questionId}", commandType: CommandType.Text);
 
             return dto?.ToDomain();
         }
