@@ -5,6 +5,8 @@ import actualImage from "../../assets/backgroundActual.png";
 import historicalImage from "../../assets/startingGrid.png";
 import historicalLogo from "../../assets/f1logo.png";
 import currentLogo from "../../assets/f1newLogo.png";
+import communityImage from "../../assets/fanMainBack.png";
+
 
 export const Home: React.FC = () => {
     return (
@@ -46,6 +48,23 @@ export const Home: React.FC = () => {
                         </div>
                     </div>
                 </div>
+            </div>
+            <div className="community-section">
+                <img src={communityImage} alt="Community" className="background-image" />
+                <Link to="/communityMenu"  className="community-content">
+                    <h2 className="community-title">Join the F1 Community</h2>
+                    <div className="community-links">
+                        <Link to="/community/forum" className="community-card">
+                            Community Forum
+                        </Link>
+                        <Link to="/community/news" className="community-card">
+                            F1 News
+                        </Link>
+                        <Link to="/community/fan-zone" className="community-card">
+                            Fan Zone
+                        </Link> 
+                    </div>
+                </Link>
             </div>
         </>
     );

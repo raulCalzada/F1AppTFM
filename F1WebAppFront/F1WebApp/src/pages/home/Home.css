@@ -37,7 +37,7 @@ body, html {
 .home-container {
     display: flex;
     flex: 1;
-    height: calc(100vh - 60px); /* Subtracting height of title-container */
+    height: calc(50vh - 10px);
 }
 
 .current-section-link, .historical-section {
@@ -54,7 +54,7 @@ body, html {
     box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
 }
 
-.current-section, .historical-section {
+.current-section, .historical-section, .community-section {
     width: 100%;
     height: 100%;
     position: relative;
@@ -71,21 +71,21 @@ body, html {
     filter: brightness(50%) !important;
 }
 
-.current-overlay, .historical-content {
+.current-overlay, .historical-content, .community-content {
     position: relative;
     z-index: 2;
     text-align: center;
     color: white;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    height: 100% !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
 }
 
-.current-title {
-    font-size: 3rem !important;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7) !important;
-    margin: 0 !important;
+.current-title{
+    font-size: 2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    margin-bottom: 30px;
 }
 
 .historical-content {
@@ -95,13 +95,13 @@ body, html {
     padding-top: 20px;
 }
 
-.historical-title {
-    font-size: 2rem !important;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7) !important;
+.historical-title, .community-title {
+    font-size: 2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
     margin-bottom: 20px;
 }
 
-.historical-links {
+.historical-links, .community-links {
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -119,4 +119,31 @@ body, html {
 .historical-card:hover {
     transform: scale(1.05);
     background: rgba(255, 255, 255, 0.1);
+}
+
+.community-section {
+    height: 30vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.community-title{
+    margin-right: 30px;
+}
+
+.community-card {
+    background: rgba(100, 76, 95, 0.7);
+    padding: 15px;
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+    transition: transform 0.3s, background 0.3s;
+}
+
+.community-card:hover{
+    transform: scale(1.05);
+    background: rgba(100, 32, 85, 0.66);
 }
