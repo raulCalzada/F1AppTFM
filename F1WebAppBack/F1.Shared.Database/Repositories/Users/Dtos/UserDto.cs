@@ -41,7 +41,7 @@ namespace F1.Shared.Database.Repositories.Users.Dtos
         {
             return new UserDto
             {
-                UserId = user.Id,
+                UserId = (int)user.Id,
                 Username = user.Username,
                 Email = user.Email,
                 Password = user.Password,

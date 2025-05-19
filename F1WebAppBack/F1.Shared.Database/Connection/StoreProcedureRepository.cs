@@ -63,7 +63,7 @@ namespace F1.Shared.Database.Connection
             return await _dbConnectionWrapper.QueryFirstOrDefaultAsync<T>(connection, sql, parameters, commandType: commandType);
         }
 
-        public async Task<T> QuerySingleAsync<T>(string sql, object? parameters = null, CommandType? commandType = null)
+        public async Task<T?> QuerySingleAsync<T>(string sql, object? parameters = null, CommandType? commandType = null)
         {
             using var connection = await _databaseConnection.GetConnectionAsync();
 
@@ -72,7 +72,7 @@ namespace F1.Shared.Database.Connection
                 throw new InvalidOperationException("Connection is null");
             }
 
-            return await _dbConnectionWrapper.QuerySingleAsync<T>(connection, sql, parameters, commandType: commandType);
+            return await _dbConnectionWrapper.QuerySingleAsync<T?>(connection, sql, parameters, commandType: commandType);
         }
 
         public async Task<T?> QuerySingleOrDefaultAsync<T>(string sql, object? parameters = null, CommandType? commandType = null)

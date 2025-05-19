@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
+	<PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
@@ -15,5 +15,11 @@
     <ProjectReference Include="..\F1.Shared.Database\F1.Shared.Database.csproj" />
     <ProjectReference Include="..\F1.Shared.Domain\F1.Shared.Domain.csproj" />
   </ItemGroup>
+    
+	<ItemGroup>
+		<AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleTo">
+			<_Parameter1>F1.Shared.ApplicationTests</_Parameter1>
+		</AssemblyAttribute>
+	</ItemGroup>
 
 </Project>
