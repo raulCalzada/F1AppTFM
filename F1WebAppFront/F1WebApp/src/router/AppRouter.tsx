@@ -13,6 +13,7 @@ import { RaceDetailedInfo } from '../pages/actual/raceDetailedInfo/RaceDetailedI
 import { Standings } from '../pages/actual/standings/Standings';
 import { HistoricalStandings } from '../pages/historical/historicalStandings/HistoricalStandings';
 import { Puntuations } from '../pages/actual/puntuations/Puntuations';
+import { CommunityMenu } from '../pages/community/menu/CommunityMenu';
 
 
 export const AppRouter = () => {
@@ -26,6 +27,7 @@ export const AppRouter = () => {
                 <Route path="/historical/puntuations" element={<HistoricalPuntuations />} />
                 <Route path="/historical/standings" element={< HistoricalStandings/>} />
                 <Route path="/race-info/:raceId/:year" element={<RaceResult />} />
+
                 <Route path="/actual" element={<ActualMenu />} />
                 <Route path="/actual/teams" element={<Teams />} />
                 <Route path="/actual/drivers" element={<Drivers />} />
@@ -34,6 +36,7 @@ export const AppRouter = () => {
                 <Route path="/actual/standings" element={< Standings/>} />
                 <Route path="/actual/puntuations" element={< Puntuations/>} />
                 
+                <Route path="/communityMenu" element={<CommunityMenu />} />
 
                 
             </Routes>
