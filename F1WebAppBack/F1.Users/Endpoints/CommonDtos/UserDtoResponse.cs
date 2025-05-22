@@ -4,7 +4,7 @@ namespace F1.Users.Endpoints.CommonDtos
 {
     public class UserDtoResponse
     {
-        public int UserId { get; set; }
+        public long UserId { get; set; }
 
         public string Username { get; set; } = string.Empty;
 
