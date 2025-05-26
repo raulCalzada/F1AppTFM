@@ -31,6 +31,11 @@ export default defineConfig({
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/openai-api/, ''),
       },
+      '/user': {
+        target: 'https://localhost:7123',
+        changeOrigin: true,
+        secure: false,
+      },
     },
-  },
-});
+  }
+},);

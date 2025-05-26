@@ -51,7 +51,7 @@ export const Home: React.FC = () => {
             </div>
             <div className="community-section">
                 <img src={communityImage} alt="Community" className="background-image" />
-                <Link to="/communityMenu"  className="community-content">
+                <Link to="/community/menu"  className="community-content">
                     <h2 className="community-title">Join the F1 Community</h2>
                     <div className="community-links">
                         <Link to="/community/forum" className="community-card">
