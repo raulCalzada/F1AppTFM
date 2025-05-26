@@ -5,11 +5,11 @@ import { useStatus, useStatus2 } from "./useStatus";
 
 export const useUser = () => {
     const { status: userStatus, onSuccess, onError, onLoading } = useStatus();
-    const { status2: userStatusLog, onSuccess2: onSuccessLog, onError2: onErrorLog, onLoading2: onLoadingLog } = useStatus2();
-    const [user, setUser] = useState<User | null>(null);
+    const { status: userStatusLog, onSuccess2, onError2, onLoading2} = useStatus2();
+    const [user, setUser] = useState<User>();
     const [userList, setUserList] = useState<User[]>([]);
-    const [deletedUser, setDeletedUser] = useState<User | null>(null);
-    const [loggedUser, setLoggedUser] = useState<User | null>(null);
+    const [deletedUser, setDeletedUser] = useState<User>();
+    const [loggedUser, setLoggedUser] = useState<User>();
 
     const getUserById = useCallback(async (userId: string) => {
         onLoading();
@@ -81,56 +81,72 @@ export const useUser = () => {
     };
 
     const setUserIdInCookies = (userId: string) => {
+        console.log('Setting user ID in cookies...', userId);
+        if (userId === undefined || userId === null || userId === '') {
+            console.error('User ID is undefined');
+            return;
+        }
         document.cookie = `userId=${encodeURIComponent(userId)}; path=/;`;
     };
 
 
     ///Login and Logout
-    const logUser = useCallback(async (userId: string) => {
-        onLoadingLog();
-        obtainUser(userId)
+    const logUser = useCallback(async (username: string, password: string) => {
+        onLoading2();
+        obtainUserByUsername(username)
             .then((response) => {
-                setLoggedUser(response);
-                setUserIdInCookies(userId);
-                onSuccessLog(response ? `User ${response.username} logged in successfully` : '');
+                if (response && response.password === password) {   
+                    setLoggedUser(response);              
+                    console.log(response.userId);                   
+                    setUserIdInCookies(response.userId);
+                    onSuccess2();
+                }
+                else {
+                    onError2('Invalid username or password');
+                }
             })
             .catch((error) => {
-                onErrorLog(error.message);
+                onError2(error.message);
             }); 
-    }, [onSuccessLog, onErrorLog, onLoadingLog]);
+    }, [onLoading2, onSuccess2, onError2]);
 
-    const logoutUser = useCallback(() => {
-        onLoadingLog();
-        setLoggedUser(null);
-        setUserIdInCookies('');
-        onSuccessLog('User logged out successfully');
-    }, [onSuccessLog, onLoadingLog]);
+    const logoutUser = useCallback(async () => {
+        onLoading2();
+        document.cookie = "userId=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT";
+        onSuccess2('User logged out successfully');
+    }, [onLoading2, onSuccess2]);
 
-    const getLoggedUser = useCallback(() => {
-        onLoadingLog();
+    const getLoggedUser = useCallback(async() => {
+        onLoading2();
         const userId = getUserIdFromCookies();
         if (userId) {
-            obtainUser(userId)
+            await obtainUser(userId)
                 .then((response) => {
                     setLoggedUser(response);
-                    onSuccessLog(response ? `User ${response.username} logged in successfully` : '');
+                    onSuccess2(response ? `User ${response.username} logged in successfully` : '');
                 })
                 .catch((error) => {
-                    onErrorLog(error.message);
+                    onError2(error.message);
                 });
         } else {
-            setLoggedUser(null);
+            onError2('No user ID found in cookies');
         }
-    }, [onLoadingLog, onSuccessLog, onErrorLog]);
+    }, [onLoading2, onSuccess2, onError2]);
+
+
 
     return {
         user,
+        loggedUser,
         userList,
         userStatus,
         userStatusLog,
         getUserById,
         getUserByUsername,
         getUserList,
+        logUser,
+        getLoggedUser,
+        logoutUser,
         deleteUser,
         updateUser,       
     };

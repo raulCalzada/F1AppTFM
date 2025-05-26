@@ -1,18 +1,37 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import "./CommunityMenu.css";
 import { CommunityMainContainer } from "../../../common/communityMainContainer/CommunityMainContainer";
+import { useUser } from "../../../hooks/useUser";
 
 export const CommunityMenu: React.FC = () => {
+    const navigate = useNavigate();
+    const { userStatusLog, getLoggedUser, loggedUser } = useUser();
+
+    useEffect(() => {
+        getLoggedUser();
+    }, []);
+
+    useEffect(() => {        
+        if (userStatusLog.error) {
+            navigate("/community/login");
+        }
+        if (loggedUser?.role == 1) {            
+            navigate("/community/admin/menu");
+        }
+    }, [userStatusLog, loggedUser, navigate]);
+
+    if (!loggedUser) return null; // O un loader
+
     return (
         <CommunityMainContainer>
             <div className="actual-menu-community">
                 <div className="main-card-community">
-                    <p className="main-card-title-community">raluu_09</p>
+                    <p className="main-card-title-community">{loggedUser.username}</p>
                     <div className="main-card-content-community">
                         <div>
                             <h3>Your points</h3>
-                            <h2 className="points-community">1000</h2>
+                            <h2 className="points-community">{loggedUser.points ?? 0}</h2>
                         </div>
                         <div>
                             <h3>World Position</h3>

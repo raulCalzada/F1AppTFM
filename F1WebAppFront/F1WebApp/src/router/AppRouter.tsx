@@ -14,6 +14,9 @@ import { Standings } from '../pages/actual/standings/Standings';
 import { HistoricalStandings } from '../pages/historical/historicalStandings/HistoricalStandings';
 import { Puntuations } from '../pages/actual/puntuations/Puntuations';
 import { CommunityMenu } from '../pages/community/menu/CommunityMenu';
+import { LoginPage } from '../pages/community/login/LoginPage';
+import { RegisterPage } from '../pages/community/register/RegisterPage';
+import { MenuAdmin } from '../pages/community/admin/menu/menuAdmin';
 
 
 export const AppRouter = () => {
@@ -36,7 +39,13 @@ export const AppRouter = () => {
                 <Route path="/actual/standings" element={< Standings/>} />
                 <Route path="/actual/puntuations" element={< Puntuations/>} />
                 
-                <Route path="/communityMenu" element={<CommunityMenu />} />
+                <Route path="/community/menu" element={<CommunityMenu />} />
+
+                <Route path="/community/admin/menu" element={<MenuAdmin />} />
+                
+
+                <Route path="/community/login" element={<LoginPage />} />
+                <Route path="/community/register" element={<RegisterPage />} />
 
                 
             </Routes>
