@@ -15,7 +15,7 @@ namespace F1.CommunityService.Endpoints.Voting.GetAllVotes
 
         public override void Configure()
         {
-            Get("/votes");
+            Get("/vote/all");
             AllowAnonymous();
         }
 

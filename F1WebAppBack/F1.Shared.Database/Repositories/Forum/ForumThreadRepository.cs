@@ -36,7 +36,7 @@ namespace F1.Shared.Database.Repositories.Forum
 
         public async Task<IEnumerable<IForum>> GetAllForums()
         {
-            var forumDto = await _storeProcedureRepository.QueryAsync<ForumThreadDto>($"SELECT * FROM ForumThread", commandType: CommandType.Text);
+            var forumDto = await _storeProcedureRepository.QueryAsync<ForumThreadDto>($"SELECT * FROM ForumThread order by 1 desc", commandType: CommandType.Text);
             return forumDto.Select(x => x.ToDomain()).ToList();
         }
 

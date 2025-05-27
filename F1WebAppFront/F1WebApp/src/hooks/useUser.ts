@@ -23,6 +23,10 @@ export const useUser = () => {
             });
     }, [onSuccess, onError, onLoading]);
 
+    const syncUserById: User = useCallback(async (userId: string) => {
+        return await obtainUser(userId);
+    }, [onSuccess, onError, onLoading]);
+
     const getUserByUsername = useCallback(async (username: string) => {
         onLoading();
         obtainUserByUsername(username)
@@ -148,6 +152,7 @@ export const useUser = () => {
         getLoggedUser,
         logoutUser,
         deleteUser,
-        updateUser,       
+        updateUser,
+        syncUserById
     };
 }

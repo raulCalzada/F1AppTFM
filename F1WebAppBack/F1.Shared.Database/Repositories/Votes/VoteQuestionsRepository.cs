@@ -44,13 +44,6 @@ namespace F1.Shared.Database.Repositories.Votes
             return dto?.ToDomain();
         }
 
-        public async Task<IEnumerable<IVoteQuestion>> GetAllVoteQusestions()
-        {
-            const string sql = "SELECT * FROM VoteQuestions";
-            var dtos = await _storeProcedureRepository.QueryAsync<VoteQuestionsDto>(sql, commandType: CommandType.Text);
-            return dtos.Select(dto => dto.ToDomain());
-        }
-
         public async Task ChangeVoteStatus(long questionId, VotingStatus state)
         {
             var sql = $"UPDATE VoteQuestions SET State = {(int)state} WHERE Id = {questionId}";
@@ -60,7 +53,7 @@ namespace F1.Shared.Database.Repositories.Votes
 
         public async Task<IEnumerable<IVoteQuestion>> GetAllVoteQuestions()
         {
-            var dto = await _storeProcedureRepository.QueryAsync<VoteQuestionsDto>($"SELECT * FROM VoteQuestions", commandType: CommandType.Text);
+            var dto = await _storeProcedureRepository.QueryAsync<VoteQuestionsDto>($"SELECT * FROM VoteQuestions order by 1 desc", commandType: CommandType.Text);
 
             return dto.Select(x => x.ToDomain()).ToList();
         }
