@@ -5,7 +5,6 @@ const BaseUrl = '/user';
 
 export const obtainUser = async (userId: string) => {
     const response = await axios.get(`${BaseUrl}/${userId}`);  
-    console.log(response.data);
     return response.data;
 };
 

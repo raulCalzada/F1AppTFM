@@ -2,7 +2,7 @@ import { User } from './../types/user.d';
 import { useCallback, useState } from "react";
 import { useStatus } from "./useStatus";
 import { ForumPost } from "../types/forum";
-import { createForumComment, createForumThread, obtainForumThread, obtainForumThreads } from "../api/forum";
+import { createForumComment, createForumThread, deleteForumThread, deleteForumThreadComment, obtainForumThread, obtainForumThreads } from "../api/forum";
 import { obtainUser } from '../api/user';
 
 export const useForum = () => {
@@ -43,8 +43,30 @@ export const useForum = () => {
     const getForumPost = useCallback(async (postId: number) => {
         onLoading();
         await obtainForumThread(postId)
-            .then((response) => {
-                setForumPost(response);
+            .then(async (response) => {
+                let post = response as ForumPost;
+
+                // Obtener username del autor del post
+                try {
+                    const user: User = await obtainUser(post.userId.toString());
+                    post = { ...post, username: user.username };
+                } catch {
+                    // Si falla, dejar el username como está
+                }
+
+                // Obtener username de cada comment
+                const commentsWithUsernames = await Promise.all(
+                    post.comments.map(async (comment) => {
+                        try {
+                            const user: User = await obtainUser(comment.userId.toString());
+                            return { ...comment, username: user.username };
+                        } catch {
+                            return comment;
+                        }
+                    })
+                );
+
+                setForumPost({ ...post, comments: commentsWithUsernames });
                 onSuccess();
             })
             .catch((error) => {
@@ -77,26 +99,13 @@ export const useForum = () => {
     }, [onLoading, setForumPost, onSuccess, onError]);
 
     const deleteForumComment = useCallback(async (commentId: number) => {
-        onLoading();
-        await deleteForumComment(commentId)
-            .then (() => {
-                getForumPost(forumPost?.id);
-            })
-            .catch((error) => {
-                onError(error);
-            });
-    }, [onLoading, getForumPost, forumPost?.id, onError]);
+        console.log("Deleting comment with ID:", commentId);
+        await deleteForumThreadComment(commentId)
+    }, []);
 
     const deleteForumPost = useCallback(async (postId: number) => {
-        onLoading();
-        await deleteForumComment(postId)
-            .then(() => {
-                getForumList();
-            })
-            .catch((error) => {
-                onError(error);
-            });
-    }, [onLoading, deleteForumComment, getForumList, onError]);
+        await deleteForumThread(postId)
+    }, []);
 
 
     return {

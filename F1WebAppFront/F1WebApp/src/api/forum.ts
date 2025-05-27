@@ -30,7 +30,9 @@ export const deleteForumThread = async (threadId: number) => {
     return response.data;
 };
 
-export const deleteForumComment = async (commentId: number) => {
+export const deleteForumThreadComment = async (commentId: number) => {
+    console.log("request", commentId);
     const response = await axios.delete(`${BaseUrl}/comment/${commentId}`);
+    console.log(response);
     return response.data;
 };

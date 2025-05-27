@@ -1,14 +1,17 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import './ForumList.css';
 import { CommunityMainContainer } from "../../../../common/communityMainContainer/CommunityMainContainer";
 import { useForum } from "../../../../hooks/useForum";
 import { useUser } from "../../../../hooks/useUser";
 import { useNavigate } from "react-router-dom";
 
+const FORUMS_PER_PAGE = 10;
+
 export const ForumList: React.FC = () => {
     const navigate = useNavigate();
     const { getForumList, forumList } = useForum();
     const { getLoggedUser, userStatusLog, loggedUser } = useUser();
+    const [currentPage, setCurrentPage] = useState(1);
 
     useEffect(() => {
         getLoggedUser();
@@ -28,12 +31,19 @@ export const ForumList: React.FC = () => {
         navigate(`/community/forum/${forumId}`);
     };
 
+    const totalPages = Math.ceil(forumList.length / FORUMS_PER_PAGE);
+    const startIdx = (currentPage - 1) * FORUMS_PER_PAGE;
+    const currentForums = forumList.slice(startIdx, startIdx + FORUMS_PER_PAGE);
+
+    const handlePrev = () => setCurrentPage((p) => Math.max(1, p - 1));
+    const handleNext = () => setCurrentPage((p) => Math.min(totalPages, p + 1));
+
     return (
         <CommunityMainContainer>
             <div className="forum-list-container">
                 <h2 className="forum-list-title">Forum Posts Availables</h2>
                 <div className="forum-list">
-                    {forumList.map((forum, idx) => (
+                    {currentForums.map((forum) => (
                         <div
                             key={forum.id}
                             className="forum-card"
@@ -45,6 +55,11 @@ export const ForumList: React.FC = () => {
                             <p style={{ color: "#000000" }}>{forum.username}</p>
                         </div>
                     ))}
+                </div>
+                <div className="forum-pagination">
+                    <button onClick={handlePrev} disabled={currentPage === 1}>Anterior</button>
+                    <span>Página {currentPage} de {totalPages}</span>
+                    <button onClick={handleNext} disabled={currentPage === totalPages}>Siguiente</button>
                 </div>
             </div>
         </CommunityMainContainer>

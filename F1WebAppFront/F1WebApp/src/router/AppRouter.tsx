@@ -18,6 +18,8 @@ import { LoginPage } from '../pages/community/login/LoginPage';
 import { RegisterPage } from '../pages/community/register/RegisterPage';
 import { MenuAdmin } from '../pages/community/admin/menu/menuAdmin';
 import { ForumList } from '../pages/community/forum/forumList/ForumList';
+import { ForumPost } from '../pages/community/forum/forumThread/ForumThread';
+import { AdminForum } from '../pages/community/admin/forum/AdminForum';
 
 
 export const AppRouter = () => {
@@ -42,9 +44,10 @@ export const AppRouter = () => {
                 
                 <Route path="/community/menu" element={<CommunityMenu />} />
                 <Route path="/community/forum" element={< ForumList/>} />
-                <Route path="/community/forum/:forumId" element={<ForumList />} />
+                <Route path="/community/forum/:forumId" element={<ForumPost />} />
 
                 <Route path="/community/admin/menu" element={<MenuAdmin />} />
+                <Route path="/community/admin/forum" element={<AdminForum />} />
                 
 
                 <Route path="/community/login" element={<LoginPage />} />
