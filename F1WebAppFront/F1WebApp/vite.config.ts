@@ -36,6 +36,16 @@ export default defineConfig({
         changeOrigin: true,
         secure: false,
       },
+      '/forum': {
+        target: 'https://localhost:7225',
+        changeOrigin: true,
+        secure: false,
+      },
+      '/vote': {
+        target: 'https://localhost:7225',
+        changeOrigin: true,
+        secure: false,
+      },
     },
   }
 },);

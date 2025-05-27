@@ -12,16 +12,16 @@ export const MenuAdmin: React.FC = () => {
         getLoggedUser();
     }, []);
 
-    useEffect(() => {        
-            if (userStatusLog.error) {
-                navigate("/community/login");
-            }
-            if (loggedUser?.role == 2) {            
-                navigate("/community/menu");
-            }
-        }, [userStatusLog, loggedUser, navigate]);
-    
-    if (!loggedUser) return null; // O un loader
+    useEffect(() => {
+        if (userStatusLog.error) {
+            navigate("/community/login");
+        }
+        if (loggedUser?.role == 2) {
+            navigate("/community/menu");
+        }
+    }, [userStatusLog, loggedUser, navigate]);
+
+    if (!loggedUser) return null;
 
     return (
         <CommunityAdminMainContainer>
