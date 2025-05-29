@@ -15,7 +15,7 @@ namespace F1.Users.Endpoints.UpdateUserEndpoint
         }
         public override void Configure()
         {
-            Post("/user/{UserId}");
+            Put("/user/{UserId}");
             AllowAnonymous();
         }
 

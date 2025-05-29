@@ -5,7 +5,7 @@ using System.Net;
 
 namespace F1.Users.Endpoints.DeleteUser
 {
-    public class DeleteUserEndpoint : Endpoint<long>
+    public class DeleteUserEndpoint : EndpointWithoutRequest
     {
         private readonly IDeleteUserUseCase _deleteUserUseCase;
         public DeleteUserEndpoint(IDeleteUserUseCase deleteUserUseCase) 
@@ -19,9 +19,11 @@ namespace F1.Users.Endpoints.DeleteUser
             AllowAnonymous();
         }
 
-        public override async Task HandleAsync(long request, CancellationToken ct)
+        public override async Task HandleAsync(CancellationToken ct)
         {
-            var response = await _deleteUserUseCase.DeleteUser(request);
+            long userId = Route<long>("UserId");
+
+            var response = await _deleteUserUseCase.DeleteUser(userId);
             if (response == null)
             {
                 await SendAsync(null, (int)HttpStatusCode.BadRequest, ct);

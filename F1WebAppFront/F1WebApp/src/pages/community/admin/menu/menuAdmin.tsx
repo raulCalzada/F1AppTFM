@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import "./menuAdmin.css";
+import "./MenuAdmin.css";
 import { CommunityAdminMainContainer } from "../../../../common/communityAdminMainContiner/CommunityAdminMainContainer";
 import { useUser } from "../../../../hooks/useUser";
 
