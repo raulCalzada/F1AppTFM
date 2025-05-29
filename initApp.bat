@@ -11,8 +11,8 @@ echo docker compose up
 docker-compose up -d
 
 REM Wait for SQL Server to finish starting
-echo Waiting 10 seconds for SQL Server to start...
-timeout /t 10 /nobreak >nul
+echo Waiting 20 seconds for SQL Server to start...
+timeout /t 20 /nobreak >nul
 
 echo ====================================
 echo Executing SQL scripts in SQL Server
