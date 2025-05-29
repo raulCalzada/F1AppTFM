@@ -23,8 +23,8 @@ export const useUser = () => {
             });
     }, [onSuccess, onError, onLoading]);
 
-    const syncUserById: User = useCallback(async (userId: string) => {
-        return await obtainUser(userId);
+    const syncUserById = useCallback(async (userId: string): Promise<User> => {
+        return await obtainUser(userId) as User;
     }, [onSuccess, onError, onLoading]);
 
     const getUserByUsername = useCallback(async (username: string) => {

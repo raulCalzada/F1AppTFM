@@ -17,7 +17,6 @@ export const LoginPage: React.FC = () => {
 
     React.useEffect(() => {
     if (userStatusLog.success) {
-        console.log("User logged in successfully");
         navigate("/community/menu");
     }
 }, [userStatusLog.success, navigate]);

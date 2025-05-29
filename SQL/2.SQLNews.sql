@@ -1,3 +1,9 @@
+IF DB_ID('F1AppDB') IS NULL
+    CREATE DATABASE F1AppDB;
+GO
+USE F1AppDB;
+GO
+
 -- Crear tabla News
 CREATE TABLE News (
     ArticleId INT IDENTITY(1,1) PRIMARY KEY NOT NULL,
@@ -62,7 +68,17 @@ VALUES
     'https://example.com/images/f1-tech-regs-2026.jpg',
     1,
 	'2025-03-05 10:30:00'
-);
+),
+('Red Bull unveils new front suspension innovation', 'Verstappen says it connects him better with the car', 'During practice in Suzuka, Red Bull introduced a new front suspension system designed to improve corner stability. Engineers claim it reduces tire wear by up to 12%.', 'https://example.com/images/redbull-suspension.jpg', NULL, 1, '2025-03-06 09:00:00'),
+('Mercedes back on podium after wind tunnel fix', 'Russell: "We understand the car better now"', 'After several races off the podium, Mercedes improved performance by correcting data from their wind tunnel. Adjustments to the diffuser and rear wing restored the W15's balance.', 'https://example.com/images/mercedes-w15.jpg', NULL, 2, '2025-03-07 14:00:00'),
+('McLaren signs young talent for 2026 season', 'Piastri renewed, and a rookie could join', 'McLaren has extended Oscar Piastri's contract and is rumored to be eyeing the reigning F2 champion as a second driver. The team continues its focus on young talent.', 'https://example.com/images/mclaren-piastri.jpg', 'https://example.com/images/f2-rookie.jpg', 1, '2025-03-08 10:00:00'),
+('FIA considers changes to post-race penalties', 'Should time penalties be applied after the flag?', 'The FIA is evaluating whether to apply time penalties post-race to allow for better review. Teams are concerned about losing positions due to late rulings.', 'https://example.com/images/fia-debate.jpg', NULL, 2, '2025-03-09 13:30:00'),
+('Alpine secures best finish of the season at Spa', 'Gasly lands impressive fourth place', 'Pierre Gasly impressed with a flawless one-stop strategy at Spa, giving Alpine its best result in 2025.', 'https://example.com/images/alpine-gasly.jpg', NULL, 1, '2025-03-10 15:45:00'),
+('Aston Martin tests adjustable rear wing', 'Is the tech ready for 2026?', 'The team ran a new adjustable rear wing system. Though still in testing, it may be approved for use by 2026.', 'https://example.com/images/aston-rearwing.jpg', NULL, 2, '2025-03-11 11:30:00'),
+('Carlos Sainz reportedly in talks with Audi F1', 'Spanish driver may switch for 2026', 'Sources close to Sainz report ongoing negotiations with Audi, who are set to enter F1 as a full works team.', 'https://example.com/images/sainz-audi.jpg', NULL, 1, '2025-03-12 16:00:00'),
+('Mexico GP contract extended through 2030', 'A fan-favorite remains on the calendar', 'F1 has extended the Mexico GP through 2030, ensuring the vibrant event remains a fixture on the calendar.', 'https://example.com/images/gp-mexico.jpg', NULL, 2, '2025-03-13 18:00:00'),
+('Zhou Guanyu scores first points of 2025 season', 'Strong wet-weather performance in Hungary', 'Zhou scored valuable points in a rain-affected race at Hungaroring, showing strong pace and consistency.', 'https://example.com/images/zhou-rain.jpg', NULL, 1, '2025-03-14 12:00:00');
+
 
 
 
@@ -77,7 +93,31 @@ INSERT INTO NewsComments (UserId, ArticleId, Comment, CreateDate) VALUES
 (5, 3, 'Strategically, this could benefit teams that already mastered thermal management, like Red Bull. In long stints, the new design reduces graining, but it makes fast laps in quali more difficult.', '2025-03-04 12:30:00'),
 (6, 4, 'Reducing front wing complexity is key. The amount of vortices currently generated still affects the following car’s stability beyond 10 meters.', '2025-03-05 10:30:00'),
 (3, 4, 'The key lies in the floor. If they remove the sealing edges that create lateral downforce, grip can be maintained without ruining clean airflow for the car behind.', '2025-03-05 11:30:00'),
-(5, 4, 'An interesting solution would be active DRS on both front and rear wings, controlled by the FIA in specific zones. Similar to what’s been tested in Formula E.', '2025-03-05 12:30:00');
+(5, 4, 'An interesting solution would be active DRS on both front and rear wings, controlled by the FIA in specific zones. Similar to what’s been tested in Formula E.', '2025-03-05 12:30:00'),
+(4, 5, 'Amazing tech from Red Bull. No one is catching them this season.', '2025-03-06 10:00:00'),
+(6, 5, 'This suspension is a game-changer in fast corners.', '2025-03-06 10:10:00'),
+(5, 5, 'Mercedes better come up with something quick.', '2025-03-06 10:30:00'),
+(7, 5, 'Verstappen is unstoppable with this kind of innovation.', '2025-03-06 10:45:00'),
+(9, 5, 'Is this even legal? FIA should look into it.', '2025-03-06 11:00:00'),
+(10, 5, 'They’re always pushing the limits – respect.', '2025-03-06 11:15:00'),
+(3, 6, 'Finally, Mercedes looks competitive again.', '2025-03-07 15:00:00'),
+(5, 6, 'Russell is outdriving expectations.', '2025-03-07 15:20:00'),
+(8, 7, 'Piastri has huge potential. Smart move.', '2025-03-08 11:00:00'),
+(4, 7, 'I hope they don’t rush a rookie into F1.', '2025-03-08 11:15:00'),
+(6, 7, 'McLaren’s youth project is paying off.', '2025-03-08 11:30:00'),
+(7, 8, 'Post-race penalties? That’s too chaotic.', '2025-03-09 14:00:00'),
+(5, 8, 'FIA needs to be more consistent.', '2025-03-09 14:30:00'),
+(6, 9, 'Gasly nailed it. Top drive.', '2025-03-10 16:00:00'),
+(9, 9, 'That one-stop gamble paid off.', '2025-03-10 16:20:00'),
+(4, 10, 'Is active aero even legal?', '2025-03-11 12:00:00'),
+(3, 10, 'F1 needs more innovation like this.', '2025-03-11 12:15:00'),
+(6, 11, 'Sainz to Audi? That would be epic.', '2025-03-12 17:00:00'),
+(7, 11, 'It makes sense, especially with Ferrari not renewing.', '2025-03-12 17:15:00'),
+(8, 12, 'The Mexico GP is one of the best – glad it’s staying.', '2025-03-13 19:00:00'),
+(10, 12, 'Fans there bring amazing energy.', '2025-03-13 19:20:00'),
+(5, 13, 'Zhou deserved those points – great in the wet.', '2025-03-14 13:00:00'),
+(4, 13, 'Strong performance by Sauber.', '2025-03-14 13:15:00');
+GO
 GO
 
 
