@@ -13,7 +13,7 @@ namespace F1.Shared.Application.Community.UseCases.Voting
             _votingServices = votingServices;
         }
 
-        public async Task<IVoteQuestion> CreateCompleteVote(IVoteQuestion voteQuestion)
+        public async Task<IVoteQuestion?> CreateCompleteVote(IVoteQuestion voteQuestion)
         {
             if (voteQuestion == null)
             {
@@ -31,8 +31,6 @@ namespace F1.Shared.Application.Community.UseCases.Voting
             var questionId = await _votingServices.CreateVote(voteQuestion);
 
             return await _votingServices.GetVotesAndQuestion(questionId);
-
-
         }
     }
 }

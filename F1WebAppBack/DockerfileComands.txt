@@ -1,0 +1,7 @@
+#ejected from .\F1AppTFM\F1WebAppBack
+
+docker build -t f1.news:1.0.0-SNAPSHOT -f F1.News/Dockerfile .
+docker build -t f1.users:1.0.0-SNAPSHOT -f F1.Users/Dockerfile .
+docker build -t f1.communityservice:1.0.0-SNAPSHOT -f F1.CommunityService/Dockerfile .
+
+

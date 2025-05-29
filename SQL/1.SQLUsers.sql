@@ -1,3 +1,9 @@
+IF DB_ID('F1AppDB') IS NULL
+    CREATE DATABASE F1AppDB;
+GO
+USE F1AppDB;
+GO
+
 -- Create table Users
 CREATE TABLE Users (
     UserId INT IDENTITY(1,1) PRIMARY KEY NOT NULL,
@@ -14,15 +20,25 @@ GO
 -- Insert users
 INSERT INTO Users (Username, Email, Password, CreateDate, LastUpdateDate, IsActive, Rol)
 VALUES 
-('admin', 'admin@example.com', 'hashed_password3', '2025-03-21T11:53:03', NULL, 1, 1),
-('admin2', 'admin2@example.com', 'hashed_password2', '2025-03-21T11:53:03', NULL, 1, 1),
-('user1', 'user1@example.com', 'hashed_password1', '2025-03-21T11:53:03', NULL, 1, 2),
-('user2', 'user2@example.com', 'hashed_password4', '2025-03-21T11:53:03', NULL, 1, 2),
-('user3', 'user3@example.com', 'hashed_password5', '2025-03-21T11:53:03', NULL, 0, 2),
-('user4', 'user4@example.com', 'hashed_password6', '2025-03-21T11:53:03', NULL, 1, 2),
-('writer1', 'writer1@example.com', 'hashed_password7', '2025-03-21T11:53:03', NULL, 0, 3),
-('writer2', 'writer2@example.com', 'hashed_password8', '2025-03-21T11:53:03', NULL, 0, 3);
+-- Admins
+('admin', 'admin@example.com', 'admin', '2025-03-21T11:53:03', NULL, 1, 1),
+('lucas.morales', 'lucas.morales@example.com', 'admin', '2025-03-21T11:53:03', NULL, 1, 1),
+
+-- Users (Rol 2)
+('user', 'user@example.com', 'user', '2025-03-21T11:53:03', NULL, 1, 2),
+('ana.gomez', 'ana.gomez@example.com', 'user', '2025-03-21T11:53:03', NULL, 1, 2),
+('maria.lopez', 'maria.lopez@example.com', 'user', '2025-03-21T11:53:03', NULL, 0, 2),
+('pablo.rojas', 'pablo.rojas@example.com', 'user', '2025-03-21T11:53:03', NULL, 1, 2),
+('diego.santos', 'diego.santos@example.com', 'user', '2025-03-21T11:53:03', NULL, 1, 2),
+('laura.navarro', 'laura.navarro@example.com', 'user', '2025-03-21T11:53:03', NULL, 0, 2),
+('javier.hernandez', 'javier.hernandez@example.com', 'user', '2025-03-21T11:53:03', NULL, 1, 2),
+('valeria.ramirez', 'valeria.ramirez@example.com', 'user', '2025-03-21T11:53:03', NULL, 1, 2),
+
+-- Writers (Rol 3)
+('laura.torres', 'laura.torres@example.com', 'writer', '2025-03-21T11:53:03', NULL, 1, 3),
+('carlos.vazquez', 'carlos.vazquez@example.com', 'writer', '2025-03-21T11:53:03', NULL, 1, 3);
 GO
+
 
 -- Create sp [CreateUser]
 CREATE PROCEDURE [dbo].[CreateUser]
