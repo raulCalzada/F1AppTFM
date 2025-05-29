@@ -14,11 +14,15 @@ const emptyUser: Omit<User, "userId" | "createDate" | "lastUpdateDate"> = {
 };
 
 export const UsersAdmin: React.FC = () => {
-    const { getLoggedUser, userStatusLog, loggedUser, getUserList, userList, updateUser} = useUser();
+    const { getLoggedUser, userStatusLog, loggedUser, getUserList, userList, updateUser } = useUser();
     const navigate = useNavigate();
 
     const [editingUser, setEditingUser] = useState<User | null>(null);
     const [form, setForm] = useState<typeof emptyUser>(emptyUser);
+
+    // Buscador
+    const [search, setSearch] = useState("");
+    const [filteredUsers, setFilteredUsers] = useState<User[]>([]);
 
     useEffect(() => {
         getLoggedUser();
@@ -34,6 +38,20 @@ export const UsersAdmin: React.FC = () => {
         }
     }, [userStatusLog, loggedUser, navigate]);
 
+    useEffect(() => {
+        if (!search) {
+            setFilteredUsers(userList || []);
+        } else {
+            setFilteredUsers(
+                (userList || []).filter(
+                    (user) =>
+                        user.userId.toString().includes(search) ||
+                        user.username.toLowerCase().includes(search.toLowerCase())
+                )
+            );
+        }
+    }, [search, userList]);
+
     const handleEditWindowUser = (user: User) => {
         setEditingUser(user);
         setForm({
@@ -47,7 +65,6 @@ export const UsersAdmin: React.FC = () => {
 
     const handleUpdateUser = async (e: React.FormEvent) => {
         e.preventDefault();
-        console.log("Updating user with form data:", form);
         if (editingUser) {
             const updatedUser: User = {
                 ...editingUser,
@@ -61,11 +78,11 @@ export const UsersAdmin: React.FC = () => {
                     second: "2-digit",
                     hour12: false,
                 }).replace(",", ""),
-            }
+            };
 
             if (updatedUser.password === "" || updatedUser.password === undefined) {
                 updatedUser.password = editingUser.password;
-            }           
+            }
             if (updatedUser.username === "" || updatedUser.username === undefined) {
                 updatedUser.username = editingUser.username;
             }
@@ -94,10 +111,22 @@ export const UsersAdmin: React.FC = () => {
         setForm(emptyUser);
     };
 
+    const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setSearch(e.target.value);
+    };
+
     return (
         <CommunityAdminMainContainer>
             <div className="users-admin-container">
                 <h1>Users Admin Page</h1>
+                <div style={{ marginBottom: 16 }}>
+                    <input
+                        type="text"
+                        placeholder="Seach by ID or username"
+                        value={search}
+                        onChange={handleSearchChange}
+                    />
+                </div>
                 {editingUser && (
                     <form onSubmit={handleUpdateUser} style={{ marginBottom: 20 }}>
                         <input
@@ -152,7 +181,7 @@ export const UsersAdmin: React.FC = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {userList?.map((user) => (
+                        {filteredUsers?.map((user) => (
                             <tr key={user.userId}>
                                 <td>{user.userId}</td>
                                 <td>{user.username}</td>
