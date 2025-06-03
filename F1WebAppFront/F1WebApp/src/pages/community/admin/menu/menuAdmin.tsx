@@ -43,7 +43,7 @@ export const MenuAdmin: React.FC = () => {
                         <h2>Votings</h2>
                         <p>Create, delete, give puntuations from votings</p>
                     </Link>
-                    <Link to="/community/admin/points" className="sub-card-admin hover:scale-105 transition-transform duration-300 shadow-lg">
+                    <Link to="/community/admin/settings" className="sub-card-admin hover:scale-105 transition-transform duration-300 shadow-lg">
                         <h2 style={{ color: "orange" }}>Settings</h2>
                         <p>Put or Quit functionalities from production</p>
                     </Link>
