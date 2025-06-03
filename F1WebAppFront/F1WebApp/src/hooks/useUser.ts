@@ -1,5 +1,5 @@
 import { useCallback, useState } from "react";
-import { getAllUsers, obtainUser, obtainUserByUsername } from "../api/user";
+import { editUser, getAllUsers, obtainUser, obtainUserByUsername } from "../api/user";
 import { User } from "../types/user";
 import { useStatus, useStatus2 } from "./useStatus";
 
@@ -58,7 +58,7 @@ export const useUser = () => {
         deleteUser(userId)
             .then((response) => {
                 setDeletedUser(response);
-                if(deletedUser?.id === null){
+                if(deletedUser?.userId === null){
                     onError('User not found');
                 }
                 })
@@ -68,8 +68,9 @@ export const useUser = () => {
     }, [onSuccess, onError, onLoading]);
         
     const updateUser = useCallback(async (userId: string, userData: User) => {
+        console.log('useUser update:', userId, 'and data:', userData);
         onLoading();
-        updateUser(userId, userData)
+        editUser(userId, userData)
             .then((response) => {
                 setUser(response);
                 onSuccess(response ? `User ${response.username} updated successfully` : '');

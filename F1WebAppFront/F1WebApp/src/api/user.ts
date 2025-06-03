@@ -18,8 +18,10 @@ export const deleteUser = async (userId: string) => {
     return response.data;
 };
 
-export const updateUser = async (userId: string, userData: User) => {
+export const editUser = async (userId: string, userData: User) => {
+    console.log('Updating user:', userId, userData);
     const response = await axios.put(`${BaseUrl}/${userId}`, userData);
+    console.log('Update response:', response);
     return response.data;
 };
 
