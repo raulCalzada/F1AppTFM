@@ -21,6 +21,7 @@ import { ForumPost } from '../pages/community/forum/forumThread/ForumThread';
 import { AdminForum } from '../pages/community/admin/forum/AdminForum';
 import { UsersAdmin } from '../pages/community/admin/users/UsersAdmin';
 import { MenuAdmin } from '../pages/community/admin/menu/MenuAdmin';
+import { SettingsAdmin } from '../pages/community/admin/settings/SettingsAdmin';
 
 export const AppRouter = () => {
     return (
@@ -49,6 +50,7 @@ export const AppRouter = () => {
                 <Route path="/community/admin/menu" element={<MenuAdmin />} />
                 <Route path="/community/admin/forum" element={<AdminForum />} />
                 <Route path="/community/admin/users" element={< UsersAdmin/>} />
+                <Route path="/community/admin/settings" element={< SettingsAdmin/>} />                
 
                 <Route path="/community/login" element={<LoginPage />} />
                 <Route path="/community/register" element={<RegisterPage />} />

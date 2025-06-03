@@ -3,20 +3,28 @@ import { Link, useNavigate } from "react-router-dom";
 import "./CommunityMenu.css";
 import { CommunityMainContainer } from "../../../common/communityMainContainer/CommunityMainContainer";
 import { useUser } from "../../../hooks/useUser";
+import { useGlobalVariables } from "../../../settings/globalvariables";
+
 
 export const CommunityMenu: React.FC = () => {
     const navigate = useNavigate();
     const { userStatusLog, getLoggedUser, loggedUser } = useUser();
 
+    const {
+        showNews,
+        showForum,
+        showVotings
+    } = useGlobalVariables();
+
     useEffect(() => {
         getLoggedUser();
     }, []);
 
-    useEffect(() => {        
+    useEffect(() => {
         if (userStatusLog.error) {
             navigate("/community/login");
         }
-        if (loggedUser?.role == 1) {            
+        if (loggedUser?.role == 1) {
             navigate("/community/admin/menu");
         }
     }, [userStatusLog, loggedUser, navigate]);
@@ -36,22 +44,28 @@ export const CommunityMenu: React.FC = () => {
                         <div>
                             <h3>World Position</h3>
                             <h2 className="points-community">🏆10º🏆</h2>
-                        </div>                       
+                        </div>
                     </div>
                 </div>
                 <div className="sub-cards-community">
-                    <Link to="/votings" className="sub-card-community hover:scale-105 transition-transform duration-300 shadow-lg">
-                        <h2>🏆 Votings 🏆</h2>
-                        <p> 🔥 Think you know it all? Prove it in community polls and rack up points to claim the title of the ultimate F1 fan! </p>
-                    </Link>
-                    <Link to="/news" className="sub-card-community hover:scale-105 transition-transform duration-300 shadow-lg">
-                        <h2>📰 News 📰</h2>
-                        <p>Stay updated with community-driven news reports.</p>
-                    </Link>
-                    <Link to="/community/forum" className="sub-card-community hover:scale-105 transition-transform duration-300 shadow-lg">
-                        <h2>💬 Forum</h2>
-                        <p>Join discussions and share your thoughts with the community.</p>
-                    </Link>
+                    {showVotings && (
+                        <Link to="/votings" className="sub-card-community hover:scale-105 transition-transform duration-300 shadow-lg">
+                            <h2>🏆 Votings 🏆</h2>
+                            <p>🔥 Think you know it all? Prove it in community polls and rack up points to claim the title of the ultimate F1 fan!</p>
+                        </Link>
+                    )}
+                    {showNews && (
+                        <Link to="/news" className="sub-card-community hover:scale-105 transition-transform duration-300 shadow-lg">
+                            <h2>📰 News 📰</h2>
+                            <p>Stay updated with community-driven news reports.</p>
+                        </Link>
+                    )}
+                    {showForum && (
+                        <Link to="/community/forum" className="sub-card-community hover:scale-105 transition-transform duration-300 shadow-lg">
+                            <h2>💬 Forum</h2>
+                            <p>Join discussions and share your thoughts with the community.</p>
+                        </Link>
+                    )}
                 </div>
             </div>
         </CommunityMainContainer>
