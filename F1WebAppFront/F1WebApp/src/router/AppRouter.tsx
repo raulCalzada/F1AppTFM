@@ -23,6 +23,7 @@ import { CommunityMenu } from '../pages/community/user/menu/CommunityMenu';
 import { ForumList } from '../pages/community/user/forum/forumList/ForumList';
 import { ForumPost } from '../pages/community/user/forum/forumThread/ForumThread';
 import { MenuWritter } from '../pages/community/writter/menu/MenuWritter';
+import { NewsList } from '../pages/community/user/news/newList/NewsList';
 
 export const AppRouter = () => {
     return (
@@ -46,7 +47,8 @@ export const AppRouter = () => {
                 
                 <Route path="/community/menu" element={<CommunityMenu />} />
                 <Route path="/community/forum" element={< ForumList/>} />
-                <Route path="/community/forum/:forumId" element={<ForumPost />} />               
+                <Route path="/community/forum/:forumId" element={<ForumPost />} />  
+                <Route path="/community/news" element={<NewsList />} />          
 
                 <Route path="/community/admin/menu" element={<MenuAdmin />} />
                 <Route path="/community/admin/forum" element={<AdminForum />} />

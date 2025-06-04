@@ -59,7 +59,7 @@ export const CommunityMenu: React.FC = () => {
                         </Link>
                     )}
                     {showNews && (
-                        <Link to="/news" className="sub-card-community hover:scale-105 transition-transform duration-300 shadow-lg">
+                        <Link to="/community/news" className="sub-card-community hover:scale-105 transition-transform duration-300 shadow-lg">
                             <h2>📰 News 📰</h2>
                             <p>Stay updated with community-driven news reports.</p>
                         </Link>

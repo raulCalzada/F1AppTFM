@@ -52,7 +52,7 @@ export const ForumList: React.FC = () => {
                         >
                             <h3>{forum.title}</h3>
                             <p>{forum.description.slice(0, 150)}{forum.description.length > 150 ? "..." : ""}</p>
-                            <p style={{ color: "#000000" }}>{forum.username}</p>
+                            <p>{forum.username}</p>
                         </div>
                     ))}
                 </div>
