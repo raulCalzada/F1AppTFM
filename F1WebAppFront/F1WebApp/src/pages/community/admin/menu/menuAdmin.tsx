@@ -19,6 +19,9 @@ export const MenuAdmin: React.FC = () => {
         if (loggedUser?.role == 2) {
             navigate("/community/menu");
         }
+        if (loggedUser?.role == 3) {
+            navigate("/community/writter/menu");
+        }
     }, [userStatusLog, loggedUser, navigate]);
 
     if (!loggedUser) return null;

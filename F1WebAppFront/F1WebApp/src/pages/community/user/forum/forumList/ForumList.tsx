@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import './ForumList.css';
-import { CommunityMainContainer } from "../../../../common/communityMainContainer/CommunityMainContainer";
-import { useForum } from "../../../../hooks/useForum";
-import { useUser } from "../../../../hooks/useUser";
 import { useNavigate } from "react-router-dom";
+import { useForum } from "../../../../../hooks/useForum";
+import { useUser } from "../../../../../hooks/useUser";
+import { CommunityMainContainer } from "../../../../../common/communityMainContainer/CommunityMainContainer";
 
 const FORUMS_PER_PAGE = 10;
 

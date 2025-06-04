@@ -13,15 +13,16 @@ import { RaceDetailedInfo } from '../pages/actual/raceDetailedInfo/RaceDetailedI
 import { Standings } from '../pages/actual/standings/Standings';
 import { HistoricalStandings } from '../pages/historical/historicalStandings/HistoricalStandings';
 import { Puntuations } from '../pages/actual/puntuations/Puntuations';
-import { CommunityMenu } from '../pages/community/menu/CommunityMenu';
 import { LoginPage } from '../pages/community/login/LoginPage';
 import { RegisterPage } from '../pages/community/register/RegisterPage';
-import { ForumList } from '../pages/community/forum/forumList/ForumList';
-import { ForumPost } from '../pages/community/forum/forumThread/ForumThread';
 import { AdminForum } from '../pages/community/admin/forum/AdminForum';
 import { UsersAdmin } from '../pages/community/admin/users/UsersAdmin';
 import { MenuAdmin } from '../pages/community/admin/menu/MenuAdmin';
 import { SettingsAdmin } from '../pages/community/admin/settings/SettingsAdmin';
+import { CommunityMenu } from '../pages/community/user/menu/CommunityMenu';
+import { ForumList } from '../pages/community/user/forum/forumList/ForumList';
+import { ForumPost } from '../pages/community/user/forum/forumThread/ForumThread';
+import { MenuWritter } from '../pages/community/writter/menu/MenuWritter';
 
 export const AppRouter = () => {
     return (
@@ -50,7 +51,9 @@ export const AppRouter = () => {
                 <Route path="/community/admin/menu" element={<MenuAdmin />} />
                 <Route path="/community/admin/forum" element={<AdminForum />} />
                 <Route path="/community/admin/users" element={< UsersAdmin/>} />
-                <Route path="/community/admin/settings" element={< SettingsAdmin/>} />                
+                <Route path="/community/admin/settings" element={< SettingsAdmin/>} />    
+
+                <Route path="/community/writter/menu" element={<MenuWritter/>} />            
 
                 <Route path="/community/login" element={<LoginPage />} />
                 <Route path="/community/register" element={<RegisterPage />} />

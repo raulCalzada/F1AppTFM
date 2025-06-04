@@ -1,9 +1,10 @@
-import { CommunityMainContainer } from "../../../../common/communityMainContainer/CommunityMainContainer";
-import { useForum } from "../../../../hooks/useForum";
-import { useUser } from "../../../../hooks/useUser";
+
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import "./ForumThread.css";
+import { useForum } from "../../../../../hooks/useForum";
+import { useUser } from "../../../../../hooks/useUser";
+import { CommunityMainContainer } from "../../../../../common/communityMainContainer/CommunityMainContainer";
 
 export const ForumPost: React.FC = () => {
     const { getForumPost, forumPost, createComment, deleteForumComment} = useForum();

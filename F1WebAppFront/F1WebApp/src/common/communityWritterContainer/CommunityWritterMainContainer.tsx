@@ -1,7 +1,7 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate} from "react-router-dom";
 import Logo from "../../assets/communityLogo.png";
-import './CommunityMainContainer.css';
+import './CommunityWritterMainContainer.css';
 import background from "../../assets/fanMainBack.png";
 import { LogOut } from "lucide-react"; // Asegúrate de tener esta librería instalada
 import { useUser } from "../../hooks/useUser";
@@ -10,7 +10,7 @@ interface Props {
   children: React.ReactNode;
 }
 
-export const CommunityMainContainer: React.FC<Props> = ({ children }) => {
+export const CommunityWritterMainContainer: React.FC<Props> = ({ children }) => {
   const navigate = useNavigate();
   const {logoutUser} = useUser();
 
@@ -20,19 +20,19 @@ export const CommunityMainContainer: React.FC<Props> = ({ children }) => {
   };
 
   return (
-      <div className="main-container-community" style={{ backgroundImage: `url(${background})` }}>
-        <div className="header-community">
-          <img className="f1-logo-community" src={Logo} alt="Formula 1 Logo" />
-          <h1 className="main-title-community">
-            
-            <span style={{ color: 'white' }}>Web </span>
-            <span style={{ color: 'white' }}>App</span>
+      <div className="main-container-writter" style={{ backgroundImage: `url(${background})` }}>
+        <div className="header-writter">
+          <img className="f1-logo-writter" src={Logo} alt="Formula 1 Logo" />
+          <h1 className="main-title-writter">           
+            <span style={{ color: 'white' }}>Community </span>
+            <span style={{ color: '#1a1a1a' }}>Writter </span>
+            <span style={{ color: 'white' }}>Management</span>
           </h1>
           <button className="logout-button" onClick={handleLogout} title="Logout">
             <LogOut size={28} color="white" />
           </button>
         </div>
-        <div className="page-content-community">
+        <div className="page-content-writter">
           {children}
         </div>
       </div>
