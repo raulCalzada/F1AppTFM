@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate} from "react-router-dom";
 import Logo from "../../assets/communityLogo.png";
-import './CommunityWritterMainContainer.css';
+import './CommunityWriterMainContainer.css';
 import background from "../../assets/fanMainBack.png";
 import { LogOut } from "lucide-react"; // Asegúrate de tener esta librería instalada
 import { useUser } from "../../hooks/useUser";
@@ -10,7 +10,7 @@ interface Props {
   children: React.ReactNode;
 }
 
-export const CommunityWritterMainContainer: React.FC<Props> = ({ children }) => {
+export const CommunityWriterMainContainer: React.FC<Props> = ({ children }) => {
   const navigate = useNavigate();
   const {logoutUser} = useUser();
 

@@ -36,9 +36,9 @@ VALUES
 
 -- Writers (Rol 3)
 ('laura.torres', 'laura.torres@example.com', 'writer', '2025-03-21T11:53:03', NULL, 1, 3),
-('carlos.vazquez', 'carlos.vazquez@example.com', 'writer', '2025-03-21T11:53:03', NULL, 1, 3);
+('carlos.vazquez', 'carlos.vazquez@example.com', 'writer', '2025-03-21T11:53:03', NULL, 1, 3),
+('writer', 'carlos.vazquez@example.com', 'writer', '2025-03-21T11:53:03', NULL, 1, 3);
 GO
-
 
 -- Create sp [CreateUser]
 CREATE PROCEDURE [dbo].[CreateUser]

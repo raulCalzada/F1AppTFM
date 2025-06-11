@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import "./MenuWritter.css";
+import "./MenuWriter.css";
 import { useUser } from "../../../../hooks/useUser";
 import { useGlobalVariables } from "../../../../settings/globalvariables";
-import { CommunityWritterMainContainer } from "../../../../common/communityWritterContainer/CommunityWritterMainContainer";
+import { CommunityWriterMainContainer } from "../../../../common/communityWriterContainer/CommunityWriterMainContainer";
 
-export const MenuWritter: React.FC = () => {
+export const MenuWriter: React.FC = () => {
     const navigate = useNavigate();
     const { userStatusLog, getLoggedUser, loggedUser } = useUser();
 
@@ -34,7 +34,7 @@ export const MenuWritter: React.FC = () => {
     if (!loggedUser) return null;
 
     return (
-        <CommunityWritterMainContainer>
+        <CommunityWriterMainContainer>
             <div className="actual-menu-writter">
                 <div className="main-card-writter">
                     <h1 className="main-title-page-writter main-card-title-writter">📝 Writer Menu</h1>
@@ -43,16 +43,16 @@ export const MenuWritter: React.FC = () => {
                     </div>
                 </div>
                 <div className="sub-cards-writter">
-                    <Link to="/community/writter/news/create" className="sub-card-writter">
+                    <Link to="/community/writer/news/create" className="sub-card-writter">
                         <h2 className="sub-card-title-writter">🆕 Create News</h2>
                         <p className="sub-card-description-writter">Write and publish a new article</p>
                     </Link>
-                    <Link to="/community/writter/news/all" className="sub-card-writter">
+                    <Link to="/community/writer/news" className="sub-card-writter">
                         <h2 className="sub-card-title-writter">📚 View News</h2>
                         <p className="sub-card-description-writter">See, edit or delete your published news</p>
                     </Link>
                 </div>
             </div>
-        </CommunityWritterMainContainer>
+        </CommunityWriterMainContainer>
     );
 };

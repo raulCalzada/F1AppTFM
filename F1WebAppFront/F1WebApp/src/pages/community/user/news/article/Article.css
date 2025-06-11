@@ -1,0 +1,85 @@
+.article-container {
+  padding: 20px;
+  background-color: #0a1f44;
+  color: #ffffff;
+}
+
+.article-title {
+  font-size: 2.4rem;
+  color: #00aaff;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.article-subtitle {
+  font-size: 1.4rem;
+  color: #66ccff;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.article-meta {
+  text-align: center;
+  color: #bbbbbb;
+  margin-bottom: 20px;
+}
+
+.article-image-main {
+  width: 80%;
+  max-height: 400px;
+  object-fit: cover;
+  border: 2px solid #00aaff;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.article-content {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 20px;
+  color: #dddddd;
+  white-space: pre-wrap;
+}
+
+.article-image-secondary {
+  width: 30%;
+  max-height: 300px;
+  object-fit: cover;
+  border: 1px solid #005f99;
+  border-radius: 10px;
+  margin: 10px auto 30px auto;
+  display: block;
+}
+
+.article-comments-section {
+  background-color: #001c38;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.article-comments-section h3 {
+  color: #00aaff;
+  margin-bottom: 15px;
+}
+
+.article-comment {
+  border-bottom: 1px solid #005f99;
+  padding: 10px 0;
+}
+
+.comment-meta {
+  color: #66ccff;
+  margin-bottom: 5px;
+}
+
+.no-comments {
+  color: #888888;
+  font-style: italic;
+}
+
+.article-loading {
+  padding: 40px;
+  text-align: center;
+  font-size: 1.5rem;
+  color: #00aaff;
+}

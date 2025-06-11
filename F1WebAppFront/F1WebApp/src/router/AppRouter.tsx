@@ -22,8 +22,10 @@ import { SettingsAdmin } from '../pages/community/admin/settings/SettingsAdmin';
 import { CommunityMenu } from '../pages/community/user/menu/CommunityMenu';
 import { ForumList } from '../pages/community/user/forum/forumList/ForumList';
 import { ForumPost } from '../pages/community/user/forum/forumThread/ForumThread';
-import { MenuWritter } from '../pages/community/writter/menu/MenuWritter';
 import { NewsList } from '../pages/community/user/news/newList/NewsList';
+import { Article } from '../pages/community/user/news/article/Article';
+import { MenuWriter } from '../pages/community/writer/menu/MenuWriter';
+import { ListNewsWriter } from '../pages/community/writer/listNews/ListNewsWriter';
 
 export const AppRouter = () => {
     return (
@@ -48,14 +50,17 @@ export const AppRouter = () => {
                 <Route path="/community/menu" element={<CommunityMenu />} />
                 <Route path="/community/forum" element={< ForumList/>} />
                 <Route path="/community/forum/:forumId" element={<ForumPost />} />  
-                <Route path="/community/news" element={<NewsList />} />          
+                <Route path="/community/news" element={<NewsList />} /> 
+                <Route path="/community/news/:newId" element={<Article />} /> 
+
 
                 <Route path="/community/admin/menu" element={<MenuAdmin />} />
                 <Route path="/community/admin/forum" element={<AdminForum />} />
                 <Route path="/community/admin/users" element={< UsersAdmin/>} />
                 <Route path="/community/admin/settings" element={< SettingsAdmin/>} />    
 
-                <Route path="/community/writter/menu" element={<MenuWritter/>} />            
+                <Route path="/community/writer/menu" element={<MenuWriter/>} />         
+                <Route path="/community/writer/news" element={<ListNewsWriter/>} />     
 
                 <Route path="/community/login" element={<LoginPage />} />
                 <Route path="/community/register" element={<RegisterPage />} />

@@ -29,7 +29,7 @@ export const CommunityMenu: React.FC = () => {
             navigate("/community/admin/menu");
         }
         if (loggedUser?.role == 3) {
-            navigate("/community/writter/menu");
+            navigate("/community/writer/menu");
         }
     }, [userStatusLog, loggedUser, navigate]);
 

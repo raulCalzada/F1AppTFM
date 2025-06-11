@@ -21,6 +21,8 @@ export const createNews = async (newsData: Article) => {
 };
 
 export const editNews = async (id: string, newsData: Article) => {
+    console.log("Editing news with ID:", id);
+    console.log("News data to update:", newsData);
     const response = await axios.put(`${BaseUrl}/${id}`, newsData);
     return response.data;
 };
@@ -44,4 +46,6 @@ export const updateComment = async (newId: number, commentId: number, content: s
     const response = await axios.put(`${BaseUrl}/${newId}/comment/${commentId}`, { content });
     return response.data;
 }
+
+
 

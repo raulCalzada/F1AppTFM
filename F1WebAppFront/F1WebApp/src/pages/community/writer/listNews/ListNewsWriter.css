@@ -1,0 +1,187 @@
+.news-list-container-writer {
+  padding: 20px;
+  color: #ffffff;
+  background-color: #0a1f44;
+}
+
+.news-list-title-writer {
+  color: #00aaff;
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.featured-news-writer {
+  display: flex;
+  gap: 20px;
+  background-color: #001c38;
+  border: 2px solid #00aaff;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s;
+  margin-bottom: 30px;
+}
+
+.featured-news-writer:hover {
+  transform: scale(1.01);
+}
+
+.featured-news-writer img {
+  width: 50%;
+  object-fit: cover;
+}
+
+.featured-news-content-writer {
+  padding: 20px;
+  flex: 1;
+}
+
+.featured-news-content-writer h3 {
+  font-size: 1.8rem;
+  color: #ffffff;
+}
+
+.subtitle-writer {
+  color: #00aaff;
+  font-weight: 500;
+  margin-top: 10px;
+}
+
+.snippet-writer {
+  margin-top: 10px;
+  color: #cccccc;
+}
+
+.news-grid-writer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.news-card-writer {
+  background-color: #001c38;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s;
+  border: 1px solid #005f99;
+}
+
+.news-card-writer:hover {
+  transform: scale(1.02);
+}
+
+.news-card-writer img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.news-card-content-writer {
+  padding: 15px;
+}
+
+.news-card-content-writer h4 {
+  color: #ffffff;
+  margin-bottom: 5px;
+}
+
+.news-card-content-writer p {
+  color: #bbbbbb;
+  margin: 5px 0;
+}
+
+.writer-buttons {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 15px;
+  gap: 10px;
+}
+
+.btn-update,
+.btn-delete {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-update {
+  background-color: #00aaff;
+  color: white;
+}
+
+.btn-update:hover {
+  background-color: #0088cc;
+}
+
+.btn-delete {
+  background-color: #cc0000;
+  color: white;
+}
+
+.btn-delete:hover {
+  background-color: #a00000;
+}
+
+
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: #0a1f44;
+  padding: 30px;
+  border-radius: 12px;
+  width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.modal-content input,
+.modal-content textarea {
+  width: 100%;
+  padding: 10px;
+  background-color: #001c38;
+  border: 1px solid #00aaff;
+  color: white;
+  border-radius: 6px;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.comment-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.comment-item {
+  background-color: #001c38;
+  padding: 10px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
