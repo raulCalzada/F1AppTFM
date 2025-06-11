@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import './ForumList.css';
-import { CommunityMainContainer } from "../../../../common/communityMainContainer/CommunityMainContainer";
-import { useForum } from "../../../../hooks/useForum";
-import { useUser } from "../../../../hooks/useUser";
 import { useNavigate } from "react-router-dom";
+import { useForum } from "../../../../../hooks/useForum";
+import { useUser } from "../../../../../hooks/useUser";
+import { CommunityMainContainer } from "../../../../../common/communityMainContainer/CommunityMainContainer";
 
 const FORUMS_PER_PAGE = 10;
 
@@ -52,7 +52,7 @@ export const ForumList: React.FC = () => {
                         >
                             <h3>{forum.title}</h3>
                             <p>{forum.description.slice(0, 150)}{forum.description.length > 150 ? "..." : ""}</p>
-                            <p style={{ color: "#000000" }}>{forum.username}</p>
+                            <p>{forum.username}</p>
                         </div>
                     ))}
                 </div>

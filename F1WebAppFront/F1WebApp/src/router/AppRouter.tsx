@@ -13,15 +13,21 @@ import { RaceDetailedInfo } from '../pages/actual/raceDetailedInfo/RaceDetailedI
 import { Standings } from '../pages/actual/standings/Standings';
 import { HistoricalStandings } from '../pages/historical/historicalStandings/HistoricalStandings';
 import { Puntuations } from '../pages/actual/puntuations/Puntuations';
-import { CommunityMenu } from '../pages/community/menu/CommunityMenu';
 import { LoginPage } from '../pages/community/login/LoginPage';
 import { RegisterPage } from '../pages/community/register/RegisterPage';
-import { ForumList } from '../pages/community/forum/forumList/ForumList';
-import { ForumPost } from '../pages/community/forum/forumThread/ForumThread';
 import { AdminForum } from '../pages/community/admin/forum/AdminForum';
 import { UsersAdmin } from '../pages/community/admin/users/UsersAdmin';
 import { MenuAdmin } from '../pages/community/admin/menu/MenuAdmin';
 import { SettingsAdmin } from '../pages/community/admin/settings/SettingsAdmin';
+import { CommunityMenu } from '../pages/community/user/menu/CommunityMenu';
+import { ForumList } from '../pages/community/user/forum/forumList/ForumList';
+import { ForumPost } from '../pages/community/user/forum/forumThread/ForumThread';
+import { NewsList } from '../pages/community/user/news/newList/NewsList';
+import { Article } from '../pages/community/user/news/article/Article';
+import { MenuWriter } from '../pages/community/writer/menu/MenuWriter';
+import { ListNewsWriter } from '../pages/community/writer/listNews/ListNewsWriter';
+import { CreateNewWriter } from '../pages/community/writer/createNew/CreateNewWriter';
+import { ListNewsAdmin } from '../pages/community/admin/news/ListNewsAdmin';
 
 export const AppRouter = () => {
     return (
@@ -45,12 +51,20 @@ export const AppRouter = () => {
                 
                 <Route path="/community/menu" element={<CommunityMenu />} />
                 <Route path="/community/forum" element={< ForumList/>} />
-                <Route path="/community/forum/:forumId" element={<ForumPost />} />               
+                <Route path="/community/forum/:forumId" element={<ForumPost />} />  
+                <Route path="/community/news" element={<NewsList />} /> 
+                <Route path="/community/news/:newId" element={<Article />} /> 
+
 
                 <Route path="/community/admin/menu" element={<MenuAdmin />} />
                 <Route path="/community/admin/forum" element={<AdminForum />} />
                 <Route path="/community/admin/users" element={< UsersAdmin/>} />
-                <Route path="/community/admin/settings" element={< SettingsAdmin/>} />                
+                <Route path="/community/admin/settings" element={< SettingsAdmin/>} />    
+                <Route path="/community/admin/news" element={< ListNewsAdmin/>} /> 
+
+                <Route path="/community/writer/menu" element={<MenuWriter/>} />         
+                <Route path="/community/writer/news" element={<ListNewsWriter/>} />     
+                <Route path="/community/writer/news/create" element={<CreateNewWriter/>} /> 
 
                 <Route path="/community/login" element={<LoginPage />} />
                 <Route path="/community/register" element={<RegisterPage />} />

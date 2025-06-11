@@ -1,9 +1,10 @@
 import React, { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./CommunityMenu.css";
-import { CommunityMainContainer } from "../../../common/communityMainContainer/CommunityMainContainer";
-import { useUser } from "../../../hooks/useUser";
-import { useGlobalVariables } from "../../../settings/globalvariables";
+import { useUser } from "../../../../hooks/useUser";
+import { useGlobalVariables } from "../../../../settings/globalvariables";
+import { CommunityMainContainer } from "../../../../common/communityMainContainer/CommunityMainContainer";
+
 
 
 export const CommunityMenu: React.FC = () => {
@@ -26,6 +27,9 @@ export const CommunityMenu: React.FC = () => {
         }
         if (loggedUser?.role == 1) {
             navigate("/community/admin/menu");
+        }
+        if (loggedUser?.role == 3) {
+            navigate("/community/writer/menu");
         }
     }, [userStatusLog, loggedUser, navigate]);
 
@@ -55,7 +59,7 @@ export const CommunityMenu: React.FC = () => {
                         </Link>
                     )}
                     {showNews && (
-                        <Link to="/news" className="sub-card-community hover:scale-105 transition-transform duration-300 shadow-lg">
+                        <Link to="/community/news" className="sub-card-community hover:scale-105 transition-transform duration-300 shadow-lg">
                             <h2>📰 News 📰</h2>
                             <p>Stay updated with community-driven news reports.</p>
                         </Link>
