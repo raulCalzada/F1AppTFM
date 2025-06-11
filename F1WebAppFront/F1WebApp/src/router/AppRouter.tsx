@@ -26,6 +26,7 @@ import { NewsList } from '../pages/community/user/news/newList/NewsList';
 import { Article } from '../pages/community/user/news/article/Article';
 import { MenuWriter } from '../pages/community/writer/menu/MenuWriter';
 import { ListNewsWriter } from '../pages/community/writer/listNews/ListNewsWriter';
+import { CreateNewWriter } from '../pages/community/writer/createNew/CreateNewWriter';
 
 export const AppRouter = () => {
     return (
@@ -61,6 +62,7 @@ export const AppRouter = () => {
 
                 <Route path="/community/writer/menu" element={<MenuWriter/>} />         
                 <Route path="/community/writer/news" element={<ListNewsWriter/>} />     
+                <Route path="/community/writer/news/create" element={<CreateNewWriter/>} /> 
 
                 <Route path="/community/login" element={<LoginPage />} />
                 <Route path="/community/register" element={<RegisterPage />} />
