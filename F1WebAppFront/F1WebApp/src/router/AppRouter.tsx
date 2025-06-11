@@ -27,6 +27,7 @@ import { Article } from '../pages/community/user/news/article/Article';
 import { MenuWriter } from '../pages/community/writer/menu/MenuWriter';
 import { ListNewsWriter } from '../pages/community/writer/listNews/ListNewsWriter';
 import { CreateNewWriter } from '../pages/community/writer/createNew/CreateNewWriter';
+import { ListNewsAdmin } from '../pages/community/admin/news/ListNewsAdmin';
 
 export const AppRouter = () => {
     return (
@@ -59,6 +60,7 @@ export const AppRouter = () => {
                 <Route path="/community/admin/forum" element={<AdminForum />} />
                 <Route path="/community/admin/users" element={< UsersAdmin/>} />
                 <Route path="/community/admin/settings" element={< SettingsAdmin/>} />    
+                <Route path="/community/admin/news" element={< ListNewsAdmin/>} /> 
 
                 <Route path="/community/writer/menu" element={<MenuWriter/>} />         
                 <Route path="/community/writer/news" element={<ListNewsWriter/>} />     

@@ -99,7 +99,7 @@ export const useNews = () => {
   const addComment = useCallback(
     async (commentData: {
       articleId: string;
-      content: string;
+      comment: string;
       userId: number;
     }) => {
       onLoading();

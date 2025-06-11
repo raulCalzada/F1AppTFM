@@ -32,7 +32,7 @@ export const deleteNews = async (id: string) => {
     return response.data;
 };
 
-export const createComment = async (commentData: { articleId: string; content: string; userId: number }) => {
+export const createComment = async (commentData: { articleId: string; comment: string; userId: number; createDate: string }) => {
     const response = await axios.post(`${BaseUrl}/${commentData.articleId}/comment`, commentData);
     return response.data;
 }
