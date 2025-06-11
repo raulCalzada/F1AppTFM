@@ -5,9 +5,10 @@ import { useUser } from "../../../../hooks/useUser";
 import { useNews } from "../../../../hooks/useNews";
 import { CommunityWriterMainContainer } from "../../../../common/communityWriterContainer/CommunityWriterMainContainer";
 import { Article } from "../../../../types/article";
+import { uploadImage } from "../../../../api/images";
+
 
 export const CreateNewWriter: React.FC = () => {
-     console.log("Mounted CreateNewWriter");
     const { loggedUser, getLoggedUser } = useUser();
     const { createArticle } = useNews();
     const navigate = useNavigate();
@@ -34,7 +35,7 @@ export const CreateNewWriter: React.FC = () => {
         setFormData(prev => ({ ...prev, [name]: value }));
     };
 
-    const handleFileDrop = (
+    const handleFileDrop = async (
         e: React.DragEvent<HTMLDivElement>,
         field: "imageUrl1" | "imageUrl2",
         setFileName: React.Dispatch<React.SetStateAction<string | null>>,
@@ -45,14 +46,13 @@ export const CreateNewWriter: React.FC = () => {
 
         const file = e.dataTransfer.files[0];
         if (file && file.type.startsWith("image/")) {
-            const newFileName = `newsImages/${file.name}`;
-
-            const reader = new FileReader();
-            reader.onload = () => {
-                setFileName(newFileName);
-                setFormData(prev => ({ ...prev, [field]: newFileName }));
-            };
-            reader.readAsDataURL(file);
+            const uploadedUrl = await uploadImage(file);
+            if (uploadedUrl) {
+                setFileName(uploadedUrl);
+                setFormData(prev => ({ ...prev, [field]: uploadedUrl }));
+            } else {
+                alert("Image upload failed.");
+            }
         }
     };
 
@@ -119,7 +119,7 @@ export const CreateNewWriter: React.FC = () => {
                         {fileName2 ? <p>Uploaded: {fileName2}</p> : <p>Drag & Drop image here</p>}
                     </div>
 
-                    <button type="submit" onClick={() => console.log("Click")}>Publish Article</button>
+                    <button type="submit">Publish Article</button>
                 </form>
             </div>
         </CommunityWriterMainContainer>
