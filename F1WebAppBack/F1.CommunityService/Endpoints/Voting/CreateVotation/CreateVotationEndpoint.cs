@@ -16,7 +16,7 @@ namespace F1.CommunityService.Endpoints.Voting.CreateVotation
 
         public override void Configure()
         {
-            Post("/vote");
+            Post("/vote/create");
             AllowAnonymous();
         }
 

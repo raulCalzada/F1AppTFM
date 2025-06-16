@@ -17,7 +17,6 @@ import { LoginPage } from '../pages/community/login/LoginPage';
 import { RegisterPage } from '../pages/community/register/RegisterPage';
 import { AdminForum } from '../pages/community/admin/forum/AdminForum';
 import { UsersAdmin } from '../pages/community/admin/users/UsersAdmin';
-import { MenuAdmin } from '../pages/community/admin/menu/MenuAdmin';
 import { SettingsAdmin } from '../pages/community/admin/settings/SettingsAdmin';
 import { CommunityMenu } from '../pages/community/user/menu/CommunityMenu';
 import { ForumList } from '../pages/community/user/forum/forumList/ForumList';
@@ -28,6 +27,7 @@ import { MenuWriter } from '../pages/community/writer/menu/MenuWriter';
 import { ListNewsWriter } from '../pages/community/writer/listNews/ListNewsWriter';
 import { CreateNewWriter } from '../pages/community/writer/createNew/CreateNewWriter';
 import { ListNewsAdmin } from '../pages/community/admin/news/ListNewsAdmin';
+import { MenuAdmin } from '../pages/community/admin/menu/menuAdmin';
 
 export const AppRouter = () => {
     return (
