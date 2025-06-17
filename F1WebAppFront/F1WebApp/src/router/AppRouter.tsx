@@ -27,7 +27,7 @@ import { MenuWriter } from '../pages/community/writer/menu/MenuWriter';
 import { ListNewsWriter } from '../pages/community/writer/listNews/ListNewsWriter';
 import { CreateNewWriter } from '../pages/community/writer/createNew/CreateNewWriter';
 import { ListNewsAdmin } from '../pages/community/admin/news/ListNewsAdmin';
-import { MenuAdmin } from '../pages/community/admin/menu/menuAdmin';
+import { MenuAdmin } from '../pages/community/admin/menu/MenuAdmin';
 
 export const AppRouter = () => {
     return (
