@@ -28,7 +28,6 @@ public class SubmitQuizRequest
             });
         }
 
-
         return new Shared.Domain.Comunity.Entities.Quiz
         {
             Id = QuizId,

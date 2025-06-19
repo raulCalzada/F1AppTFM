@@ -13,7 +13,7 @@ public class GetUserQuizPuntuationsResponse
     {
         Title = quiz.Title;
         Description = quiz.Description;
-        IsCompleted = quiz.UserResults.Any();
-        ScoreObtained = quiz.UserResults?.FirstOrDefault()?.ScoreObtained;
+        IsCompleted = quiz.ScoreReceived != null;
+        ScoreObtained = quiz.ScoreReceived ?? null;
     }
 }
