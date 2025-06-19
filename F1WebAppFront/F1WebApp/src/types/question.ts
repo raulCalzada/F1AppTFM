@@ -1,4 +1,4 @@
-export interface Question {
+export interface VoteQuestion {
   id: number;
   question: string;
   status: number;        // 1: active, 2: inactive, 3: historic 

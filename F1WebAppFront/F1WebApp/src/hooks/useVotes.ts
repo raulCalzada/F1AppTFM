@@ -1,6 +1,7 @@
 import { useCallback, useState } from "react";
 import { useStatus } from "./useStatus";
-import { obtainQuestions, getVotesById, addNewQuestion, deleteQuestion, changeQuestionStatus, vote } from "../api/vote";
+import { VoteQuestion } from "../types/question";
+import { addNewQuestion, changeQuestionStatus, getVotesById, obtainQuestions, vote } from "../api/votes";
 
 
 export const useVote = () => {
@@ -72,6 +73,7 @@ export const useVote = () => {
             onError(error);
         }
     }, [onLoading, onSuccess, onError]);
+
     
     return {
         voteList,
