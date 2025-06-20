@@ -1,3 +1,10 @@
+-- Table creation (already exists)
+IF DB_ID('F1AppDB') IS NULL
+    CREATE DATABASE F1AppDB;
+GO
+USE F1AppDB;
+GO
+
 -- Main table for quizzes
 CREATE TABLE Quizzes (
     Id BIGINT PRIMARY KEY IDENTITY(1,1),

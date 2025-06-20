@@ -5,5 +5,6 @@ public interface IQuizQuestion
     long Id { get; set; }
     string Text { get; set; }
     IEnumerable<IQuizAnswer> Answers { get; set; }
-    long CorrectSelectedAnswerId { get; set; }
+    long? CorrectSelectedAnswerId { get; set; }
+    string? CorrectSelectedAnswer { get; set; }
 }
