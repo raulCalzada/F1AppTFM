@@ -8,6 +8,7 @@ public class CreateQuizRequest
     public string Title { get; set; } = string.Empty;
     public string Description { get; set; } = string.Empty;
     public List<CreateQuestionRequest> Questions { get; set; } = [];
+    public int TotalScore { get; set; }
 
     public IQuiz ToDomain()
     {
@@ -37,7 +38,8 @@ public class CreateQuizRequest
         {
             Title = this.Title,
             Description = this.Description,
-            Questions = questions
+            Questions = questions,
+            TotalScore = this.TotalScore
         };
     }
 }

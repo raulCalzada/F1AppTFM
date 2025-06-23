@@ -23,6 +23,7 @@ public class SubmitQuizUseCase : ISubmitQuizUseCase
         {
             throw new InvalidOperationException("Quiz questions count mismatch");
         }
+        quiz.ScoreReceived = 0;
 
         var numberOfQuestions = originalQuiz.Questions.Count();
         
@@ -35,14 +36,14 @@ public class SubmitQuizUseCase : ISubmitQuizUseCase
 
         foreach (var question in quiz.Questions)
         {
-            var originalQuestion = quiz.Questions.FirstOrDefault(q => q.Id.Equals(question.Id) && q.Text.Equals(question.Text));
+            var originalQuestion = originalQuiz.Questions.FirstOrDefault(q => q.Id.Equals(question.Id));
 
             if (originalQuestion == null)
             {
                 throw new InvalidOperationException($"Question with ID {question.Id} not found in the original quiz");
             }
 
-            if (originalQuestion.CorrectSelectedAnswerId.Equals(question.CorrectSelectedAnswerId))
+            if (originalQuestion.CorrectSelectedAnswer.Equals(question.CorrectSelectedAnswer))
             {
                 quiz.ScoreReceived += scorePerQuestion;
             }
@@ -52,7 +53,7 @@ public class SubmitQuizUseCase : ISubmitQuizUseCase
         
         await _quizServices.AddUserResult(quiz.Id, new QuizResult
         {
-            User = quiz.UserResults.FirstOrDefault()?.User ?? throw new InvalidOperationException("User ID not found and couldn't update de score"),
+            User = quiz.UserResults.FirstOrDefault()?.User,
             ScoreObtained = quiz.ScoreReceived ?? 0
         });
 

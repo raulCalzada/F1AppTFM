@@ -11,7 +11,7 @@ CREATE TABLE ForumThread (
     ThreadId INT IDENTITY(1,1) PRIMARY KEY NOT NULL,
     Title NVARCHAR(150) NOT NULL,
     Content NVARCHAR(MAX) NOT NULL,
-    AuthorUserId INT NOT NULL,
+    AuthorUserId BIGINT NOT NULL,
     CreateDate DATETIME DEFAULT GETDATE() NOT NULL,
     FOREIGN KEY (AuthorUserId) REFERENCES Users(UserId)
 );
@@ -20,7 +20,7 @@ GO
 CREATE TABLE ForumThreadComment (
     Id INT IDENTITY(1,1) PRIMARY KEY NOT NULL,
     Content NVARCHAR(MAX) NOT NULL,
-    AuthorUserId INT NOT NULL,
+    AuthorUserId BIGINT NOT NULL,
     ThreadId INT NOT NULL,
     CreateDate DATETIME DEFAULT GETDATE() NOT NULL,
     FOREIGN KEY (AuthorUserId) REFERENCES Users(UserId),

@@ -33,7 +33,7 @@ CREATE TABLE Votes (
     Id INT PRIMARY KEY IDENTITY(1,1),
     QuestionId INT NOT NULL,
     OptionNumber INT NOT NULL,
-    UserId INT NOT NULL,
+    UserId BIGINT NOT NULL,
     FOREIGN KEY (QuestionId) REFERENCES VoteQuestions(Id) ON DELETE CASCADE,
     FOREIGN KEY (UserId) REFERENCES Users(UserId) ON DELETE CASCADE
 );

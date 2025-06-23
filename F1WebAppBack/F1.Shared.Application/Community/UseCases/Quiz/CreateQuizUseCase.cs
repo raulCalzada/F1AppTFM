@@ -16,7 +16,7 @@ class CreateQuizUseCase : ICreateQuizUseCase
     {
         var quizzes = await _quizServices.GetAllQuizzes();
 
-        if (quizzes.Any(q => q.Title.Equals(q.Title)))
+        if (!quizzes.Any(q => q.Title.Equals(q.Title)))
         {
             throw new InvalidOperationException("Title already exists");
         }

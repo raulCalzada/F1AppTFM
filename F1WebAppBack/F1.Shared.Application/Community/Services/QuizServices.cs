@@ -119,6 +119,9 @@ public class QuizServices : IQuizServices
                 throw new ArgumentException($"Question {q.Text} has no answers");
             }
             q.Answers = answers;
+
+            //get correct answer for each question
+            q.CorrectSelectedAnswer = answers.FirstOrDefault(a => a.Id.Equals(q.CorrectSelectedAnswerId))?.Text;
         }
 
         //get result from users

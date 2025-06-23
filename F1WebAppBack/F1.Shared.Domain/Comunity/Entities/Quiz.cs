@@ -10,7 +10,6 @@ public class Quiz : IQuiz
     public string Description { get; set; } = string.Empty;
     public int? TotalScore { get; set; }
     public int? ScoreReceived { get; set; }
-    public User User { get; set; } = new User();
     public IEnumerable<IQuizQuestion> Questions { get; set; } = [];
     public IEnumerable<IQuizResult> UserResults { get; set; } = [];
 }

@@ -29,7 +29,7 @@ namespace F1.Shared.Database.Repositories.Quiz
 
         public async Task<IQuiz?> GetQuizByTitle(string title)
         {
-            var quiz = await _storeProcedureRepository.QueryFirstOrDefaultAsync<QuizzesDto>($"SELECT * FROM Quizzes WHERE Title = {title}", CommandType.Text);
+            var quiz = await _storeProcedureRepository.QueryFirstOrDefaultAsync<QuizzesDto>($"SELECT * FROM Quizzes WHERE Title = '{title}'", CommandType.Text);
 
             return quiz?.ToDomain();
         }
