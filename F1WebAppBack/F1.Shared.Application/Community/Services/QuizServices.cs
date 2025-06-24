@@ -51,7 +51,7 @@ public class QuizServices : IQuizServices
 
             if (questionsWithoutAnswersWithId.Count() != quiz.Questions.Count())
             {
-                await this.DeleteQuiz(quiz.Id);
+                await this.DeleteQuiz(quiz);
                 throw new InvalidOperationException("Not all questions were created successfully");
             }
 
@@ -69,18 +69,20 @@ public class QuizServices : IQuizServices
 
         catch (Exception ex)
         {
-            await this.DeleteQuiz(quiz.Id);
+            await this.DeleteQuiz(quiz);
             throw new InvalidOperationException("An error occurred while creating the quiz", ex);
         }
     }
 
-    public async Task DeleteQuiz(long quizId)
+    public async Task DeleteQuiz(IQuiz quiz)
     {
-        var quiz = await GetQuizById(quizId) ?? throw new InvalidOperationException("Quiz already deleted"); // Ensure the quiz exists before attempting to delete
-        await _quizAnswersRepository.DeleteQuizAnswer(quizId);
-        await _quizQuestionsRepository.DeleteQuizQuestionsByQuizId(quizId);
-        await _quizResultsRepository.DeleteQuizResults(quizId);
-        await _quizzesRepository.DeleteQuiz(quizId);
+        foreach(var question in quiz.Questions)
+        {
+            await _quizAnswersRepository.DeleteQuizAnswer(question.Id);
+        }     
+        await _quizQuestionsRepository.DeleteQuizQuestionsByQuizId(quiz.Id);
+        await _quizResultsRepository.DeleteQuizResults(quiz.Id);
+        await _quizzesRepository.DeleteQuiz(quiz.Id);
     }
 
     public async Task<IEnumerable<IQuiz>> GetAllQuizzes()

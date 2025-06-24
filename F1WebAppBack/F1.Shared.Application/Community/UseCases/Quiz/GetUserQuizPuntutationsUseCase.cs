@@ -18,7 +18,7 @@ public class GetUserQuizPuntutationsUseCase : IGetUserQuizPuntutationsUseCase
 
         foreach (var quiz in quizzes)
         {
-            var userResult = quiz.UserResults.FirstOrDefault(ur => ur.Id == userId);
+            var userResult = quiz.UserResults.FirstOrDefault(ur => ur.User.Id.Equals(userId));
             if (userResult != null)
             {
                 quiz.ScoreReceived = userResult.ScoreObtained;

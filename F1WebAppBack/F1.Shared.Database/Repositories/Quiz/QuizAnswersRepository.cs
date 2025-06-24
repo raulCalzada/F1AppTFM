@@ -43,9 +43,9 @@ namespace F1.Shared.Database.Repositories.Quiz
             await _storeProcedureRepository.ExecuteAsync(sql, parameters, CommandType.Text);
         }
 
-        public async Task DeleteQuizAnswer(long quizId)
+        public async Task DeleteQuizAnswer(long questionId)
         {
-            var sql = $"DELETE FROM QuizAnswers WHERE QuestionId = {quizId}";
+            var sql = $"DELETE FROM QuizAnswers WHERE QuestionId = {questionId}";
             await _storeProcedureRepository.ExecuteAsync(sql, commandType: CommandType.Text);
         }
     }

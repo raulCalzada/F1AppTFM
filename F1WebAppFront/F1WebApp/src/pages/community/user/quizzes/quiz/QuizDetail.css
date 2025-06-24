@@ -1,0 +1,129 @@
+.quiz-detail-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: rgba(10, 10, 20, 0.85);
+  border-radius: 12px;
+  backdrop-filter: blur(8px);
+  color: white;
+}
+
+.quiz-title {
+  color: #FF8000;
+  font-size: 28px;
+  margin-bottom: 10px;
+  text-align: center;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.quiz-description {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 16px;
+  margin-bottom: 30px;
+  text-align: center;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 128, 0, 0.3);
+}
+
+.questions-container {
+  margin-bottom: 30px;
+}
+
+.question-card {
+  background-color: rgba(30, 30, 40, 0.7);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  margin-bottom: 20px;
+  border-left: 4px solid #0066CC;
+}
+
+.question-text {
+  margin-top: 0;
+  color: #FFFFFF;
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.answers-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.answer-option {
+  padding: 12px 15px;
+  background-color: rgba(40, 40, 50, 0.6);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.answer-option:hover {
+  background-color: rgba(60, 60, 70, 0.8);
+}
+
+.answer-option.selected {
+  background-color: #FF8000;
+  color: white;
+  border-color: #FF8000;
+}
+
+.quiz-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.btn-submit-quiz, .btn-cancel-quiz {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 16px;
+}
+
+.btn-submit-quiz {
+  background-color: #FF8000;
+  color: white;
+}
+
+.btn-submit-quiz:hover {
+  background-color: #E67300;
+}
+
+.btn-submit-quiz:disabled {
+  background-color: #666;
+  cursor: not-allowed;
+}
+
+.btn-cancel-quiz {
+  background-color: #0066CC;
+  color: white;
+}
+
+.btn-cancel-quiz:hover {
+  background-color: #004C99;
+}
+
+@media (max-width: 768px) {
+  .quiz-detail-container {
+    padding: 15px;
+  }
+  
+  .quiz-title {
+    font-size: 24px;
+  }
+  
+  .quiz-actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .btn-submit-quiz, .btn-cancel-quiz {
+    width: 100%;
+  }
+}

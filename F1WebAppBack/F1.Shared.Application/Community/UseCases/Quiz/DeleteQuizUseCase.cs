@@ -22,7 +22,7 @@ public class DeleteQuizUseCase : IDeleteQuizUseCase
             throw new InvalidOperationException("Quiz not found");
         }
 
-        await _quizServices.DeleteQuiz(quizId);
+        await _quizServices.DeleteQuiz(quiz);
 
         var deletedQuiz = await _quizServices.GetQuizById(quizId);
 

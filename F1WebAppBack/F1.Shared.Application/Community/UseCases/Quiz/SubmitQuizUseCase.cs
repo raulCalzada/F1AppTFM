@@ -23,7 +23,6 @@ public class SubmitQuizUseCase : ISubmitQuizUseCase
         {
             throw new InvalidOperationException("Quiz questions count mismatch");
         }
-        quiz.ScoreReceived = 0;
 
         var numberOfQuestions = originalQuiz.Questions.Count();
         
@@ -32,22 +31,30 @@ public class SubmitQuizUseCase : ISubmitQuizUseCase
             throw new InvalidOperationException("Quiz total score or number of questions is not set");
         }
 
-        var scorePerQuestion = originalQuiz.TotalScore / numberOfQuestions;
+        double scorePerQuestion = (double)originalQuiz.TotalScore / numberOfQuestions;
+        double scoreReceived = (double)originalQuiz.TotalScore;
 
         foreach (var question in quiz.Questions)
         {
             var originalQuestion = originalQuiz.Questions.FirstOrDefault(q => q.Id.Equals(question.Id));
 
-            if (originalQuestion == null)
+            if (originalQuestion == null || originalQuestion.CorrectSelectedAnswer == null)
             {
                 throw new InvalidOperationException($"Question with ID {question.Id} not found in the original quiz");
             }
 
-            if (originalQuestion.CorrectSelectedAnswer.Equals(question.CorrectSelectedAnswer))
+            if (!originalQuestion.CorrectSelectedAnswer.Equals(question.CorrectSelectedAnswer))
             {
-                quiz.ScoreReceived += scorePerQuestion;
+                scoreReceived -= scorePerQuestion;
             }
         }
+
+        if (scoreReceived < 0)
+        {
+            scoreReceived = 0;
+        }
+
+        quiz.ScoreReceived = (int)scoreReceived;
 
         quiz.TotalScore = originalQuiz.TotalScore;
         

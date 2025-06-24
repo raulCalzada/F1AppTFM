@@ -29,6 +29,8 @@ import { CreateNewWriter } from '../pages/community/writer/createNew/CreateNewWr
 import { ListNewsAdmin } from '../pages/community/admin/news/ListNewsAdmin';
 import { MenuAdmin } from '../pages/community/admin/menu/MenuAdmin';
 import { Votes } from '../pages/community/user/votes/Votes';
+import { QuizList } from '../pages/community/user/quizzes/quizList/QuizList';
+import { QuizDetail } from '../pages/community/user/quizzes/quiz/QuizDetail';
 
 export const AppRouter = () => {
     return (
@@ -57,6 +59,8 @@ export const AppRouter = () => {
                 <Route path="/community/news" element={<NewsList />} /> 
                 <Route path="/community/news/:newId" element={<Article />} /> 
                 <Route path="/community/votings" element={<Votes />} /> 
+                <Route path="/community/quiz" element={<QuizList />} /> 
+                <Route path="/community/quiz/:quizId" element={<QuizDetail />} /> 
 
 
                 { /* Community Admin Routes */ }

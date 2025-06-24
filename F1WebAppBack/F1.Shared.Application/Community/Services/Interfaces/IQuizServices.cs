@@ -9,6 +9,6 @@ public interface IQuizServices
     Task<IQuiz?> GetQuizById(long quizId);
     Task<IQuiz> GetQuizByTitle(string title);
     Task<IEnumerable<IQuiz>> GetAllQuizzes();
-    Task DeleteQuiz(long quizId);
+    Task DeleteQuiz(IQuiz quiz);
     Task AddUserResult(long quizId, IQuizResult quizResult);
 }

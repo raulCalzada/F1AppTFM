@@ -171,13 +171,11 @@ UPDATE QuizQuestions SET CorrectAnswerId = (SELECT Id FROM QuizAnswers WHERE Que
 
 
 -- Quiz 1 Results
-INSERT INTO QuizResults (UserId, QuizId, ScoreObtained) VALUES
-(3, 1, 60), 
+INSERT INTO QuizResults (UserId, QuizId, ScoreObtained) VALUES 
 (4, 1, 80), 
 (6, 1, 90), 
 (8, 1, 70),
 
 -- Quiz 2 Results
-(3, 2, 50),
 (6, 2, 95), 
 (9, 2, 85);
