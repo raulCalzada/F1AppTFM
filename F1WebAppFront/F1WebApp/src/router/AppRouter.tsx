@@ -28,6 +28,7 @@ import { ListNewsWriter } from '../pages/community/writer/listNews/ListNewsWrite
 import { CreateNewWriter } from '../pages/community/writer/createNew/CreateNewWriter';
 import { ListNewsAdmin } from '../pages/community/admin/news/ListNewsAdmin';
 import { MenuAdmin } from '../pages/community/admin/menu/MenuAdmin';
+import { Votes } from '../pages/community/user/votes/Votes';
 
 export const AppRouter = () => {
     return (
@@ -49,19 +50,23 @@ export const AppRouter = () => {
                 <Route path="/actual/standings" element={< Standings/>} />
                 <Route path="/actual/puntuations" element={< Puntuations/>} />
                 
+                { /* Community User Routes */ }
                 <Route path="/community/menu" element={<CommunityMenu />} />
                 <Route path="/community/forum" element={< ForumList/>} />
                 <Route path="/community/forum/:forumId" element={<ForumPost />} />  
                 <Route path="/community/news" element={<NewsList />} /> 
                 <Route path="/community/news/:newId" element={<Article />} /> 
+                <Route path="/community/votings" element={<Votes />} /> 
 
 
+                { /* Community Admin Routes */ }
                 <Route path="/community/admin/menu" element={<MenuAdmin />} />
                 <Route path="/community/admin/forum" element={<AdminForum />} />
                 <Route path="/community/admin/users" element={< UsersAdmin/>} />
                 <Route path="/community/admin/settings" element={< SettingsAdmin/>} />    
                 <Route path="/community/admin/news" element={< ListNewsAdmin/>} /> 
 
+                { /* Community Writer Routes */ }
                 <Route path="/community/writer/menu" element={<MenuWriter/>} />         
                 <Route path="/community/writer/news" element={<ListNewsWriter/>} />     
                 <Route path="/community/writer/news/create" element={<CreateNewWriter/>} /> 

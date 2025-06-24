@@ -53,7 +53,7 @@ export const CommunityMenu: React.FC = () => {
                 </div>
                 <div className="sub-cards-community">
                     {showVotings && (
-                        <Link to="/votings" className="sub-card-community hover:scale-105 transition-transform duration-300 shadow-lg">
+                        <Link to="/community/votings" className="sub-card-community hover:scale-105 transition-transform duration-300 shadow-lg">
                             <h2>🏆 Votings 🏆</h2>
                             <p>🔥 Think you know it all? Prove it in community polls and rack up points to claim the title of the ultimate F1 fan!</p>
                         </Link>

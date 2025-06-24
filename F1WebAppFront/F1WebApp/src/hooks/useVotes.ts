@@ -1,7 +1,7 @@
 import { useCallback, useState } from "react";
 import { useStatus } from "./useStatus";
-import { VoteQuestion } from "../types/question";
-import { addNewQuestion, changeQuestionStatus, getVotesById, obtainQuestions, vote } from "../api/votes";
+import { VoteQuestion } from "../types/voteQuestion";
+import { createVotation, deleteQuestion, editVoteStatus, obtainQuestions, obtainVoteById, vote } from "../api/votes";
 
 
 export const useVote = () => {
@@ -23,7 +23,7 @@ export const useVote = () => {
     const getVoteById = useCallback(async (id: number) => {
         onLoading();
         try {
-            const result = await getVotesById(id);
+            const result = await obtainVoteById(id);
             setSelectedVote(result);
             onSuccess();
         } catch (error) {
@@ -34,7 +34,7 @@ export const useVote = () => {
     const createQuestion = useCallback(async (question: { question: string; status: number; options: string[] }) => {
         onLoading();
         try {
-            const result = await addNewQuestion(question);
+            const result = await createVotation(question);
             setSelectedVote(result);
             onSuccess();
         } catch (error) {
@@ -55,7 +55,8 @@ export const useVote = () => {
     const updateQuestionStatus = useCallback(async (status: number, id: number) => {
         onLoading();
         try {
-            const result = await changeQuestionStatus(status, id);
+            const statusUpdate = { status, question: id };
+            const result = await editVoteStatus(statusUpdate);
             setSelectedVote(result);
             onSuccess();
         } catch (error) {
@@ -63,10 +64,11 @@ export const useVote = () => {
         }
     }, [onLoading, onSuccess, onError]);
 
-    const submitVote = useCallback(async (id: number, option: string, userId: number) => {
+    const submitVote = useCallback(async (id: number, option: number, userId: number) => {
         onLoading();
         try {
-            const result = await vote(id, option, userId);
+            const submit = { questionId: id, voteOption: option, userId };
+            const result = await vote(submit);
             setSelectedVote(result);
             onSuccess();
         } catch (error) {

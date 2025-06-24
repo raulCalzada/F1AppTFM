@@ -27,7 +27,7 @@ namespace F1.CommunityService.Endpoints.Voting.GetAllVotes
                 await SendErrorsAsync();
                 return;
             }
-            var response = result.Select(x => new VoteQuestionDto(x));
+            var response = result.Select(x => new VoteQuestionWithAnswersDto(x));
             await SendOkAsync(response, ct);
         }
     }

@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { VoteQuestion } from '../types/voteQuestion';
 
 const BaseUrl = '/vote';
 
@@ -7,29 +8,29 @@ export const obtainQuestions = async() => {
     return response.data;
 };
 
-export const getVotesById = async(id: number) => {
-    const response = await axios.get(`${BaseUrl}/${id}`);
+export const obtainVoteById = async(questionId: string) => {
+    const response = await axios.get(`${BaseUrl}/${questionId}`);  
+    return response.data;
+};
+
+export const editVoteStatus = async(status:{"status": number, "question": number}) => {
+    const response = await axios.put(`${BaseUrl}/${status.question}`, status);  
     return response.data;
 }
 
-export const addNewQuestion = async (question: {question: string, status: number, options: string[]}) => {
-    const response = await axios.post(`${BaseUrl}/create`, question);
+export const createVotation = async(question : VoteQuestion) => {
+    const response = await axios.post(`${BaseUrl}/${question.status}`, question);  
     return response.data;
 }
 
-export const deleteQuestion = async (id: number) => {
-    const response = await axios.delete(`${BaseUrl}/delete/${id}`);
+export const vote = async(vote: {questionId: number, voteOption: number, userId: number}) => {
+    console.log('vote:', vote); 
+    const response = await axios.post(`${BaseUrl}/${vote.questionId}`, vote);  
+    console.log('vote response:', response.data);
     return response.data;
-}
+};
 
-export const changeQuestionStatus = async(status: number, id: number) => {
-    const response = await axios.put(`${BaseUrl}/status/${id}`, { status });
+export const deleteQuestion = async(questionId: number) => {
+    const response = await axios.delete(`${BaseUrl}/${questionId}`);  
     return response.data;
-}
-
-export const vote = async(id: number,  option: string, userId: number ) => {
-    const response = await axios.post(`${BaseUrl}/${id}`, {option, userId});
-    return response.data;
-}
-
-
+};

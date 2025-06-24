@@ -39,6 +39,9 @@ sqlcmd -S %SERVER% -U %USER% -P %PASSWORD% -i "%SCRIPT_DIR%\3.SQLForum.sql"
 echo Running 4.SQLVotes.sql...
 sqlcmd -S %SERVER% -U %USER% -P %PASSWORD% -i "%SCRIPT_DIR%\4.SQLVotes.sql"
 
+echo Running 5.SQLQuizzes.sql...
+sqlcmd -S %SERVER% -U %USER% -P %PASSWORD% -i "%SCRIPT_DIR%\5.SQLQuizzes.sql
+
 echo ====================================
 echo Scripts executed successfully.
 pause

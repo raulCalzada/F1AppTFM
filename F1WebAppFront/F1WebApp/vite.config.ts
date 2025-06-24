@@ -42,7 +42,7 @@ export default defineConfig({
         secure: false,
       },
       '/vote': {
-        target: 'http://localhost:5003',
+        target: 'http://localhost:5001',
         changeOrigin: true,
         secure: false,
       },
