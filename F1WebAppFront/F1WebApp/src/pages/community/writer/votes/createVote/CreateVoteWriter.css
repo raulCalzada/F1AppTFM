@@ -1,0 +1,219 @@
+.create-vote-container {
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    color: #333;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f1f1f1;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.create-vote-container h1 {
+    color: #000000;
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    text-align: center;
+    padding-bottom: 0.5rem;
+    background: linear-gradient(90deg, #00D2BE 0%, #008176 100%);
+    padding: 1rem;
+    border-radius: 4px;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.vote-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: #000000;
+}
+
+.form-group input,
+.form-group select {
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: all 0.3s;
+    background-color: #f8f8f8;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #00D2BE;
+    box-shadow: 0 0 0 2px rgba(0, 210, 190, 0.3);
+    background-color: white;
+}
+
+.form-group input.error {
+    border-color: #e74c3c;
+}
+
+.error-message {
+    color: #e74c3c;
+    font-size: 0.85rem;
+    margin-top: 0.25rem;
+}
+
+.options-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.options-section label {
+    font-weight: 600;
+    color: #000000;
+}
+
+.option-row {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.option-row input {
+    color:rgb(0, 0, 0);
+    flex: 1;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: all 0.3s;
+    background-color: #f8f8f8;
+}
+
+.option-row input.error {
+    border-color: #e74c3c;
+}
+
+.remove-option-button {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s;
+    white-space: nowrap;
+}
+
+.remove-option-button:hover {
+    background-color: #c0392b;
+    transform: translateY(-1px);
+}
+
+.add-option-button {
+    background: linear-gradient(135deg, #00D2BE 0%, #008176 100%);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s;
+    align-self: flex-start;
+    margin-top: 0.5rem;
+}
+
+.add-option-button:hover:not(:disabled) {
+    background: linear-gradient(135deg, #008176 0%, #00D2BE 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.add-option-button:disabled {
+    background: #bdc3c7;
+    cursor: not-allowed;
+}
+
+.status-select {
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    background-color: #f8f8f8;
+    color: #333;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.cancel-button {
+    background-color: #95a5a6;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.cancel-button:hover {
+    background-color: #7f8c8d;
+    transform: translateY(-1px);
+}
+
+.submit-button {
+    background: linear-gradient(135deg, #00D2BE 0%, #008176 100%);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.submit-button:hover:not(:disabled) {
+    background: linear-gradient(135deg, #008176 0%, #00D2BE 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.submit-button:disabled {
+    background: #bdc3c7;
+    cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+    .create-vote-container {
+        padding: 1rem;
+    }
+    
+    .form-actions {
+        flex-direction: column;
+    }
+    
+    .cancel-button,
+    .submit-button {
+        width: 100%;
+    }
+    
+    .option-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .remove-option-button {
+        align-self: flex-start;
+    }
+}

@@ -31,6 +31,12 @@ import { MenuAdmin } from '../pages/community/admin/menu/MenuAdmin';
 import { Votes } from '../pages/community/user/votes/Votes';
 import { QuizList } from '../pages/community/user/quizzes/quizList/QuizList';
 import { QuizDetail } from '../pages/community/user/quizzes/quiz/QuizDetail';
+import { ListQuizzesAdmin } from '../pages/community/admin/quizzes/ListQuizzesAdmin';
+import { ListQuizWriter } from '../pages/community/writer/quiz/listQuiz/ListQuizWriter';
+import { CreateQuiz } from '../pages/community/writer/quiz/createQuiz/CreateQuiz';
+import { VoteListAdmin } from '../pages/community/admin/votes/VoteListAdmin';
+import { VoteListWriter } from '../pages/community/writer/votes/voteList/VoteListWriter';
+import { CreateVoteWriter } from '../pages/community/writer/votes/createVote/CreateVoteWriter';
 
 export const AppRouter = () => {
     return (
@@ -69,12 +75,21 @@ export const AppRouter = () => {
                 <Route path="/community/admin/users" element={< UsersAdmin/>} />
                 <Route path="/community/admin/settings" element={< SettingsAdmin/>} />    
                 <Route path="/community/admin/news" element={< ListNewsAdmin/>} /> 
+                <Route path="/community/admin/quiz" element={<ListQuizzesAdmin/>} />
+                <Route path="/community/admin/votings" element={<VoteListAdmin />} />
 
+                
                 { /* Community Writer Routes */ }
                 <Route path="/community/writer/menu" element={<MenuWriter/>} />         
                 <Route path="/community/writer/news" element={<ListNewsWriter/>} />     
                 <Route path="/community/writer/news/create" element={<CreateNewWriter/>} /> 
+                <Route path="/community/writer/quiz" element={<ListQuizWriter />} /> 
+                <Route path="/community/writer/quiz/create" element={<CreateQuiz />} />
+                <Route path="/community/writer/vote" element={<VoteListWriter />} />
+                <Route path="/community/writer/vote/create" element={<CreateVoteWriter />} />
+                
 
+                { /* Community Authentication Routes */ }
                 <Route path="/community/login" element={<LoginPage />} />
                 <Route path="/community/register" element={<RegisterPage />} />
                 

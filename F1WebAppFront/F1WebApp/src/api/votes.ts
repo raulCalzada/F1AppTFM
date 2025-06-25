@@ -14,19 +14,19 @@ export const obtainVoteById = async(questionId: string) => {
 };
 
 export const editVoteStatus = async(status:{"status": number, "question": number}) => {
-    const response = await axios.put(`${BaseUrl}/${status.question}`, status);  
+    const response = await axios.put(`${BaseUrl}/${status.question}/status`, status);  
     return response.data;
 }
 
 export const createVotation = async(question : VoteQuestion) => {
-    const response = await axios.post(`${BaseUrl}/${question.status}`, question);  
+    console.log("Creating votation with question:", question);
+    const response = await axios.post(`${BaseUrl}/create`, question);  
+    console.log("Votation created with response:", response.data);
     return response.data;
 }
 
 export const vote = async(vote: {questionId: number, voteOption: number, userId: number}) => {
-    console.log('vote:', vote); 
     const response = await axios.post(`${BaseUrl}/${vote.questionId}`, vote);  
-    console.log('vote response:', response.data);
     return response.data;
 };
 

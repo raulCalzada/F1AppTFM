@@ -65,6 +65,18 @@ public class QuizServices : IQuizServices
                     await _quizAnswersRepository.CreateQuizAnswer(ans, q.Id);
                 }
             }
+
+            quizCreated = await GetQuizById(quiz.Id) ?? throw new ArgumentException("Quiz creation failed");
+
+            foreach (var q in quizCreated.Questions)
+            {
+                //pairing quiz recived with quiz the quiz created in the database
+                var quizQuestion = quiz.Questions.First(quiz => quiz.Text.Equals(q.Text));
+                //get correct answer for each question
+                q.CorrectSelectedAnswerId = q.Answers.First(a => a.Text.Equals(quizQuestion.CorrectSelectedAnswer)).Id;
+
+                await _quizQuestionsRepository.UpdateQuizQuestion(q, quiz.Id);
+            }
         }
 
         catch (Exception ex)
@@ -136,9 +148,14 @@ public class QuizServices : IQuizServices
         return quiz;
     }
 
-    public async Task<IQuiz> GetQuizByTitle(string title)
+    public async Task<IQuiz?> GetQuizByTitle(string title)
     {
-        var quiz = await _quizzesRepository.GetQuizByTitle(title) ?? throw new ArgumentException("Quiz not found");
+        var quiz = await _quizzesRepository.GetQuizByTitle(title);
+
+        if (quiz == null)
+        {
+            return null;
+        }
 
         //get questions
         var questions = await _quizQuestionsRepository.GetAllQuizQuestionsByQuizId(quiz.Id);

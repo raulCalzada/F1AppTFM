@@ -1,0 +1,157 @@
+.votes-writer-container {
+    padding: 2rem;
+    background-color: #0e0e0e;
+    min-height: 100vh;
+    color: #f0f0f0; 
+}
+
+.votes-writer-container h1 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #ffc400; 
+}
+
+.writer-controls {
+    margin-bottom: 1.5rem;
+}
+
+.writer-controls input {
+    padding: 0.5rem 1rem;
+    width: 100%;
+    max-width: 400px;
+    border: 1px solid #444;
+    border-radius: 4px;
+    font-size: 1rem;
+    background-color: #1c1c1c;
+    color: #f0f0f0;
+}
+
+.votes-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #1a1a1a; 
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    overflow: hidden;
+    color: #fff;
+}
+
+.votes-table th,
+.votes-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #333;
+    vertical-align: top;
+}
+
+.votes-table th {
+    background-color: #121212; 
+    font-weight: bold;
+    color: #ffc400;
+}
+
+.votes-table tr:hover {
+    background-color: #222;
+}
+
+.options-list {
+    list-style-type: disc;
+    padding-left: 1.2rem;
+    margin: 0;
+}
+
+/* Colores de estado */
+.status-active {
+    color: #007aff;
+    font-weight: bold;
+}
+
+.status-inactive {
+    color: #ffc400; 
+    font-weight: bold;
+}
+
+.status-historic {
+    color: #aaa;
+    font-weight: bold;
+}
+
+.actions-cell {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    min-width: 120px;
+}
+
+.status-select {
+    padding: 0.4rem;
+    border-radius: 4px;
+    border: 1px solid #555;
+    font-size: 0.9rem;
+    background-color: #1c1c1c;
+    color: #fff;
+}
+
+.delete-button {
+    background-color: #e10600; 
+    color: white;
+    border: none;
+    padding: 0.4rem 0.75rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.2s;
+}
+
+.delete-button:hover {
+    background-color: #a80000;
+}
+
+.status-filter-select {
+    margin-left: 1rem;
+    padding: 0.5rem;
+    background-color: #1c1c1c;
+    color: #fff;
+    border: 1px solid #444;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+.create-vote-button {
+    background: linear-gradient(135deg, #00D2BE 0%, #008176 100%);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s;
+    margin-left: 1rem;
+    white-space: nowrap;
+}
+
+.create-vote-button:hover {
+    background: linear-gradient(135deg, #008176 0%, #00D2BE 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+    .votes-table th,
+    .votes-table td {
+        padding: 0.5rem;
+        font-size: 0.85rem;
+    }
+
+    .admin-controls input {
+        width: 100%;
+    }
+
+    .actions-cell {
+        flex-direction: column;
+    }
+    .create-vote-button {
+        margin-left: 0;
+        margin-top: 1rem;
+        width: 100%;
+    }
+}

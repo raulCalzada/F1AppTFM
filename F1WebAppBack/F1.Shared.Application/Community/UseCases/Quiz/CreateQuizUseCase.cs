@@ -14,16 +14,16 @@ class CreateQuizUseCase : ICreateQuizUseCase
     }
     public async Task<IQuiz> CreateQuiz(IQuiz quiz)
     {
-        var quizzes = await _quizServices.GetAllQuizzes();
+        var createdQuiz = await _quizServices.GetQuizByTitle(quiz.Title);
 
-        if (!quizzes.Any(q => q.Title.Equals(q.Title)))
+        if (createdQuiz != null)
         {
             throw new InvalidOperationException("Title already exists");
         }
 
         await _quizServices.CreateQuiz(quiz);
 
-        var createdQuiz = await _quizServices.GetQuizByTitle(quiz.Title);
+        createdQuiz = await _quizServices.GetQuizByTitle(quiz.Title);
 
         if (createdQuiz == null)
         {

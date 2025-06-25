@@ -39,3 +39,9 @@ export const submitQuiz = async (submitData: {quizId: number; userId: number; qu
     console.log("Quiz submission response:", response.data);
     return response.data;
 };
+
+export const quitQuiz = async (quizId: number) => {
+    const response = await axios.delete(`${BaseUrl}/${quizId}`);
+    console.log("Quit quiz response:", response.data);
+    return response.data;
+}

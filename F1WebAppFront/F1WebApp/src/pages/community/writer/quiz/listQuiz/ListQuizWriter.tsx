@@ -1,16 +1,17 @@
 import { useEffect, useState } from "react";
-import { useUser } from "../../../../hooks/useUser";
 import { useNavigate } from "react-router-dom";
-import { useQuiz } from "../../../../hooks/useQuiz";
-import "./ListQuizzesAdmin.css";
-import { CommunityAdminMainContainer } from "../../../../common/communityAdminMainContiner/CommunityAdminMainContainer";
-import { Quiz } from "../../../../types/quiz";
+import "./ListQuizWriter.css";
+import { useUser } from "../../../../../hooks/useUser";
+import { useQuiz } from "../../../../../hooks/useQuiz";
+import { CommunityWriterMainContainer } from "../../../../../common/communityWriterContainer/CommunityWriterMainContainer";
+import React from "react";
+import { Quiz } from "../../../../../types/quiz";
 
-export const ListQuizzesAdmin: React.FC = () => {
+export const ListQuizWriter: React.FC = () => {
     const { getLoggedUser, userStatusLog, loggedUser } = useUser();
-    const { 
-        quizList, 
-        getQuizList, 
+    const {
+        quizList,
+        getQuizList,
         quizStatus,
         deleteQuiz
     } = useQuiz();
@@ -32,8 +33,8 @@ export const ListQuizzesAdmin: React.FC = () => {
         if (loggedUser?.role === 2) {
             navigate("/community/menu");
         }
-        if (loggedUser?.role === 3) {
-            navigate("/community/writer/menu");
+        if (loggedUser?.role === 1) {
+            navigate("/community/admin/menu");
         }
     }, [userStatusLog, loggedUser, navigate]);
 
@@ -42,7 +43,7 @@ export const ListQuizzesAdmin: React.FC = () => {
             setFilteredQuizzes(quizList || []);
         } else {
             setFilteredQuizzes(
-                (quizList || []).filter(quiz => 
+                (quizList || []).filter(quiz =>
                     quiz.quizId.toString().includes(search) ||
                     quiz.questionText.toLowerCase().includes(search.toLowerCase())
                 )
@@ -61,22 +62,29 @@ export const ListQuizzesAdmin: React.FC = () => {
         }
     };
 
+    const handleCreateQuiz = () => {
+        navigate("/community/writer/quiz/create");
+    };
+
     const toggleUserScores = (quizId: number) => {
         setShowUserScores(showUserScores === quizId ? null : quizId);
     };
 
     return (
-        <CommunityAdminMainContainer>
-            <div className="quizzes-admin-container">
-                <h1>Quizzes Page</h1>
-                
-                <div className="admin-controls">
+        <CommunityWriterMainContainer>
+            <div className="quizzes-writer-container">
+                <h1>Quizzes</h1>
+
+                <div className="writer-controls">
                     <input
                         type="text"
                         placeholder="Search by ID or question"
                         value={search}
                         onChange={(e) => setSearch(e.target.value)}
                     />
+                    <button onClick={handleCreateQuiz} className="create-button">
+                        Create New Quiz
+                    </button>
                 </div>
 
                 {quizStatus.loading ? (
@@ -94,20 +102,20 @@ export const ListQuizzesAdmin: React.FC = () => {
                         </thead>
                         <tbody>
                             {filteredQuizzes?.map((quiz) => (
-                                <>
+                                <React.Fragment key={quiz.quizId}>
                                     <tr key={quiz.quizId}>
                                         <td>{quiz.quizId}</td>
                                         <td>{quiz.questionText}</td>
                                         <td>{quiz.correctAnswer}</td>
                                         <td>{quiz.usersDone?.length || 0}</td>
                                         <td className="actions-cell">
-                                            <button 
+                                            <button
                                                 onClick={() => toggleUserScores(quiz.quizId)}
                                                 className="scores-button"
                                             >
                                                 {showUserScores === quiz.quizId ? 'Hide Scores' : 'Show Scores'}
                                             </button>
-                                            <button 
+                                            <button
                                                 onClick={() => handleDeleteQuiz(quiz.quizId)}
                                                 className="delete-button"
                                             >
@@ -138,18 +146,18 @@ export const ListQuizzesAdmin: React.FC = () => {
                                                             </tbody>
                                                         </table>
                                                     ) : (
-                                                        <p>No participants yet</p>
+                                                        <text>No participants yet</text>
                                                     )}
                                                 </div>
                                             </td>
                                         </tr>
                                     )}
-                                </>
+                                </React.Fragment>
                             ))}
                         </tbody>
                     </table>
                 )}
             </div>
-        </CommunityAdminMainContainer>
+        </CommunityWriterMainContainer>
     );
 };

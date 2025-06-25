@@ -72,6 +72,18 @@ export const useQuiz = () => {
         }
     }, [onLoading, onSuccess, onError, selectedQuiz]);
 
+    const deleteQuiz = useCallback(async (quizId: number) => {
+        onLoading();
+        try {
+            deleteQuiz(quizId);
+            onSuccess();
+        }
+        catch (error) {
+            onError(error);
+        }
+    }
+    , [onLoading, onSuccess, onError]);
+
     return {
         quizList,
         userQuizList,
@@ -82,7 +94,8 @@ export const useQuiz = () => {
         getUserQuizList,
         createNewQuiz,
         submitUserQuiz,
-        setSelectedQuiz
+        setSelectedQuiz,
+        deleteQuiz
     };
 };
 
