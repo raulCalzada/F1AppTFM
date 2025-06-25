@@ -17,7 +17,7 @@ namespace F1.CommunityService.Endpoints.Voting.ChangeVoteStatus
 
         public override void Configure()
         {
-            Post("/vote/{QuestionId}/status");
+            Put("/vote/{QuestionId}/status");
             AllowAnonymous();
         }
 

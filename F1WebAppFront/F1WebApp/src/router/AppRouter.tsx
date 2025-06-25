@@ -17,7 +17,6 @@ import { LoginPage } from '../pages/community/login/LoginPage';
 import { RegisterPage } from '../pages/community/register/RegisterPage';
 import { AdminForum } from '../pages/community/admin/forum/AdminForum';
 import { UsersAdmin } from '../pages/community/admin/users/UsersAdmin';
-import { MenuAdmin } from '../pages/community/admin/menu/MenuAdmin';
 import { SettingsAdmin } from '../pages/community/admin/settings/SettingsAdmin';
 import { CommunityMenu } from '../pages/community/user/menu/CommunityMenu';
 import { ForumList } from '../pages/community/user/forum/forumList/ForumList';
@@ -28,6 +27,16 @@ import { MenuWriter } from '../pages/community/writer/menu/MenuWriter';
 import { ListNewsWriter } from '../pages/community/writer/listNews/ListNewsWriter';
 import { CreateNewWriter } from '../pages/community/writer/createNew/CreateNewWriter';
 import { ListNewsAdmin } from '../pages/community/admin/news/ListNewsAdmin';
+import { MenuAdmin } from '../pages/community/admin/menu/MenuAdmin';
+import { Votes } from '../pages/community/user/votes/Votes';
+import { QuizList } from '../pages/community/user/quizzes/quizList/QuizList';
+import { QuizDetail } from '../pages/community/user/quizzes/quiz/QuizDetail';
+import { ListQuizzesAdmin } from '../pages/community/admin/quizzes/ListQuizzesAdmin';
+import { ListQuizWriter } from '../pages/community/writer/quiz/listQuiz/ListQuizWriter';
+import { CreateQuiz } from '../pages/community/writer/quiz/createQuiz/CreateQuiz';
+import { VoteListAdmin } from '../pages/community/admin/votes/VoteListAdmin';
+import { VoteListWriter } from '../pages/community/writer/votes/voteList/VoteListWriter';
+import { CreateVoteWriter } from '../pages/community/writer/votes/createVote/CreateVoteWriter';
 
 export const AppRouter = () => {
     return (
@@ -49,23 +58,38 @@ export const AppRouter = () => {
                 <Route path="/actual/standings" element={< Standings/>} />
                 <Route path="/actual/puntuations" element={< Puntuations/>} />
                 
+                { /* Community User Routes */ }
                 <Route path="/community/menu" element={<CommunityMenu />} />
                 <Route path="/community/forum" element={< ForumList/>} />
                 <Route path="/community/forum/:forumId" element={<ForumPost />} />  
                 <Route path="/community/news" element={<NewsList />} /> 
                 <Route path="/community/news/:newId" element={<Article />} /> 
+                <Route path="/community/votings" element={<Votes />} /> 
+                <Route path="/community/quiz" element={<QuizList />} /> 
+                <Route path="/community/quiz/:quizId" element={<QuizDetail />} /> 
 
 
+                { /* Community Admin Routes */ }
                 <Route path="/community/admin/menu" element={<MenuAdmin />} />
                 <Route path="/community/admin/forum" element={<AdminForum />} />
                 <Route path="/community/admin/users" element={< UsersAdmin/>} />
                 <Route path="/community/admin/settings" element={< SettingsAdmin/>} />    
                 <Route path="/community/admin/news" element={< ListNewsAdmin/>} /> 
+                <Route path="/community/admin/quiz" element={<ListQuizzesAdmin/>} />
+                <Route path="/community/admin/votings" element={<VoteListAdmin />} />
 
+                
+                { /* Community Writer Routes */ }
                 <Route path="/community/writer/menu" element={<MenuWriter/>} />         
                 <Route path="/community/writer/news" element={<ListNewsWriter/>} />     
                 <Route path="/community/writer/news/create" element={<CreateNewWriter/>} /> 
+                <Route path="/community/writer/quiz" element={<ListQuizWriter />} /> 
+                <Route path="/community/writer/quiz/create" element={<CreateQuiz />} />
+                <Route path="/community/writer/vote" element={<VoteListWriter />} />
+                <Route path="/community/writer/vote/create" element={<CreateVoteWriter />} />
+                
 
+                { /* Community Authentication Routes */ }
                 <Route path="/community/login" element={<LoginPage />} />
                 <Route path="/community/register" element={<RegisterPage />} />
                 

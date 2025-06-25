@@ -51,6 +51,14 @@ export const MenuWriter: React.FC = () => {
                         <h2 className="sub-card-title-writter">📚 View News</h2>
                         <p className="sub-card-description-writter">See, edit or delete your published news</p>
                     </Link>
+                    <Link to="/community/writer/quiz" className="sub-card-writter">
+                        <h2 className="sub-card-title-writter">🧠 Create Quiz</h2>
+                        <p className="sub-card-description-writter">Create and See Quizzes</p>
+                    </Link>
+                     <Link to="/community/writer/vote" className="sub-card-writter">
+                        <h2 className="sub-card-title-writter">🗳️ Create Votation</h2>
+                        <p className="sub-card-description-writter">Create and see votations. Give 🏆Points🏆</p>
+                    </Link>
                 </div>
             </div>
         </CommunityWriterMainContainer>

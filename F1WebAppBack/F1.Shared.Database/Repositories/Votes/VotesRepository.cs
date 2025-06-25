@@ -29,7 +29,7 @@ namespace F1.Shared.Database.Repositories.Votes
 
         public async Task Vote(long questionId, int option, long userId)
         {
-            var sql = "INSERT INTO Votes (QuestionId, OptionNumber, UserId) VALUES " +
+            var sql = "INSERT INTO Votes (QuestionId, OptionNumber, UserId) " +
                       "VALUES (@QuestionId, @OptionNumber, @UserId)";
 
             var parameters = new

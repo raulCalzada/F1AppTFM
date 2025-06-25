@@ -101,6 +101,7 @@ export const useNews = () => {
       articleId: string;
       comment: string;
       userId: number;
+      createDate: string;
     }) => {
       onLoading();
       await createComment(commentData)

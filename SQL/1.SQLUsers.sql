@@ -6,7 +6,7 @@ GO
 
 -- Create table Users
 CREATE TABLE Users (
-    UserId INT IDENTITY(1,1) PRIMARY KEY NOT NULL,
+    UserId BIGINT IDENTITY(1,1) PRIMARY KEY NOT NULL,
     Username NVARCHAR(50) NOT NULL,
     Email NVARCHAR(100) NOT NULL,
     Password NVARCHAR(255) NOT NULL,
@@ -57,7 +57,7 @@ GO
 
 --create sp [UpdateUser]
 CREATE PROCEDURE [dbo].[UpdateUser]
-    @UserId INT,
+    @UserId BIGINT,
     @Username NVARCHAR(50),
     @Email NVARCHAR(100),
     @Password NVARCHAR(255),

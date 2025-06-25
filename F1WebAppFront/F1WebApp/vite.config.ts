@@ -42,12 +42,17 @@ export default defineConfig({
         secure: false,
       },
       '/vote': {
-        target: 'http://localhost:5003',
+        target: 'http://localhost:5001',
         changeOrigin: true,
         secure: false,
       },
       '/new': {
         target: 'http://localhost:5002',
+        changeOrigin: true,
+        secure: false,
+      },
+      '/quiz': {
+        target: 'http://localhost:5001',
         changeOrigin: true,
         secure: false,
       },

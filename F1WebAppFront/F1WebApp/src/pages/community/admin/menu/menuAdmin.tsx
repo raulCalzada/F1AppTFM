@@ -31,20 +31,24 @@ export const MenuAdmin: React.FC = () => {
             <div className="actual-menu-admin">
                 <div className="sub-cards-admin">
                     <Link to="/community/admin/users" className="sub-card-admin hover:scale-105 transition-transform duration-300 shadow-lg">
-                        <h2>👤Users👤</h2>
+                        <h2>👤 Users 👤</h2>
                         <p>Update/Delete users or give 🏆Points🏆</p>
                     </Link>
                     <Link to="/community/admin/news" className="sub-card-admin hover:scale-105 transition-transform duration-300 shadow-lg">
-                        <h2>📰 News 📰</h2>
+                        <h2>📰 News</h2>
                         <p>Delete news</p>
                     </Link>
                     <Link to="/community/admin/forum" className="sub-card-admin hover:scale-105 transition-transform duration-300 shadow-lg">
                         <h2>💬 Forum</h2>
                         <p>Delete Forum Threads</p>
                     </Link>
-                    <Link to="/community/votings" className="sub-card-admin hover:scale-105 transition-transform duration-300 shadow-lg">
-                        <h2>Votings</h2>
-                        <p>Create, delete, give puntuations from votings</p>
+                    <Link to="/community/admin/quiz" className="sub-card-admin hover:scale-105 transition-transform duration-300 shadow-lg">
+                        <h2>🧠 Quiz</h2>
+                        <p>Delete or Activate Quizzes</p>
+                    </Link>
+                    <Link to="/community/admin/votings" className="sub-card-admin hover:scale-105 transition-transform duration-300 shadow-lg">
+                        <h2>🗳️ Votings</h2>
+                        <p>Create, delete, give 🏆puntuations🏆 from votings</p>
                     </Link>
                     <Link to="/community/admin/settings" className="sub-card-admin hover:scale-105 transition-transform duration-300 shadow-lg">
                         <h2 style={{ color: "orange" }}>Settings</h2>

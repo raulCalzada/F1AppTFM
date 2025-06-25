@@ -4,6 +4,8 @@ using F1.Shared.Database.Repositories.Forum;
 using F1.Shared.Database.Repositories.Forum.Interfaces;
 using F1.Shared.Database.Repositories.News;
 using F1.Shared.Database.Repositories.News.Interfaces;
+using F1.Shared.Database.Repositories.Quiz;
+using F1.Shared.Database.Repositories.Quiz.Interfaces;
 using F1.Shared.Database.Repositories.Users;
 using F1.Shared.Database.Repositories.Users.Interfaces;
 using F1.Shared.Database.Repositories.Votes;
@@ -28,7 +30,12 @@ namespace F1.Shared.Database
 
                 .AddScoped<IVoteOptionsRepository, VoteOptionsRepository>()
                 .AddScoped<IVoteQuestionsRepository, VoteQuestionsRepository>()
-                .AddScoped<IVotesRepository, VotesRepository>();
+                .AddScoped<IVotesRepository, VotesRepository>()
+
+                .AddScoped<IQuizzesRepository, QuizzesRepository>()
+                .AddScoped<IQuizQuestionsRepository, QuizQuestionsRepository>()
+                .AddScoped<IQuizAnswersRepository, QuizAnswersRepository>()
+                .AddScoped<IQuizResultsRepository, QuizResultsRepository>();
 
             return builder;
         }

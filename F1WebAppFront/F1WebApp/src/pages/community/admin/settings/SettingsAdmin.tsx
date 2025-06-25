@@ -7,7 +7,8 @@ export const SettingsAdmin: React.FC = () => {
     const {
         showNews, setShowNews,
         showForum, setShowForum,
-        showVotings, setShowVotings
+        showVotings, setShowVotings,
+        showQuiz, setShowQuiz
     } = useGlobalVariables();
 
     return (
@@ -37,6 +38,15 @@ export const SettingsAdmin: React.FC = () => {
                     <button
                         className={`toggle-btn ${showVotings ? "on" : "off"}`}
                         onClick={() => setShowVotings(!showVotings)}
+                    >
+                        {showVotings ? "ON" : "OFF"}
+                    </button>
+                </div>
+                <div className="toggle-container">
+                    <span>Show Quizzes</span>
+                    <button
+                        className={`toggle-btn ${showQuiz ? "on" : "off"}`}
+                        onClick={() => setShowQuiz(!showQuiz)}
                     >
                         {showVotings ? "ON" : "OFF"}
                     </button>

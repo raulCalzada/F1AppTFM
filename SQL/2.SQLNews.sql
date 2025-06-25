@@ -12,7 +12,7 @@ CREATE TABLE News (
     Content NVARCHAR(MAX) NOT NULL,
     ImageUrl1 NVARCHAR(500) NULL,
     ImageUrl2 NVARCHAR(500) NULL,
-    AuthorUserId INT NOT NULL,
+    AuthorUserId BIGINT NOT NULL,
     CreateDate DATETIME DEFAULT GETDATE() NOT NULL,
     FOREIGN KEY (AuthorUserId) REFERENCES Users(UserId)
 );
@@ -21,7 +21,7 @@ GO
 -- Crear tabla NewsComments
 CREATE TABLE NewsComments (
     CommentId INT IDENTITY(1,1) PRIMARY KEY NOT NULL,
-    UserId INT NOT NULL,
+    UserId BIGINT NOT NULL,
     ArticleId INT NOT NULL,
     Comment NVARCHAR(1000) NOT NULL,
     CreateDate DATETIME DEFAULT GETDATE(),

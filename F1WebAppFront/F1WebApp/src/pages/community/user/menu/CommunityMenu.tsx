@@ -14,7 +14,8 @@ export const CommunityMenu: React.FC = () => {
     const {
         showNews,
         showForum,
-        showVotings
+        showVotings,
+        showQuiz
     } = useGlobalVariables();
 
     useEffect(() => {
@@ -53,7 +54,7 @@ export const CommunityMenu: React.FC = () => {
                 </div>
                 <div className="sub-cards-community">
                     {showVotings && (
-                        <Link to="/votings" className="sub-card-community hover:scale-105 transition-transform duration-300 shadow-lg">
+                        <Link to="/community/votings" className="sub-card-community hover:scale-105 transition-transform duration-300 shadow-lg">
                             <h2>🏆 Votings 🏆</h2>
                             <p>🔥 Think you know it all? Prove it in community polls and rack up points to claim the title of the ultimate F1 fan!</p>
                         </Link>
@@ -68,6 +69,12 @@ export const CommunityMenu: React.FC = () => {
                         <Link to="/community/forum" className="sub-card-community hover:scale-105 transition-transform duration-300 shadow-lg">
                             <h2>💬 Forum</h2>
                             <p>Join discussions and share your thoughts with the community.</p>
+                        </Link>
+                    )}
+                    {showQuiz && (
+                        <Link to="/community/quiz" className="sub-card-community hover:scale-105 transition-transform duration-300 shadow-lg">
+                            <h2>🧠 Quiz Time 🧠</h2>
+                            <p>Test your Formula 1 knowledge with challenging quizzes and climb the leaderboard to prove you're the ultimate F1 brain!</p>
                         </Link>
                     )}
                 </div>

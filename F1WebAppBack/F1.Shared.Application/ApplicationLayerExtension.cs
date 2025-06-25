@@ -14,6 +14,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using F1.Shared.Application.Community.Services.Interfaces;
 using F1.Shared.Application.Community.Services;
+using F1.Shared.Application.Community.UseCases.Quiz.Interfaces;
+using F1.Shared.Application.Community.UseCases.Quiz;
 
 namespace F1.Shared.Application
 {
@@ -25,7 +27,8 @@ namespace F1.Shared.Application
                 .AddTransient<IUserService, UserService>()
                 .AddTransient<INewsServices, NewsServices>()
                 .AddTransient<IForumServices, ForumServices>()
-                .AddTransient<IVotingServices, VotingServices>();
+                .AddTransient<IVotingServices, VotingServices>()
+                .AddTransient<IQuizServices, QuizServices>();
 
             return builder;
         }
@@ -81,6 +84,19 @@ namespace F1.Shared.Application
             return builder;
         }
 
+        private static IHostApplicationBuilder AddQuizUseCases(this IHostApplicationBuilder builder)
+        {
+            builder.Services
+                .AddTransient<ICreateQuizUseCase, CreateQuizUseCase>()
+                .AddTransient<IDeleteQuizUseCase, DeleteQuizUseCase>()
+                .AddTransient<IGetAllQuizzesUseCase, GetAllQuizzesUseCase>()
+                .AddTransient<IGetQuizUseCase, GetQuizUseCase>()
+                .AddTransient<IGetUserQuizPuntutationsUseCase, GetUserQuizPuntutationsUseCase>()
+                .AddTransient<ISubmitQuizUseCase, SubmitQuizUseCase>();
+
+            return builder;
+        }
+
         public static IHostApplicationBuilder UseApplicationLayer(this IHostApplicationBuilder builder)
         {
             return builder
@@ -88,6 +104,7 @@ namespace F1.Shared.Application
                 .AddNewsUseCases()
                 .AddForumUseCases()
                 .AddVotingUseCases()
+                .AddQuizUseCases()
                 .AddServices();
         }
     }

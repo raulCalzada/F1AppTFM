@@ -1,0 +1,133 @@
+.quizzes-admin-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.admin-controls {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    gap: 15px;
+}
+
+.admin-controls input {
+    flex-grow: 1;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.create-button {
+    background-color: #FF8000;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.create-button:hover {
+    background-color: #E67300;
+}
+
+.quizzes-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.quizzes-table th, .quizzes-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.quizzes-table th {
+    background-color: #0066CC;
+    color: white;
+    font-weight: bold;
+}
+
+.quizzes-table tr:hover {
+    background-color:rgb(0, 0, 0);
+}
+
+.actions-cell {
+    display: flex;
+    gap: 8px;
+}
+
+.scores-button {
+    background-color: #0066CC;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.scores-button:hover {
+    background-color: #004C99;
+}
+
+.delete-button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.delete-button:hover {
+    background-color: #c82333;
+}
+
+.user-scores-container {
+    padding: 15px;
+    background-color:#004C99;
+    border-radius: 4px;
+    margin: 10px 0;
+}
+
+.user-scores-container h4 {
+    margin-top: 0;
+    color: #333;
+}
+
+.scores-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.scores-table th, .scores-table td {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.scores-table th {
+    background-color: #e0e0e0;
+}
+
+@media (max-width: 768px) {
+    .admin-controls {
+        flex-direction: column;
+    }
+    
+    .quizzes-table {
+        display: block;
+        overflow-x: auto;
+    }
+
+    .actions-cell {
+        flex-direction: column;
+    }
+}

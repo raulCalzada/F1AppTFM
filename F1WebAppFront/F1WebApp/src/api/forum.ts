@@ -1,7 +1,5 @@
 import axios from "axios";
 
-
-
 const BaseUrl = '/forum';
 
 export const obtainForumThreads = async () => {
