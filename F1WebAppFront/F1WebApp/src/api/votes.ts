@@ -19,9 +19,7 @@ export const editVoteStatus = async(status:{"status": number, "question": number
 }
 
 export const createVotation = async(question : VoteQuestion) => {
-    console.log("Creating votation with question:", question);
     const response = await axios.post(`${BaseUrl}/create`, question);  
-    console.log("Votation created with response:", response.data);
     return response.data;
 }
 
