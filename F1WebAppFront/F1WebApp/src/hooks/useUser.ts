@@ -138,6 +138,14 @@ export const useUser = () => {
         }
     }, [onLoading2, onSuccess2, onError2]);
 
+    const getUserPositionByPoints = useCallback((): number | null => {
+        if (!loggedUser || userList.length === 0) return null;
+
+        const sortedUsers = [...userList].sort((a, b) => b.points - a.points);
+        const position = sortedUsers.findIndex(u => u.userId === loggedUser.userId);
+
+        return position !== -1 ? position + 1 : null;
+}, [loggedUser, userList]);
 
 
     return {
@@ -154,6 +162,7 @@ export const useUser = () => {
         logoutUser,
         deleteUser,
         updateUser,
-        syncUserById
+        syncUserById,
+        getUserPositionByPoints
     };
 }

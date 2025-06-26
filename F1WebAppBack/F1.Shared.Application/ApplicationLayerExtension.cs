@@ -80,6 +80,7 @@ namespace F1.Shared.Application
                 .AddTransient<IDeleteVotationUseCase, DeleteVotationUseCase>()
                 .AddTransient<IGetVoteUseCase, GetVoteUseCase>()
                 .AddTransient<IGetAllVotesUseCase, GetAllVotesUseCase>()
+                .AddTransient<IGiveVotingPointsUseCase, GiveVotingPointsUseCase>()
                 .AddTransient<IVoteUseCase, VoteUseCase>();
             return builder;
         }

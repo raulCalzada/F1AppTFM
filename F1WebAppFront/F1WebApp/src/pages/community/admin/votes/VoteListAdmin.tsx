@@ -12,7 +12,8 @@ export const VoteListAdmin: React.FC = () => {
         getVoteList,
         voteStatus,
         deleteVoteQuestion,
-        updateQuestionStatus
+        updateQuestionStatus,
+        givePointsToOption
     } = useVote();
 
     const navigate = useNavigate();
@@ -72,7 +73,7 @@ export const VoteListAdmin: React.FC = () => {
     };
 
     const getStatusColor = (status: number) => {
-        switch(status) {
+        switch (status) {
             case 1: return 'status-active';
             case 2: return 'status-inactive';
             case 3: return 'status-historic';
@@ -81,7 +82,7 @@ export const VoteListAdmin: React.FC = () => {
     };
 
     const getStatusText = (status: number) => {
-        switch(status) {
+        switch (status) {
             case 1: return 'Active';
             case 2: return 'Inactive';
             case 3: return 'Historic';
@@ -93,7 +94,7 @@ export const VoteListAdmin: React.FC = () => {
         <CommunityAdminMainContainer>
             <div className="votes-admin-container">
                 <h1>Votes Panel</h1>
-                
+
                 <div className="admin-controls">
                     <input
                         type="text"
@@ -140,7 +141,20 @@ export const VoteListAdmin: React.FC = () => {
                                     <td>
                                         <ul className="options-list">
                                             {vote.options.map((option, index) => (
-                                                <li key={index}>{option}</li>
+                                                <li key={index}>
+                                                    <span>{option}</span>
+                                                    <button
+                                                        className="give-points-button"
+                                                        onClick={() => {
+                                                            const points = parseInt(prompt("How many points to give?", "10") || "0");
+                                                            if (points > 0) {
+                                                                givePointsToOption(vote.id, index + 1, points);
+                                                            }
+                                                        }}
+                                                    >
+                                                        Give Points
+                                                    </button>
+                                                </li>
                                             ))}
                                         </ul>
                                     </td>

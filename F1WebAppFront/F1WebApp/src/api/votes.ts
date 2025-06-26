@@ -32,3 +32,8 @@ export const deleteQuestion = async(questionId: number) => {
     const response = await axios.delete(`${BaseUrl}/${questionId}`);  
     return response.data;
 };
+
+export const givePoints = async(data: { questionId: number, voteOption: number, points: number }) => {
+    const response = await axios.post(`${BaseUrl}/give-points`, data);
+    return response.data;
+};

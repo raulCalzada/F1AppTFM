@@ -1,5 +1,6 @@
 using F1.Shared.Application.Community.Services.Interfaces;
 using F1.Shared.Application.Community.UseCases.Quiz.Interfaces;
+using F1.Shared.Application.User.Services.Interfaces;
 using F1.Shared.Domain.Comunity.Entities;
 using F1.Shared.Domain.Comunity.Entities.Interfaces;
 
@@ -8,10 +9,12 @@ namespace F1.Shared.Application.Community.UseCases.Quiz;
 public class SubmitQuizUseCase : ISubmitQuizUseCase
 {
     private readonly IQuizServices _quizServices;
+    private readonly IUserService _userService;
 
-    public SubmitQuizUseCase(IQuizServices quizServices)
+    public SubmitQuizUseCase(IQuizServices quizServices, IUserService userService)
     {
         _quizServices = quizServices;
+        _userService = userService;
     }
 
     public async Task<IQuiz> QuizSubmit(IQuiz quiz)
@@ -63,6 +66,8 @@ public class SubmitQuizUseCase : ISubmitQuizUseCase
             User = quiz.UserResults.FirstOrDefault()?.User,
             ScoreObtained = quiz.ScoreReceived ?? 0
         });
+
+        _ = _userService.GivePoints(quiz.UserResults.FirstOrDefault()?.User.Id ?? 0, quiz.ScoreReceived ?? 0);
 
         return quiz;
     }

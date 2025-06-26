@@ -1,7 +1,7 @@
 import { useCallback, useState } from "react";
 import { useStatus } from "./useStatus";
 import { VoteQuestion } from "../types/voteQuestion";
-import { createVotation, deleteQuestion, editVoteStatus, obtainQuestions, obtainVoteById, vote } from "../api/votes";
+import { createVotation, deleteQuestion, editVoteStatus, givePoints, obtainQuestions, obtainVoteById, vote } from "../api/votes";
 
 
 export const useVote = () => {
@@ -56,8 +56,7 @@ export const useVote = () => {
         onLoading();
         try {
             const statusUpdate = { status, question: id };
-            const result = await editVoteStatus(statusUpdate);
-            setSelectedVote(result);
+            await editVoteStatus(statusUpdate);
             onSuccess();
         } catch (error) {
             onError(error);
@@ -76,6 +75,16 @@ export const useVote = () => {
         }
     }, [onLoading, onSuccess, onError]);
 
+    const givePointsToOption = useCallback(async (questionId: number, voteOption: number, points: number) => {
+    onLoading();
+    try {
+        await givePoints({ questionId, voteOption, points });
+        onSuccess();
+    } catch (error) {
+        onError(error);
+    }
+}, [onLoading, onSuccess, onError]);
+
     
     return {
         voteList,
@@ -87,6 +96,7 @@ export const useVote = () => {
         deleteVoteQuestion,
         updateQuestionStatus,
         submitVote,
-        setSelectedVote
+        setSelectedVote,
+        givePointsToOption
     };
 };
