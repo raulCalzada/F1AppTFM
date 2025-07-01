@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import '../login/LoginPage.css';
 import { CommunityMainContainer } from "../../../common/communityMainContainer/CommunityMainContainer";
+import { useUser } from "../../../hooks/useUser";
+import { User } from "../../../types/user";
 
 export const RegisterPage: React.FC = () => {
     const [username, setUsername] = useState("");
@@ -10,15 +12,30 @@ export const RegisterPage: React.FC = () => {
     const [confirmPassword, setConfirmPassword] = useState("");
     const [error, setError] = useState("");
     const navigate = useNavigate();
+    const { getUserList, createNewUser } = useUser();
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         if (password !== confirmPassword) {
             setError("Passwords do not match");
             return;
         }
-        setError("");
-        navigate("/login");
+
+        const newUser : User = {
+            username,
+            email,
+            password,
+            isActive: true,
+            role: 1,
+        };
+
+        try {
+            createNewUser(newUser);
+            await getUserList();
+            navigate("/community/login");
+        } catch (err) {
+            setError("An error occurred while creating the user");
+        }
     };
 
     return (
@@ -26,7 +43,7 @@ export const RegisterPage: React.FC = () => {
             <div className="actual-menu-community">
                 <div className="main-card-community login-card">
                     <p className="main-card-title-community">Register</p>
-                    
+
                     {error && <div className="dropdown-error">{error}</div>}
 
                     <form onSubmit={handleSubmit} className="login-form">

@@ -1,5 +1,5 @@
 import { useCallback, useState } from "react";
-import { editUser, getAllUsers, obtainUser, obtainUserByUsername } from "../api/user";
+import { createUser, editUser, getAllUsers, obtainUser, obtainUserByUsername } from "../api/user";
 import { User } from "../types/user";
 import { useStatus, useStatus2 } from "./useStatus";
 
@@ -22,6 +22,19 @@ export const useUser = () => {
                 onError(error.message);
             });
     }, [onSuccess, onError, onLoading]);
+
+    const createNewUser = useCallback(async (userData: User) => {
+        onLoading();
+        createUser(userData)
+            .then((response) => {
+                setUser(response);
+                onSuccess(response ? `User ${response.username} created successfully` : '');
+                return response;
+            })
+            .catch((error) => {
+                onError(error.message);
+            });
+        }, [onSuccess, onError, onLoading]);
 
     const syncUserById = useCallback(async (userId: string): Promise<User> => {
         return await obtainUser(userId) as User;
@@ -163,6 +176,7 @@ export const useUser = () => {
         deleteUser,
         updateUser,
         syncUserById,
-        getUserPositionByPoints
+        getUserPositionByPoints,
+        createNewUser
     };
 }
