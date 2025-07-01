@@ -4,11 +4,13 @@
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerfileContext>.</DockerfileContext>
+    <UserSecretsId>62838d1d-1087-4df9-93f6-65d8ef187de3</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="FastEndpoints" Version="5.35.0" />
-    <PackageReference Include="FastEndpoints.Swagger" Version="5.35.0" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.3" />
   </ItemGroup>
 

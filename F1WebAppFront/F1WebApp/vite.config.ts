@@ -31,6 +31,31 @@ export default defineConfig({
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/openai-api/, ''),
       },
+      '/user': {
+        target: 'http://localhost:5003',
+        changeOrigin: true,
+        secure: false,
+      },
+      '/forum': {
+        target: 'http://localhost:5001',
+        changeOrigin: true,
+        secure: false,
+      },
+      '/vote': {
+        target: 'http://localhost:5001',
+        changeOrigin: true,
+        secure: false,
+      },
+      '/new': {
+        target: 'http://localhost:5002',
+        changeOrigin: true,
+        secure: false,
+      },
+      '/quiz': {
+        target: 'http://localhost:5001',
+        changeOrigin: true,
+        secure: false,
+      },
     },
-  },
-});
+  }
+},);

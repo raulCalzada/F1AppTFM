@@ -10,9 +10,6 @@ namespace F1.Shared.Application.User.Services.Interfaces
         Task DeleteUser(IUser user);
         Task CreateUser(IUser user);
         Task UpdateUser(IUser user);
-
-
-
-
+        Task GivePoints(long userId, long pointsToAdd);
     }
 }

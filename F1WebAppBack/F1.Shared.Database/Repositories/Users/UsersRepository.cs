@@ -16,7 +16,7 @@ namespace F1.Shared.Database.Repositories.Users
 
         public async Task<IEnumerable<IUser>> GetAllUsers()
         {
-            var userDtoList = await _storeProcedureRepository.QueryAsync<UserDto>("SELECT * FROM Users", commandType: CommandType.Text);
+            var userDtoList = await _storeProcedureRepository.QueryAsync<UserDto>("SELECT * FROM Users order by 1 desc", commandType: CommandType.Text);
             return userDtoList.Select(x => x.ToDomain()).ToList();
         }
 
@@ -25,8 +25,8 @@ namespace F1.Shared.Database.Repositories.Users
             var userDto = new
             {
                 Username = user.Username,
-                Email = user.Password,
-                Password = user.Email,
+                Email = user.Email,
+                Password = user.Password,
                 Rol = user.Role
             };
 

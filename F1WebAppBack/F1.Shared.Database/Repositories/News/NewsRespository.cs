@@ -57,8 +57,6 @@ namespace F1.Shared.Database.Repositories.News
                 Content = news.Content,
                 ImageUrl1 = news.ImageUrl1,
                 ImageUrl2 = news.ImageUrl2,
-                AuthorUserId = news.Author.Id,
-                CreateDate = news.CreateDate
             };
             await _storeProcedureRepository.ExecuteAsync("UpdateNews", newsDto, CommandType.StoredProcedure);
         }

@@ -12,5 +12,6 @@ namespace F1.Shared.Domain.Users.Entities.Interfaces
         DateTime? LastUpdateDate { get; set; }
         bool IsActive { get; set; }
         Role Role { get; set; }
+        long Points { get; set; }
     }
 }

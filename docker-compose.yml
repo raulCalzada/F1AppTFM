@@ -1,0 +1,44 @@
+
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: sqlserver
+    environment:
+      SA_PASSWORD: "Admin123!"
+      ACCEPT_EULA: "Y"
+    ports:
+      - "1433:1433"
+
+  communityservice:
+    build:
+      context: ./F1WebAppBack
+      dockerfile: ./F1.CommunityService/Dockerfile
+    ports:
+      - "5001:8080"
+    depends_on:
+      - sqlserver
+    environment:
+      ConnectionStrings__DDBB: "Server=sqlserver;Database=F1AppDB;User ID=sa;Password=Admin123!;TrustServerCertificate=True;"
+
+  news:
+    build:
+      context: ./F1WebAppBack
+      dockerfile: ./F1.News/Dockerfile
+    ports:
+      - "5002:8080"
+    depends_on:
+      - sqlserver
+    environment:
+      ConnectionStrings__DDBB: "Server=sqlserver;Database=F1AppDB;User ID=sa;Password=Admin123!;TrustServerCertificate=True;"
+
+  users:
+    build:
+      context: ./F1WebAppBack
+      dockerfile: ./F1.Users/Dockerfile
+    ports:
+      - "5003:8080"
+    depends_on:
+      - sqlserver
+    environment:
+      ConnectionStrings__DDBB: "Server=sqlserver;Database=F1AppDB;User ID=sa;Password=Admin123!;TrustServerCertificate=True;"
+

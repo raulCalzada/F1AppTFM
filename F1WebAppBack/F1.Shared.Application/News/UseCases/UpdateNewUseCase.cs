@@ -14,9 +14,9 @@ namespace F1.Shared.Application.News.UseCases
         }
         public async Task<INew> UpdateNew(INew news)
         {
-            var article = _newsServices.GetCompleteNewById(news.Id);
+            var article = await _newsServices.GetCompleteNewById(news.Id);
 
-            if (article == null && article?.Id == news.Id)
+            if (article == null || !article.Id.Equals(news.Id))
             {
                 throw new InvalidOperationException("New not found");
             }

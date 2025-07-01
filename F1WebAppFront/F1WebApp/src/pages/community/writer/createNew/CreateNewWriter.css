@@ -1,0 +1,66 @@
+.create-news-container {
+  background-color: #0a1f44;
+  padding: 30px;
+  border-radius: 12px;
+  color: white;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.create-news-container h2 {
+  color: #00aaff;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.create-news-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.create-news-form input,
+.create-news-form textarea {
+  padding: 10px;
+  background-color: #001c38;
+  border: 1px solid #00aaff;
+  border-radius: 6px;
+  color: white;
+  font-size: 1rem;
+}
+
+.create-news-form input::placeholder,
+.create-news-form textarea::placeholder {
+  color: #cccccc;
+}
+
+.btn-create {
+  background-color: #00aaff;
+  color: white;
+  font-weight: bold;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-create:hover {
+  background-color: #0088cc;
+}
+
+.dropzone {
+  border: 2px dashed #00aaff;
+  padding: 20px;
+  text-align: center;
+  color: #cccccc;
+  border-radius: 8px;
+  background-color: #001c38;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.dropzone.active {
+  background-color: #003366;
+  border-color: #66d9ff;
+}

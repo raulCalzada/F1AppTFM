@@ -1,0 +1,86 @@
+.login-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.login-input-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-input-group label {
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.login-input-group input {
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+.login-button {
+    background-color: #dc2626; 
+    color: white;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.login-button:hover {
+    background-color: #b91c1c;
+}
+
+.login-register-text {
+    margin-top: 1.5rem;
+    text-align: center;
+}
+
+.login-register-link {
+    color: #dc2626;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.login-register-link:hover {
+    text-decoration: underline;
+}
+
+
+.dropdown-error {
+    width: 100%;
+    background-color: #fee2e2;
+    color: #991b1b;
+    padding: 0.75rem 1rem;
+    border: 1px solid #fca5a5;
+    border-radius: 0.5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    animation: slideDownFade 0.3s ease-out;
+    font-weight: 500;
+}
+
+@keyframes slideDownFade {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
