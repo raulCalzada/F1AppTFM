@@ -42,7 +42,7 @@ jobs:
       run: |
         dotnet build F1.Shared.Domain --configuration Release --no-restore
         dotnet build F1.Shared.Database --configuration Release --no-restore
-        dotnet build F1.Application --configuration Release --no-restore
+        dotnet build F1.Shared.Application --configuration Release --no-restore
     
     - name: Build API Components
       run: |
