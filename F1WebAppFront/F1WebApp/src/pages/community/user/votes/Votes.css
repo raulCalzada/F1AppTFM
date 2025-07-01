@@ -1,0 +1,237 @@
+/* Votes.css - Dark Theme Update */
+.votes-list-container-vote {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #121212;
+    min-height: 100vh;
+}
+
+.votes-list-title-vote {
+    color: #00D2BE; /* Aston Martin Teal */
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.votes-grid-vote {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 25px;
+}
+
+.vote-card-vote {
+    background-color: #1E1E1E;
+    border-radius: 10px;
+    padding: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-left: 5px solid #00D2BE;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.vote-card-vote:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+    border-left-color: #006F62;
+}
+
+.vote-card-content-vote h4 {
+    margin-top: 0;
+    color: #FFFFFF;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.vote-options-preview-vote {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.option-tag-vote {
+    background-color: #2A2A2A;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 0.95em;
+    color: #DDD;
+    border-left: 3px solid #00D2BE;
+    transition: all 0.2s ease;
+}
+
+.vote-count-vote {
+    font-size: 0.85em;
+    color: #777;
+    margin: 15px 0 0 0;
+    text-align: right;
+}
+
+.no-votes-message-vote {
+    text-align: center;
+    color: #666;
+    font-size: 1.1rem;
+}
+
+/* Modal styles */
+.modal-backdrop-vote {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content-vote {
+    background-color: #1E1E1E;
+    padding: 30px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 650px;
+    max-height: 90vh;
+    overflow-y: auto;
+    border-top: 5px solid #00D2BE;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+.vote-question-title-vote {
+    color: #00D2BE;
+    margin-top: 0;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.vote-options-vote {
+    margin: 25px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.option-item-vote {
+    padding: 14px 20px;
+    background-color: #2A2A2A;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: #EEE;
+    border-left: 4px solid #2A2A2A;
+}
+
+.option-item-vote:hover {
+    background-color: #333;
+    border-left-color: #00D2BE;
+}
+
+.option-item-vote.selected-vote {
+    background-color: #006F62;
+    color: white;
+    border-left-color: #00D2BE;
+}
+
+.already-voted-message-vote {
+    padding: 15px;
+    background-color: rgba(0, 210, 190, 0.1);
+    border-left: 4px solid #00D2BE;
+    margin: 20px 0;
+    color: #00D2BE;
+    font-weight: bold;
+    border-radius: 6px;
+}
+
+.vote-stats-vote {
+    margin-top: 30px;
+}
+
+.stat-item-vote {
+    margin-bottom: 20px;
+}
+
+.stat-option-vote {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #00D2BE;
+}
+
+.stat-bar-container-vote {
+    height: 22px;
+    background-color: #2A2A2A;
+    border-radius: 11px;
+    margin-bottom: 8px;
+    overflow: hidden;
+}
+
+.stat-bar-vote {
+    height: 100%;
+    background: linear-gradient(90deg, #006F62, #00D2BE);
+    transition: width 0.7s ease;
+}
+
+.stat-percentage-vote {
+    font-size: 0.95em;
+    color: #00D2BE;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.stat-count-vote {
+    font-size: 0.85em;
+    color: #999;
+}
+
+.modal-actions-vote {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.btn-submit-vote {
+    background: linear-gradient(135deg, #006F62, #00D2BE);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn-submit-vote:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(0, 210, 190, 0.3);
+}
+
+.btn-submit-vote:disabled {
+    background: #444;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.btn-cancel-vote {
+    background-color: #333;
+    color: #EEE;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.btn-cancel-vote:hover {
+    background-color: #444;
+    transform: translateY(-2px);
+}

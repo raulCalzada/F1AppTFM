@@ -6,8 +6,16 @@ using F1.Shared.Application.User.Services;
 using F1.Shared.Application.User.Services.Interfaces;
 using F1.Shared.Application.User.UseCases;
 using F1.Shared.Application.User.UseCases.Interfaces;
+using F1.Shared.Application.Community.UseCases.Forum;
+using F1.Shared.Application.Community.UseCases.Forum.Interfaces;
+using F1.Shared.Application.Community.UseCases.Voting;
+using F1.Shared.Application.Community.UseCases.Voting.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using F1.Shared.Application.Community.Services.Interfaces;
+using F1.Shared.Application.Community.Services;
+using F1.Shared.Application.Community.UseCases.Quiz.Interfaces;
+using F1.Shared.Application.Community.UseCases.Quiz;
 
 namespace F1.Shared.Application
 {
@@ -15,10 +23,12 @@ namespace F1.Shared.Application
     {
         private static IHostApplicationBuilder AddServices(this IHostApplicationBuilder builder)
         {
-
             builder.Services
                 .AddTransient<IUserService, UserService>()
-                .AddTransient<INewsServices, NewsServices>();
+                .AddTransient<INewsServices, NewsServices>()
+                .AddTransient<IForumServices, ForumServices>()
+                .AddTransient<IVotingServices, VotingServices>()
+                .AddTransient<IQuizServices, QuizServices>();
 
             return builder;
         }
@@ -50,11 +60,52 @@ namespace F1.Shared.Application
             return builder;
         }
 
+        private static IHostApplicationBuilder AddForumUseCases(this IHostApplicationBuilder builder)
+        {
+            builder.Services
+                .AddTransient<ICreateForumCommentUseCase, CreateForumCommentUseCase>()
+                .AddTransient<ICreateForumThreadUseCase, CreateForumThreadUseCase>()
+                .AddTransient<IDeleteForumThreadUseCase, DeleteForumThreadUseCase>()
+                .AddTransient<IDeleteForumCommentUseCase, DeleteForumCommentUseCase>()
+                .AddTransient<IGetAllForumThreadsUseCase, GetAllForumThreadsUseCase>()
+                .AddTransient<IGetForumThreadUseCase, GetForumThreadUseCase>();
+            return builder;
+        }
+
+        private static IHostApplicationBuilder AddVotingUseCases(this IHostApplicationBuilder builder)
+        {
+            builder.Services
+                .AddTransient<IChangeVoteStatusUseCase, ChangeVoteStatusUseCase>()
+                .AddTransient<ICreateVoteUseCase, CreateVoteUseCase>()
+                .AddTransient<IDeleteVotationUseCase, DeleteVotationUseCase>()
+                .AddTransient<IGetVoteUseCase, GetVoteUseCase>()
+                .AddTransient<IGetAllVotesUseCase, GetAllVotesUseCase>()
+                .AddTransient<IGiveVotingPointsUseCase, GiveVotingPointsUseCase>()
+                .AddTransient<IVoteUseCase, VoteUseCase>();
+            return builder;
+        }
+
+        private static IHostApplicationBuilder AddQuizUseCases(this IHostApplicationBuilder builder)
+        {
+            builder.Services
+                .AddTransient<ICreateQuizUseCase, CreateQuizUseCase>()
+                .AddTransient<IDeleteQuizUseCase, DeleteQuizUseCase>()
+                .AddTransient<IGetAllQuizzesUseCase, GetAllQuizzesUseCase>()
+                .AddTransient<IGetQuizUseCase, GetQuizUseCase>()
+                .AddTransient<IGetUserQuizPuntutationsUseCase, GetUserQuizPuntutationsUseCase>()
+                .AddTransient<ISubmitQuizUseCase, SubmitQuizUseCase>();
+
+            return builder;
+        }
+
         public static IHostApplicationBuilder UseApplicationLayer(this IHostApplicationBuilder builder)
         {
             return builder
                 .AddUserUseCases()
                 .AddNewsUseCases()
+                .AddForumUseCases()
+                .AddVotingUseCases()
+                .AddQuizUseCases()
                 .AddServices();
         }
     }

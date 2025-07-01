@@ -20,5 +20,7 @@ namespace F1.Shared.Domain.Users.Entities
         public bool IsActive { get; set; } = false;
 
         public Role Role { get; set; } = Role.User; 
+
+        public long Points { get; set; }
     }
 }

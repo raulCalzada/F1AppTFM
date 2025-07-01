@@ -1,0 +1,208 @@
+.quizzes-writer-container {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    color: #333;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f1f1f1;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.quizzes-writer-container h1 {
+    color: #000000;
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    text-align: center;
+    padding-bottom: 0.5rem;
+    background: linear-gradient(90deg, #00D2BE 0%, #008176 100%);
+    padding: 1rem;
+    border-radius: 4px;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.writer-controls {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+    gap: 1rem;
+    flex-wrap: wrap;
+    background-color: #000000;
+    padding: 1rem;
+    border-radius: 4px;
+}
+
+.writer-controls input {
+    flex: 1;
+    min-width: 250px;
+    padding: 0.75rem;
+    border: 1px solid #00D2BE;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: all 0.3s;
+    background-color: #f8f8f8;
+}
+
+.writer-controls input:focus {
+    outline: none;
+    border-color: #008176;
+    box-shadow: 0 0 0 2px rgba(0, 210, 190, 0.3);
+    background-color: white;
+}
+
+.create-button {
+    background: linear-gradient(135deg, #00D2BE 0%, #008176 100%);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s;
+    white-space: nowrap;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.create-button:hover {
+    background: linear-gradient(135deg, #008176 0%, #00D2BE 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.quizzes-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.quizzes-table th {
+    background: linear-gradient(90deg, #000000 0%, #008176 100%);
+    color: white;
+    font-weight: 600;
+    padding: 1rem;
+    text-align: left;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.9rem;
+}
+
+.quizzes-table td {
+    padding: 1rem;
+    border-bottom: 1px solid #e0e0e0;
+    vertical-align: middle;
+}
+
+.quizzes-table tr:hover {
+    background-color: #f0f8f7;
+}
+
+.actions-cell {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.scores-button {
+    background: linear-gradient(135deg, #00D2BE 0%, #008176 100%);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s;
+    min-width: 100px;
+}
+
+.scores-button:hover {
+    background: linear-gradient(135deg, #008176 0%, #00D2BE 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.delete-button {
+    background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s;
+    min-width: 80px;
+}
+
+.delete-button:hover {
+    background: linear-gradient(135deg, #c0392b 0%, #e74c3c 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.scores-row {
+    background-color: #f8f9fa;
+}
+
+.user-scores-container {
+    padding: 1rem;
+    background-color: white;
+    border-radius: 4px;
+    margin: 0.5rem 0;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.05);
+    border-left: 4px solid #00D2BE;
+}
+
+.user-scores-container h4 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: #008176;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.scores-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 0.5rem;
+}
+
+.scores-table th, .scores-table td {
+    padding: 0.75rem;
+    border: 1px solid #e0e0e0;
+    text-align: left;
+}
+
+.scores-table th {
+    background-color: #000000;
+    color: white;
+    font-weight: 500;
+}
+
+.scores-table tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+@media (max-width: 768px) {
+    .writer-controls {
+        flex-direction: column;
+    }
+    
+    .writer-controls input,
+    .create-button {
+        width: 100%;
+    }
+    
+    .quizzes-table {
+        display: block;
+        overflow-x: auto;
+    }
+    
+    .actions-cell {
+        flex-direction: column;
+    }
+}

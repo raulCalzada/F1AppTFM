@@ -1,12 +1,18 @@
-﻿using F1.Shared.Database.Connection.Interfaces;
-using Microsoft.Data.SqlClient;
+﻿using Microsoft.Extensions.Configuration;
 using System.Data;
+using Microsoft.Data.SqlClient;
+using F1.Shared.Database.Connection.Interfaces;
 
 namespace F1.Shared.Database.Connection
 {
     public class DatabaseConnection : IDatabaseConnection
     {
-        private const string _connectionString = "Server=localhost\\SQLEXPRESS;Database=master;Trusted_Connection=True;TrustServerCertificate=True;";
+        private readonly string? _connectionString;
+
+        public DatabaseConnection(IConfiguration configuration)
+        {
+            _connectionString = configuration.GetConnectionString("DDBB");
+        }
 
         public async Task<IDbConnection> GetConnectionAsync()
         {

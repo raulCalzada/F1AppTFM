@@ -22,6 +22,8 @@ namespace F1.Shared.Database.Repositories.Users.Dtos
 
         public int Rol { get; set; } = 2; // Default value for Role.User
 
+        public long Points { get; set; } = 0;
+
         public IUser ToDomain()
         {
             return new User
@@ -33,7 +35,8 @@ namespace F1.Shared.Database.Repositories.Users.Dtos
                 CreateDate = CreateDate,
                 LastUpdateDate = LastUpdateDate,
                 IsActive = IsActive,
-                Role = (Role)Rol
+                Role = (Role)Rol,
+                Points = Points
             };
         }
 
@@ -48,7 +51,8 @@ namespace F1.Shared.Database.Repositories.Users.Dtos
                 CreateDate = user.CreateDate,
                 LastUpdateDate = user.LastUpdateDate,
                 IsActive = user.IsActive,
-                Rol = (int)user.Role
+                Rol = (int)user.Role,
+                Points = user.Points
             };
         }
     }

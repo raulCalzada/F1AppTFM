@@ -17,7 +17,7 @@ namespace F1.News.Endpoints.GetLastNews
 
         public override void Configure()
         {
-            Get("/news/{quantity?}"); 
+            Get("/new/news/{quantity?}"); 
             AllowAnonymous();
         }
 

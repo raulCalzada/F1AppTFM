@@ -1,0 +1,104 @@
+.actual-menu-community {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+}
+
+.main-card-community {
+    background: rgba(22, 0, 0, 0.78);
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 600px;
+}
+
+.points-community {
+    color: rgb(255, 217, 1);
+}
+
+.main-title-page-community {
+    color: rgb(255, 255, 255);
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+}
+
+.main-card-content-community {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem; 
+    margin-top: 1rem;
+}
+
+.main-card-content-community {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem; 
+    margin-top: 1rem;
+}
+
+.main-card-link-community {
+    margin-top: 1rem;
+    display: inline-block;
+    color: #e10600;
+    text-decoration: underline;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.main-card-link-community:hover {
+    color: #ff4500;
+}
+
+.sub-cards-community {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+    width: 100%;
+    max-width: 1200px;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+.sub-card-community {
+    background: rgba(119, 0, 0, 0.7);
+    border-radius: 10px;
+    padding: 1.5rem;
+    text-align: center;
+    flex: 1 1 250px;
+    max-width: 300px;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    text-decoration: none;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.sub-card-community:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgb(0, 0, 0);
+}
+
+.sub-card-title-community {
+    color: #FFFFFF;
+    margin-bottom: 10px;
+}
+
+.sub-card-description-community {
+    color: #ccc;
+}
+
+
+@media (min-width: 1400px) {
+    .sub-card-community {
+        flex: 1 1 350px;
+        max-width: 400px;
+        gap: 2rem;
+
+    }    
+}
