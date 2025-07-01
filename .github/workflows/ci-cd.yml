@@ -3,10 +3,10 @@ name: CI/CD Pipeline for F1WebApp
 on:
   push:
     branches: [ develop ]
-  workflow_dispatch:  # allows manual exec
+  workflow_dispatch:
     inputs:
       environment:
-        description: 'Entorno a probar'
+        description: 'Entorno para ejecutar'
         required: true
         default: 'develop'
 
@@ -24,19 +24,43 @@ jobs:
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: '8.0'
+        
+    - name: Restore Shared Dependencies
+      run: |
+        dotnet restore F1.Shared.Domain
+        dotnet restore F1.Shared.Database
+        dotnet restore F1.Application
+          
+    - name: Restore API dependencies
+      run: |
+        dotnet restore F1.CommunityService
+        dotnet restore F1.Users
+        dotnet restore F1.News
+        
+    # Build commands estructurados igual que el restore
+    - name: Build Shared Components
+      run: |
+        dotnet build F1.Shared.Domain --configuration Release --no-restore
+        dotnet build F1.Shared.Database --configuration Release --no-restore
+        dotnet build F1.Application --configuration Release --no-restore
     
-    - name: Restore dependencies
-      run: dotnet restore
+    - name: Build API Components
+      run: |
+        dotnet build F1.CommunityService --configuration Release --no-restore
+        dotnet build F1.Users --configuration Release --no-restore
+        dotnet build F1.News --configuration Release --no-restore
     
-    - name: Build solution
-      run: dotnet build --configuration Release --no-restore
-    
-    - name: Run Application Tests
-      run: dotnet test F1.Tests/F1.Shared.ApplicationTests --configuration Release --no-build
-    
-    - name: Run Additional Tests (Ejemplo para futuros tests)
-      if: false  # Deshabilitado por ahora
-      run: dotnet test F1.Tests/F1.Shared.DomainTests --configuration Release --no-build
+    - name: Run Tests
+      run: |
+        dotnet test F1.Tests/F1.Shared.ApplicationTests --configuration Release --no-build
+        # dotnet test F1.Tests/F1.Shared.DomainTests --configuration Release --no-build
+     
+    - name: Upload test results  #to show the tests results  
+      if: always()
+      uses: actions/upload-artifact@v3
+      with:
+        name: test-results
+        path: F1WebAppBack/F1.Tests/TestResults/*.trx
 
   automerge:
     needs: build-and-test
