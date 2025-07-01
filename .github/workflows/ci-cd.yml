@@ -3,6 +3,12 @@ name: CI/CD Pipeline for F1WebApp
 on:
   push:
     branches: [ develop ]
+  workflow_dispatch:  # allows manual exec
+    inputs:
+      environment:
+        description: 'Entorno a probar'
+        required: true
+        default: 'develop'
 
 jobs:
   build-and-test:
