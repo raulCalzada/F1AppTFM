@@ -37,7 +37,7 @@ jobs:
         dotnet restore F1.Users
         dotnet restore F1.News
         
-    # Build commands estructurados igual que el restore
+    # Build commands
     - name: Build Shared Components
       run: |
         dotnet build F1.Shared.Domain --configuration Release --no-restore
@@ -52,12 +52,12 @@ jobs:
     
     - name: Run Tests
       run: |
-        dotnet test F1.Tests/F1.Shared.ApplicationTests --configuration Release --no-build
+        dotnet test F1.Tests/F1.Shared.ApplicationTests --configuration Release --no-build --logger "trx;LogFileName=test-results.trx"
         # dotnet test F1.Tests/F1.Shared.DomainTests --configuration Release --no-build
      
-    - name: Upload test results  #to show the tests results  
+    - name: Upload test results
       if: always()
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4  # Versión actualizada
       with:
         name: test-results
         path: F1WebAppBack/F1.Tests/TestResults/*.trx
