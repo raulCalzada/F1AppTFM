@@ -18,6 +18,9 @@ export const DropdownMenu: React.FC = () => {
       </div>
       {open && (
         <div className="dropdown-menu">
+          <a href="/" className="dropdown-item-home">Home</a>
+          <a href="/community/menu" className="dropdown-item">Community</a>
+          <a href="/actual" className="dropdown-item">Actual</a>
           <div 
             className="dropdown-item" 
             onMouseEnter={() => setSubMenuOpen(true)}
@@ -34,8 +37,7 @@ export const DropdownMenu: React.FC = () => {
               </div>
             )}
           </div>
-          <a href="/" className="dropdown-item-home">Home</a>
-          <a href="/actual" className="dropdown-item">Actual</a>
+          
         </div>
       )}
     </div>

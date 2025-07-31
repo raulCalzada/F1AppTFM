@@ -99,6 +99,11 @@ body, html {
     font-size: 2rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
     margin-bottom: 20px;
+    padding-inline: 50px;
+}
+
+.community-title:hover{
+    transform: scale(1.15);
 }
 
 .historical-links, .community-links {
@@ -135,7 +140,7 @@ body, html {
 }
 
 .community-card {
-    background: rgba(100, 76, 95, 0.7);
+    background: linear-gradient(135deg, #1c1c1e 0%, #e10600 100%);
     padding: 15px;
     border-radius: 5px;
     color: white;

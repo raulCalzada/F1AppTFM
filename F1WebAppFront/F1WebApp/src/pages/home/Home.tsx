@@ -52,17 +52,22 @@ export const Home: React.FC = () => {
             <div className="community-section">
                 <img src={communityImage} alt="Community" className="background-image" />
                 <Link to="/community/menu"  className="community-content">
-                    <h2 className="community-title">Join the F1 Community</h2>
-                    <div className="community-links">
+                <div className="community-links">
                         <Link to="/community/forum" className="community-card">
                             Community Forum
                         </Link>
                         <Link to="/community/news" className="community-card">
                             F1 News
+                        </Link>      
+                    </div>
+                    <h2 className="community-title">Join the F1 Community</h2>
+                    <div className="community-links">
+                        <Link to="/community/votings" className="community-card">
+                            Votings
                         </Link>
-                        <Link to="/community/fan-zone" className="community-card">
-                            Fan Zone
-                        </Link> 
+                        <Link to="/community/quiz" className="community-card">
+                            Quiz
+                        </Link>      
                     </div>
                 </Link>
             </div>

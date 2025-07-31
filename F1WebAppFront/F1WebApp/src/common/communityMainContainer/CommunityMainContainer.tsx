@@ -5,6 +5,7 @@ import './CommunityMainContainer.css';
 import background from "../../assets/fanMainBack.png";
 import { LogOut } from "lucide-react"; // Asegúrate de tener esta librería instalada
 import { useUser } from "../../hooks/useUser";
+import { DropdownMenu } from "../menu/DropDownMenu";
 
 interface Props {
   children: React.ReactNode;
@@ -12,7 +13,7 @@ interface Props {
 
 export const CommunityMainContainer: React.FC<Props> = ({ children }) => {
   const navigate = useNavigate();
-  const {logoutUser} = useUser();
+  const { logoutUser } = useUser();
 
   const handleLogout = () => {
     logoutUser();
@@ -20,11 +21,12 @@ export const CommunityMainContainer: React.FC<Props> = ({ children }) => {
   };
 
   return (
+    <>
+      <DropdownMenu />
       <div className="main-container-community" style={{ backgroundImage: `url(${background})` }}>
         <div className="header-community">
           <img className="f1-logo-community" src={Logo} alt="Formula 1 Logo" />
           <h1 className="main-title-community">
-            
             <span style={{ color: 'white' }}>Web </span>
             <span style={{ color: 'white' }}>App</span>
           </h1>
@@ -36,5 +38,6 @@ export const CommunityMainContainer: React.FC<Props> = ({ children }) => {
           {children}
         </div>
       </div>
+    </>
   );
 };
