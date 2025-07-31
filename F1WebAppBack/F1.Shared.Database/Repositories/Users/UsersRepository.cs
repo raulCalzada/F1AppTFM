@@ -25,8 +25,8 @@ namespace F1.Shared.Database.Repositories.Users
             var userDto = new
             {
                 Username = user.Username,
-                Email = user.Password,
-                Password = user.Email,
+                Email = user.Email,
+                Password = user.Password,
                 Rol = user.Role
             };
 

@@ -19,9 +19,7 @@ export const editVoteStatus = async(status:{"status": number, "question": number
 }
 
 export const createVotation = async(question : VoteQuestion) => {
-    console.log("Creating votation with question:", question);
     const response = await axios.post(`${BaseUrl}/create`, question);  
-    console.log("Votation created with response:", response.data);
     return response.data;
 }
 
@@ -32,5 +30,10 @@ export const vote = async(vote: {questionId: number, voteOption: number, userId:
 
 export const deleteQuestion = async(questionId: number) => {
     const response = await axios.delete(`${BaseUrl}/${questionId}`);  
+    return response.data;
+};
+
+export const givePoints = async(data: { questionId: number, voteOption: number, points: number }) => {
+    const response = await axios.post(`${BaseUrl}/give-points`, data);
     return response.data;
 };

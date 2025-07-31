@@ -24,6 +24,7 @@ namespace F1.Users.Endpoints.CommonDtos
         public bool IsActive { get; set; } = false;
 
         public int Role { get; set; }
+        public long Points { get; set; } = 0;
 
         public IUser ToDomain()
         {
@@ -36,7 +37,8 @@ namespace F1.Users.Endpoints.CommonDtos
                 CreateDate = DateTime.TryParseExact(CreateDate, "dd/MM/yyyy HH:mm:ss", CultureInfo.InvariantCulture, DateTimeStyles.None, out var cDate) ? cDate : null,
                 LastUpdateDate = DateTime.TryParseExact(LastUpdateDate, "dd/MM/yyyy HH:mm:ss", CultureInfo.InvariantCulture, DateTimeStyles.None, out var uDate) ? uDate : null,
                 IsActive = IsActive,
-                Role = (Role)Role
+                Role = (Role)Role,
+                Points = Points
             };
         }
     }

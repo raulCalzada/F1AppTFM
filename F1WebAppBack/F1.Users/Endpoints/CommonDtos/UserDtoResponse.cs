@@ -19,6 +19,7 @@ namespace F1.Users.Endpoints.CommonDtos
         public bool IsActive { get; set; } = false;
 
         public int Role { get; set; }
+        public long Points { get; set; } = 0;
 
         public UserDtoResponse() { }
 
@@ -32,6 +33,7 @@ namespace F1.Users.Endpoints.CommonDtos
             LastUpdateDate = user.LastUpdateDate?.ToString();
             IsActive = user.IsActive;
             Role = (int)user.Role;
+            Points = user.Points;
         }
     }
 }

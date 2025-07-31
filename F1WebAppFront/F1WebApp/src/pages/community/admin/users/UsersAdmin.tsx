@@ -11,6 +11,7 @@ const emptyUser: Omit<User, "userId" | "createDate" | "lastUpdateDate"> = {
     password: "",
     isActive: true,
     role: 2,
+    points: 0,
 };
 
 export const UsersAdmin: React.FC = () => {
@@ -60,6 +61,7 @@ export const UsersAdmin: React.FC = () => {
             password: "",
             isActive: user.isActive,
             role: user.role,
+            points: user.points,
         });
     };
 
@@ -102,7 +104,11 @@ export const UsersAdmin: React.FC = () => {
         const { name, value, type } = target;
         setForm((prev) => ({
             ...prev,
-            [name]: type === "checkbox" ? (target as HTMLInputElement).checked : value,
+            [name]: type === "checkbox"
+                ? (target as HTMLInputElement).checked
+                : name === "points" || name === "role"
+                    ? parseInt(value)
+                    : value,
         }));
     };
 
@@ -151,6 +157,14 @@ export const UsersAdmin: React.FC = () => {
                             onChange={handleFormChange}
                             type="password"
                         />
+                        <input
+                            name="points"
+                            placeholder="Points"
+                            value={form.points}
+                            onChange={handleFormChange}
+                            type="number"
+                            required
+                        />
                         <select name="role" value={form.role} onChange={handleFormChange}>
                             <option value={1}>Admin</option>
                             <option value={2}>User</option>
@@ -177,7 +191,8 @@ export const UsersAdmin: React.FC = () => {
                             <th>Email</th>
                             <th>Role</th>
                             <th>Active</th>
-                            <th>Actions</th>
+                            <th>Points</th>
+                            <th>Actions</th>                          
                         </tr>
                     </thead>
                     <tbody>
@@ -188,6 +203,7 @@ export const UsersAdmin: React.FC = () => {
                                 <td>{user.email}</td>
                                 <td>{user.role === 1 ? "Admin" : user.role === 2 ? "User" : "Writer"}</td>
                                 <td>{user.isActive ? "Yes" : "No"}</td>
+                                <td>{user.points}</td>
                                 <td>
                                     <button onClick={() => handleEditWindowUser(user)}>Edit</button>
                                 </td>

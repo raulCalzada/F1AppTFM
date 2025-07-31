@@ -1,5 +1,5 @@
 import { useCallback, useState } from "react";
-import { editUser, getAllUsers, obtainUser, obtainUserByUsername } from "../api/user";
+import { createUser, editUser, getAllUsers, obtainUser, obtainUserByUsername } from "../api/user";
 import { User } from "../types/user";
 import { useStatus, useStatus2 } from "./useStatus";
 
@@ -22,6 +22,19 @@ export const useUser = () => {
                 onError(error.message);
             });
     }, [onSuccess, onError, onLoading]);
+
+    const createNewUser = useCallback(async (userData: User) => {
+        onLoading();
+        createUser(userData)
+            .then((response) => {
+                setUser(response);
+                onSuccess(response ? `User ${response.username} created successfully` : '');
+                return response;
+            })
+            .catch((error) => {
+                onError(error.message);
+            });
+        }, [onSuccess, onError, onLoading]);
 
     const syncUserById = useCallback(async (userId: string): Promise<User> => {
         return await obtainUser(userId) as User;
@@ -138,6 +151,14 @@ export const useUser = () => {
         }
     }, [onLoading2, onSuccess2, onError2]);
 
+    const getUserPositionByPoints = useCallback((): number | null => {
+        if (!loggedUser || userList.length === 0) return null;
+
+        const sortedUsers = [...userList].sort((a, b) => b.points - a.points);
+        const position = sortedUsers.findIndex(u => u.userId === loggedUser.userId);
+
+        return position !== -1 ? position + 1 : null;
+}, [loggedUser, userList]);
 
 
     return {
@@ -154,6 +175,8 @@ export const useUser = () => {
         logoutUser,
         deleteUser,
         updateUser,
-        syncUserById
+        syncUserById,
+        getUserPositionByPoints,
+        createNewUser
     };
 }

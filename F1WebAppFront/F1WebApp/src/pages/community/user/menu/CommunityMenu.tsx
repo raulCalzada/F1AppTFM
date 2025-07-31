@@ -1,15 +1,14 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./CommunityMenu.css";
 import { useUser } from "../../../../hooks/useUser";
 import { useGlobalVariables } from "../../../../settings/globalvariables";
 import { CommunityMainContainer } from "../../../../common/communityMainContainer/CommunityMainContainer";
 
-
-
 export const CommunityMenu: React.FC = () => {
     const navigate = useNavigate();
-    const { userStatusLog, getLoggedUser, loggedUser } = useUser();
+    const { userStatusLog, getLoggedUser, loggedUser, getUserPositionByPoints, getUserList } = useUser();
+    const [userPosition, setUserPosition] = useState<number | null>(null);
 
     const {
         showNews,
@@ -20,6 +19,7 @@ export const CommunityMenu: React.FC = () => {
 
     useEffect(() => {
         getLoggedUser();
+        getUserList();
     }, []);
 
     useEffect(() => {
@@ -34,13 +34,18 @@ export const CommunityMenu: React.FC = () => {
         }
     }, [userStatusLog, loggedUser, navigate]);
 
-    if (!loggedUser) return null; // O un loader
+    useEffect(() => {
+        const position = getUserPositionByPoints();
+        setUserPosition(position);
+    }, [loggedUser]);
+
+    if (!loggedUser) return null;
 
     return (
         <CommunityMainContainer>
             <div className="actual-menu-community">
                 <div className="main-card-community">
-                    <p className="main-card-title-community">{loggedUser.username}</p>
+                    <h1>{loggedUser.username}</h1>
                     <div className="main-card-content-community">
                         <div>
                             <h3>Your points</h3>
@@ -48,7 +53,7 @@ export const CommunityMenu: React.FC = () => {
                         </div>
                         <div>
                             <h3>World Position</h3>
-                            <h2 className="points-community">🏆10º🏆</h2>
+                            <h2 className="points-community">🏆{userPosition ? `${userPosition}º` : 'N/A'}🏆</h2>
                         </div>
                     </div>
                 </div>

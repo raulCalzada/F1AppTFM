@@ -42,5 +42,19 @@ namespace F1.Shared.Application.User.Services
         {
             return _userRepository.UpdateUser(user);
         }
+
+        public async Task GivePoints(long userId, long pointsToAdd)
+        {
+            var user = await _userRepository.GetUserById(userId);
+
+            if (user == null)
+            {
+                return;
+            }
+
+            user.Points += pointsToAdd;
+
+            await _userRepository.UpdateUser(user);
+        }
     }
 }
