@@ -113,7 +113,7 @@ export const useUser = () => {
         onLoading2();
         obtainUserByUsername(username)
             .then((response) => {
-                if (response && response.password === password) {   
+                if (response && response.password === password && response.isActive === true) {   
                     setLoggedUser(response);              
                     console.log(response.userId);                   
                     setUserIdInCookies(response.userId);

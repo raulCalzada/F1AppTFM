@@ -49,7 +49,7 @@ export const LoginPage: React.FC = () => {
                             Log In
                         </button>
                         {userStatusLog?.loading && <p className="login-loading-text">Loading...</p>}
-                        {userStatusLog?.error && <p className="login-error-text">User or password wrong</p>}
+                        {userStatusLog?.error && <p className="login-error-text">User inactive or password wrong</p>}
                     </form>
                     <p className="login-register-text">
                         Don't have an account?{" "}

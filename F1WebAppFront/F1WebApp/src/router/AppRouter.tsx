@@ -37,6 +37,7 @@ import { CreateQuiz } from '../pages/community/writer/quiz/createQuiz/CreateQuiz
 import { VoteListAdmin } from '../pages/community/admin/votes/VoteListAdmin';
 import { VoteListWriter } from '../pages/community/writer/votes/voteList/VoteListWriter';
 import { CreateVoteWriter } from '../pages/community/writer/votes/createVote/CreateVoteWriter';
+import { CreateForum } from '../pages/community/user/forum/createForum/CreateForum';
 
 export const AppRouter = () => {
     return (
@@ -62,6 +63,7 @@ export const AppRouter = () => {
                 <Route path="/community/menu" element={<CommunityMenu />} />
                 <Route path="/community/forum" element={< ForumList/>} />
                 <Route path="/community/forum/:forumId" element={<ForumPost />} />  
+                <Route path="/community/forum/create" element={<CreateForum />} />  
                 <Route path="/community/news" element={<NewsList />} /> 
                 <Route path="/community/news/:newId" element={<Article />} /> 
                 <Route path="/community/votings" element={<Votes />} /> 

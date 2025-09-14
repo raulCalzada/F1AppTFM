@@ -14,6 +14,7 @@ export const obtainForumThread = async (threadId: number) => {
 };
 
 export const createForumThread = async (threadData: { title: string; content: string; userId: number }) => {
+    console.log("request", threadData);
     const response = await axios.post(`${BaseUrl}`, threadData);
     return response.data;
 };

@@ -42,6 +42,14 @@ export const ForumList: React.FC = () => {
         <CommunityMainContainer>
             <div className="forum-list-container">
                 <h2 className="forum-list-title">Forum Posts Availables</h2>
+                <div className="forum-create-btn-wrapper">
+                    <button
+                        className="forum-create-btn"
+                        onClick={() => navigate("/community/forum/create")}
+                    >
+                        Create Forum
+                    </button>
+                </div>
                 <div className="forum-list">
                     {currentForums.map((forum) => (
                         <div

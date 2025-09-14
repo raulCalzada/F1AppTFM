@@ -2,7 +2,7 @@ import { useCallback, useState } from "react";
 import { useStatus } from "./useStatus";
 
 import { Quiz, UserQuiz, SubmitQuiz, CreateQuiz } from "../types/quiz";
-import { createQuiz, getAllQuizzes, getUserQuizzes, obtainQuizById, submitQuiz } from "../api/quiz";
+import { createQuiz, getAllQuizzes, getUserQuizzes, obtainQuizById, quitQuiz, submitQuiz } from "../api/quiz";
 
 export const useQuiz = () => {
     const [quizList, setQuizList] = useState<Quiz[]>([]);
@@ -75,7 +75,7 @@ export const useQuiz = () => {
     const deleteQuiz = useCallback(async (quizId: number) => {
         onLoading();
         try {
-            deleteQuiz(quizId);
+            quitQuiz(quizId);
             onSuccess();
         }
         catch (error) {

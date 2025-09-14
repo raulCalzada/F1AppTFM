@@ -36,3 +36,24 @@
     cursor: pointer;
     box-shadow: 0 6px 14px rgba(0, 229, 206, 0.4);
 }
+
+.forum-create-btn-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.forum-create-btn {
+    background-color: #e10600;
+    color: #fff;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.forum-create-btn:hover {
+    background-color: #b30000;
+}
