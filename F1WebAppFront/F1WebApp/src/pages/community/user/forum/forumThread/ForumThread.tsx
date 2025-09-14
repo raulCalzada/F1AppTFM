@@ -95,7 +95,7 @@ export const ForumPost: React.FC = () => {
                                         )}
                                     </div>
                                     <div className="forum-post-meta">
-                                        ({new Date(comment.createDate).toLocaleString()}):
+                                        ({comment.createDate}):
                                     </div>
                                     <div>{comment.comment}</div>
                                 </li>
